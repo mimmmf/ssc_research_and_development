@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "ssc_research_and_development:blocks/rnd_server",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ssc_research_and_development:rnd_server"
+        }
+      ]
+    }
+  ]
+}

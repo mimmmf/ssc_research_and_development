@@ -1,0 +1,32 @@
+{
+  "workspacePanelIconSize": "TILES",
+  "workspacePanelSortType": "CREATED",
+  "workspacePanelSortAscending": true,
+  "projectBrowserState": {
+    "expandedPaths": [
+      "[, SSC14 Research and Development]",
+      "[, SSC14 Research and Development, Source (Gradle)]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment\\client]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment\\client, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment\\client\\gui]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment\\item]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment\\network]",
+      "[, SSC14 Research and Development, Source (Gradle), C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\src\\main\\java\\net\\mcreator\\sscresearchanddevelopment\\procedures]"
+    ]
+  },
+  "leftDockState": {
+    "expandedDock": "project_browser",
+    "dockSizes": {
+      "project_browser": 280
+    }
+  },
+  "bottomDockState": {
+    "dockSizes": {
+      "console": 300,
+      "code_viewer": 300,
+      "debugger": 300
+    }
+  }
+}

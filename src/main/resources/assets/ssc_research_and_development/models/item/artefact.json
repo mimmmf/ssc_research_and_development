@@ -1,0 +1,7 @@
+{
+  "parent": "ssc_research_and_development:custom/artefact",
+  "textures": {
+    "1": "ssc_research_and_development:block/artefact-1-texture",
+    "particle": "minecraft:item/amethyst_shard"
+  }
+}

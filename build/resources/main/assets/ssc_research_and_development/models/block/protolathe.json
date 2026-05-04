@@ -1,0 +1,9 @@
+{
+  "parent": "ssc_research_and_development:custom/protolathe",
+  "textures": {
+    "all": "ssc_research_and_development:block/protolathe-texture",
+    "particle": "ssc_research_and_development:block/protolathe-texture",
+    "0": "ssc_research_and_development:block/protolathe-texture"
+  },
+  "render_type": "cutout"
+}

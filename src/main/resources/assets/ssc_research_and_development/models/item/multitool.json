@@ -1,0 +1,7 @@
+{
+  "parent": "ssc_research_and_development:custom/multitool",
+  "textures": {
+    "0": "ssc_research_and_development:block/multitool_animated_1",
+    "particle": "ssc_research_and_development:item/multitool_animated_item1"
+  }
+}

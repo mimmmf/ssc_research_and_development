@@ -1,0 +1,151 @@
+{
+  "_fv": 85,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 200,
+    "height": 150,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "artefact-console-gui.png",
+          "use1Xscale": false,
+          "x": 89,
+          "y": 44,
+          "locked": true
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_analitichieskaia_konsol_shirokogho_s",
+          "text": {
+            "fixedValue": "Аналитическая консоль "
+          },
+          "color": {
+            "value": -26368,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 95,
+          "y": 48,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_id",
+          "text": {
+            "fixedValue": "ID:"
+          },
+          "color": {
+            "value": -3355444,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 94,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty",
+          "text": {
+            "fixedValue": "2692"
+          },
+          "color": {
+            "value": -205,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 110,
+          "y": 124,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_klass",
+          "text": {
+            "fixedValue": "Класс:"
+          },
+          "color": {
+            "value": -3355444,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 94,
+          "y": 133,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_status",
+          "text": {
+            "fixedValue": "Статус:"
+          },
+          "color": {
+            "value": -3355444,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 94,
+          "y": 142,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_effiekt",
+          "text": {
+            "fixedValue": "Эффект:"
+          },
+          "color": {
+            "value": -3355444,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 94,
+          "y": 151,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_trighghier",
+          "text": {
+            "fixedValue": "Триггер:"
+          },
+          "color": {
+            "value": -3355444,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 94,
+          "y": 160,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

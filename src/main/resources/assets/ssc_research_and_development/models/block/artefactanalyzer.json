@@ -1,0 +1,9 @@
+{
+  "parent": "ssc_research_and_development:custom/artefact_analyzer",
+  "textures": {
+    "all": "ssc_research_and_development:block/artefact_analyzer_texture",
+    "particle": "ssc_research_and_development:block/artefact_analyzer_texture",
+    "1": "ssc_research_and_development:block/artefact_analyzer_texture"
+  },
+  "render_type": "cutout"
+}

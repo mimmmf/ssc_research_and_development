@@ -1,0 +1,453 @@
+{
+  "mod_elements": [
+    {
+      "name": "Artefactconsole",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefactconsole",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/ssc_research_and_development/items/artefactconsole.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/ArtefactconsoleBlock.java",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/artefactconsole.json",
+          "src/main/resources/assets/ssc_research_and_development/blockstates/artefactconsole.json",
+          "src/main/resources/assets/ssc_research_and_development/models/item/artefactconsole.json",
+          "src/main/resources/assets/ssc_research_and_development/models/block/artefactconsole.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/entity/ArtefactconsoleBlockEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "SSC14rnd",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ssc_14rnd",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Artefactanalyzer",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefactanalyzer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/ArtefactanalyzerBlock.java",
+          "src/main/resources/assets/ssc_research_and_development/items/artefactanalyzer.json",
+          "src/main/resources/assets/ssc_research_and_development/models/block/artefactanalyzer.json",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/artefactanalyzer.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/entity/ArtefactanalyzerBlockEntity.java",
+          "src/main/resources/assets/ssc_research_and_development/blockstates/artefactanalyzer.json",
+          "src/main/resources/assets/ssc_research_and_development/models/item/artefactanalyzer.json"
+        ]
+      }
+    },
+    {
+      "name": "Artefact",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "artefact",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/item/ArtefactItem.java",
+          "src/main/resources/assets/ssc_research_and_development/models/item/artefact.json",
+          "src/main/resources/assets/ssc_research_and_development/items/artefact.json"
+        ]
+      }
+    },
+    {
+      "name": "RNDServer",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rnd_server",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/ssc_research_and_development/items/rnd_server.json",
+          "src/main/resources/assets/ssc_research_and_development/models/block/rnd_server.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/RNDServerBlock.java",
+          "src/main/resources/assets/ssc_research_and_development/blockstates/rnd_server.json",
+          "src/main/resources/assets/ssc_research_and_development/models/item/rnd_server.json",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/rnd_server.json"
+        ]
+      }
+    },
+    {
+      "name": "ResearchConsole",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "research_console",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/ssc_research_and_development/items/research_console.json",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/research_console.json",
+          "src/main/resources/assets/ssc_research_and_development/models/block/research_console.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/ResearchConsoleBlock.java",
+          "src/main/resources/assets/ssc_research_and_development/models/item/research_console.json",
+          "src/main/resources/assets/ssc_research_and_development/blockstates/research_console.json"
+        ]
+      }
+    },
+    {
+      "name": "Autolathe",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "autolathe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/ssc_research_and_development/blockstates/autolathe.json",
+          "src/main/resources/assets/ssc_research_and_development/models/block/autolathe.json",
+          "src/main/resources/assets/ssc_research_and_development/models/item/autolathe.json",
+          "src/main/resources/assets/ssc_research_and_development/items/autolathe.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/AutolatheBlock.java",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/autolathe.json"
+        ]
+      }
+    },
+    {
+      "name": "Protolathe",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "protolathe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/ssc_research_and_development/blockstates/protolathe.json",
+          "src/main/resources/assets/ssc_research_and_development/models/block/protolathe.json",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/protolathe.json",
+          "src/main/resources/assets/ssc_research_and_development/items/protolathe.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/ProtolatheBlock.java",
+          "src/main/resources/assets/ssc_research_and_development/models/item/protolathe.json"
+        ]
+      }
+    },
+    {
+      "name": "Circuitimprinter",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "circuitimprinter",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/block/CircuitimprinterBlock.java",
+          "src/main/resources/assets/ssc_research_and_development/models/block/circuitimprinter.json",
+          "src/main/resources/assets/ssc_research_and_development/models/item/circuitimprinter.json",
+          "src/main/resources/assets/ssc_research_and_development/blockstates/circuitimprinter.json",
+          "src/main/resources/assets/ssc_research_and_development/items/circuitimprinter.json",
+          "src/main/resources/data/ssc_research_and_development/loot_table/blocks/circuitimprinter.json"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactanalyzerOnClick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefactanalyzer_on_click",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactanalyzerOnClickProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactConsoleGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "artefact_console_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/world/inventory/ArtefactConsoleGUIMenu.java",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/client/gui/ArtefactConsoleGUIScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactconsoleOnBlockRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefactconsole_on_block_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactconsoleOnBlockRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactanalyzerBlockDestroyed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefactanalyzer_block_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactanalyzerBlockDestroyedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactanalyzerOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefactanalyzer_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactanalyzerOnTickUpdateProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactConsoleGUIModel",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefact_console_gui_model",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "entity",
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactConsoleGUIModelProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactConsoleGUIModelCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefact_console_gui_model_condition",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactConsoleGUIModelConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ArtefactConsoleGUIThisGUIIsOpened",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "artefact_console_gui_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/procedures/ArtefactConsoleGUIThisGUIIsOpenedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Multitool",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "multitool",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/ssc_research_and_development/models/item/multitool.json",
+          "src/main/resources/assets/ssc_research_and_development/items/multitool.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/item/MultitoolItem.java"
+        ]
+      }
+    },
+    {
+      "name": "MultitoolOverlay",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "multitool_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sscresearchanddevelopment/client/screens/MultitoolOverlayOverlay.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.ssc_research_and_development.artefactconsole": "Консоль артефактов",
+      "item_group.ssc_research_and_development.ssc_14rnd": "SSC14 RND",
+      "item.ssc_research_and_development.artefactanalyzer": "Анализатор артефактов",
+      "item.ssc_research_and_development.artefact": "Инопланетный артефакт",
+      "item.ssc_research_and_development.rnd_server": "Сервер РнД",
+      "item.ssc_research_and_development.research_console": "Консоль исследований",
+      "item.ssc_research_and_development.autolathe": "Автолат",
+      "item.ssc_research_and_development.protolathe": "Протолат",
+      "item.ssc_research_and_development.circuitimprinter": "Принтер схем",
+      "gui.ssc_research_and_development.artefact_console_gui.label_analitichieskaia_konsol_shirokogho_s": "Аналитическая консоль ",
+      "gui.ssc_research_and_development.artefact_console_gui.label_status": "Статус:",
+      "gui.ssc_research_and_development.artefact_console_gui.label_empty": "2692",
+      "gui.ssc_research_and_development.artefact_console_gui.button_siervier": "Сервер",
+      "gui.ssc_research_and_development.artefact_console_gui.label_id": "ID:",
+      "gui.ssc_research_and_development.artefact_console_gui.label_effiekt": "Эффект:",
+      "gui.ssc_research_and_development.artefact_console_gui.label_trighghier": "Триггер:",
+      "gui.ssc_research_and_development.artefact_console_gui.label_klass": "Класс:",
+      "item.ssc_research_and_development.multitool": "Мультитул",
+      "gui.ssc_research_and_development.multitool_overlay.label_sviaz": "Связь",
+      "gui.ssc_research_and_development.multitool_overlay.label_riezhim": "Режим:"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModMenus.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModScreens.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModBlocks.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModBlockEntities.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModItems.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/SscResearchAndDevelopmentMod.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModTabs.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/resources/pack.mcmeta"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "ssc_research_and_development",
+    "modName": "SSC14 Research and Development",
+    "version": "1.0.0",
+    "author": "MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.8",
+    "modElementsPackage": "net.mcreator.sscresearchanddevelopment"
+  },
+  "mcreatorVersion": 202600114619
+}

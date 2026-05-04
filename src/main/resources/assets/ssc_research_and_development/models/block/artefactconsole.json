@@ -1,0 +1,9 @@
+{
+  "parent": "ssc_research_and_development:custom/console_of_artefacts",
+  "textures": {
+    "all": "ssc_research_and_development:block/artefact-console-texture",
+    "particle": "ssc_research_and_development:block/artefact-console-texture",
+    "2": "ssc_research_and_development:block/artefact-console-texture"
+  },
+  "render_type": "cutout"
+}

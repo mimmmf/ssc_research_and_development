@@ -1,0 +1,26 @@
+/fill -530 67 322 -540 67 310 minecraft:se
+/fill -530 67 322 -540 67 310 minecraft:chiseled_
+/fill -530 67 322 -540 67 310 minecraft:chiseled_tuff_bricks
+/effect clear @a
+/kill @a
+/data get entity @e[type=item_display,limit=1]
+/time set night
+/data get block
+/data get block 18 56 2
+/data get block 20 56 2
+/data get block 13 56 0
+/data get block 9 56 3
+/data get block 9 56 5
+/data get block 9 56 3
+/data get block -1 56 13
+/data get block 2 56 13
+/data get block 1 56 11
+/data get block 0 56 14
+/data get block 1 56 11
+/data get block 2 56 12
+/kill @e[type=minecraft:item_display]
+/time set day
+/time set night
+/data get block
+/data get block 20 113 -31
+/data get block 20 113 -29

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "ssc_research_and_development:block/protolathe"
+    },
+    "facing=east": {
+      "model": "ssc_research_and_development:block/protolathe",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "ssc_research_and_development:block/protolathe",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "ssc_research_and_development:block/protolathe",
+      "y": 270
+    }
+  }
+}

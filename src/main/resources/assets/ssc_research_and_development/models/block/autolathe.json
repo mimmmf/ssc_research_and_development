@@ -1,0 +1,9 @@
+{
+  "parent": "ssc_research_and_development:custom/autolathe",
+  "textures": {
+    "all": "ssc_research_and_development:block/autolathe-texture",
+    "particle": "ssc_research_and_development:block/autolathe-texture",
+    "0": "ssc_research_and_development:block/autolathe-texture"
+  },
+  "render_type": "cutout"
+}

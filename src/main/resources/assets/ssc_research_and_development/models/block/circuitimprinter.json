@@ -1,0 +1,9 @@
+{
+  "parent": "ssc_research_and_development:custom/circuit_imprinter",
+  "textures": {
+    "all": "ssc_research_and_development:block/circuit_imprinter_texture",
+    "particle": "ssc_research_and_development:block/circuit_imprinter_texture",
+    "0": "ssc_research_and_development:block/circuit_imprinter_texture"
+  },
+  "render_type": "cutout"
+}
