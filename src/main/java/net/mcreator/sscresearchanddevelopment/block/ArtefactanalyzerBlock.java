@@ -109,4 +109,14 @@ public class ArtefactanalyzerBlock extends Block implements EntityBlock {
 		}
 		super.destroy(world, pos, state);
 	}
+
+	// МЕТОДЫ СВЯЗАННЫЕ С ТРИГГЕРАМИ
+
+	@Override
+	protected void attack(BlockState state, Level level, BlockPos pos, Player player) {
+		if (!level.isClientSide && level.getBlockEntity(pos) instanceof ArtefactanalyzerBlockEntity be) {
+			be.onTriggerEvent("attack");
+		}
+		super.attack(state, level, pos, player);
+	}
 }

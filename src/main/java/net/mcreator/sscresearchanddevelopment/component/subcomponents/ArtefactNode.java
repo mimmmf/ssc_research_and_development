@@ -24,4 +24,15 @@ public record ArtefactNode(
                     Codec.STRING.fieldOf("triggerId").forGetter(ArtefactNode::triggerId),
                     Codec.STRING.fieldOf("reactionId").forGetter(ArtefactNode::reactionId)
             ).apply(instance, ArtefactNode::new));
+    public ArtefactNode withStatus(NodeStatus newStatus) {
+        return new ArtefactNode(
+                this.id,
+                this.depth,
+                this.points,
+                newStatus,      // Новое значение
+                this.childIds,
+                this.triggerId,
+                this.reactionId
+        );
+    }
 }

@@ -35,9 +35,7 @@ import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModB
 
 import javax.annotation.Nullable;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyContainer, ILinkable {
 	// Используем ContainerHelper для удобства, но храним только 1 слот
@@ -58,7 +56,8 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		ArtifactProperties props = stack.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
 		if (props == null) return;
 
-		ArtefactContext context = new ArtefactContext(level, worldPosition, stack, null);
+		Object[] args = tickEvents.toArray();
+		ArtefactContext context = new ArtefactContext(level, worldPosition, stack, args, null);
 		boolean dirty = false;
 
 		// Внимание: создаем новую карту узлов, так как рекорды неизменяемы
@@ -87,6 +86,7 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 				anyNodeChanged = true;
 				dirty = true;
 			}
+			tickEvents.clear();
 		}
 
 		if (dirty) {
@@ -152,7 +152,7 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 	public boolean isEmpty() { return stacks.get(0).isEmpty(); }
 
 	@Override
-	public ItemStack getItem(int index) {SscResearchAndDevelopmentMod.LOGGER.debug(stacks.get(0)); return stacks.get(0); }
+	public ItemStack getItem(int index) {return stacks.get(0); }
 
 	@Override
 	public ItemStack removeItem(int index, int count) {
@@ -223,5 +223,9 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 			SoundEvent sound = linked ? SoundEvents.EXPERIENCE_ORB_PICKUP : SoundEvents.LEAF_LITTER_BREAK;
 			level.playSound(null, worldPosition, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
+	}
+	private final List<Object> tickEvents = new ArrayList<>();
+	public void onTriggerEvent(Object arg) {
+		this.tickEvents.add(arg);
 	}
 }

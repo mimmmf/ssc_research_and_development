@@ -1,5 +1,6 @@
 package net.mcreator.sscresearchanddevelopment;
 
+import net.mcreator.sscresearchanddevelopment.component.ArtefactLogic;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -61,6 +62,7 @@ public class SscResearchAndDevelopmentMod {
 		SscResearchAndDevelopmentModMenus.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
 		SscResearchAndDevelopmentDataComponents.COMPONENTS.register(modEventBus);
+		ArtefactLogic.init();
 		// End of user code block mod init
 	}
 

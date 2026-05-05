@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 
-public record ArtefactContext (Level level, BlockPos pos, ItemStack stack, @Nullable Entity source) {
+public record ArtefactContext (Level level, BlockPos pos, ItemStack stack, Object[] context, @Nullable Entity source) {
     public interface IArtefactTrigger {
         // Проверка, сработал ли триггер (например, на тике или при ударе)
         boolean check(ArtefactContext context, ArtefactNode node, Object... args);
