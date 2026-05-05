@@ -1,6 +1,8 @@
 package net.mcreator.sscresearchanddevelopment;
 
-import net.mcreator.sscresearchanddevelopment.component.ArtefactLogic;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
+import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
+import net.neoforged.fml.common.EventBusSubscriber;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -62,11 +64,24 @@ public class SscResearchAndDevelopmentMod {
 		SscResearchAndDevelopmentModMenus.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
 		SscResearchAndDevelopmentDataComponents.COMPONENTS.register(modEventBus);
-		ArtefactLogic.init();
+		ArtefactRegistries.init(modEventBus);
 		// End of user code block mod init
 	}
 
 	// Start of user code block mod methods
+	@EventBusSubscriber(modid = MODID)
+	public class NetworkHandler {
+		@SubscribeEvent
+		public static void register(final RegisterPayloadHandlersEvent event) {
+			final PayloadRegistrar registrar = event.registrar(MODID);
+
+			registrar.playToServer(
+					ExtractPointsPayload.TYPE,
+					ExtractPointsPayload.STREAM_CODEC,
+					ExtractPointsPayload::handle
+			);
+		}
+	}
 	// End of user code block mod methods
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();

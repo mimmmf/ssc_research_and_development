@@ -1,0 +1,113 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 2026-05-05 20:38:51
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.network.registration.ClientNetworkRegistry.setup(ClientNetworkRegistry.java:90) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
+-- Mod loading issue --
+Details:
+	Mod file: <No mod information provided>
+	Failure message: An uncaught parallel processing error has occurred.
+		java.lang.IllegalStateException: Some clientbound payloads are missing client-side handlers: [ssc_research_and_development:extract_points]
+	Mod version: <No mod information provided>
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.IllegalStateException: Some clientbound payloads are missing client-side handlers: [ssc_research_and_development:extract_points]
+Stacktrace:
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.network.registration.ClientNetworkRegistry.setup(ClientNetworkRegistry.java:90) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$prepareTasks$2(SimpleReloadInstance.java:72) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:152) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:126) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:115) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.runTick(Minecraft.java:1245) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.run(Minecraft.java:882) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.main.Main.main(Main.java:243) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:132) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:120) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.NeoForgeClientDevLaunchHandler.runService(NeoForgeClientDevLaunchHandler.java:49) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:114) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:25) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:55) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:73) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.Launcher.run(Launcher.java:104) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at cpw.mods.bootstraplauncher/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:203) [bootstraplauncher-9.0.16.jar:?] {}
+	at cpw.mods.bootstraplauncher/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:62) [bootstraplauncher-9.0.16.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.8
+	Minecraft Version ID: 1.21.8
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 442304408 bytes (421 MiB) / 803209216 bytes (766 MiB) up to 4246732800 bytes (4050 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i3-12100F
+	Identifier: Intel64 Family 6 Model 151 Stepping 5
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 3.30
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9186
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 21829.38
+	Virtual memory used (MiB): 17823.70
+	Swap memory total (MiB): 5632.00
+	Swap memory used (MiB): 711.49
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 168973.19, total: 487469.00
+	Space in storage for workdir (MiB): available: 168973.19, total: 487469.00
+	JVM Flags: 0 total; 
+	ModLauncher: 9.0
+	ModLauncher launch target: neoforgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-9.0.16.jar neoforgedevdistcleaner PLUGINSERVICE 
+		loader-9.0.16.jar slf4jfixer PLUGINSERVICE 
+		loader-9.0.16.jar runtime_enum_extender PLUGINSERVICE 
+		loader-9.0.16.jar accesstransformer PLUGINSERVICE 
+		loader-9.0.16.jar mixin TRANSFORMATIONSERVICE 
+		loader-9.0.16.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@9.0
+		minecraft@9.0
+	Mod List: 
+		neoforge-21.8.31-merged.jar                       |Minecraft                     |minecraft                     |1.21.8              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |NeoForge                      |neoforge                      |21.8.31             |Manifest: NOSIGNATURE
+		main                                              |SSC14 Research and Development|ssc_research_and_development  |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: 44aec269-bb67-4c10-be12-048ecb99075a
+	FML: 9.0.16
+	NeoForge: 21.8.31

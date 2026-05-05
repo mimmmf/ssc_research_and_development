@@ -12,7 +12,9 @@ public record ArtefactNode(
         NodeStatus status,
         List<Integer> childIds,
         String triggerId,
-        String reactionId
+        String reactionId,
+        int timer,      // Текущее значение (обратный отсчет)
+        int maxTimer    // Изначальное значение задержки
 ) {
     public static final Codec<ArtefactNode> CODEC = RecordCodecBuilder.create(instance ->
             instance.group(
@@ -22,17 +24,23 @@ public record ArtefactNode(
                     Codec.STRING.xmap(NodeStatus::valueOf, NodeStatus::name).fieldOf("status").forGetter(ArtefactNode::status),
                     Codec.INT.listOf().fieldOf("children").forGetter(ArtefactNode::childIds),
                     Codec.STRING.fieldOf("triggerId").forGetter(ArtefactNode::triggerId),
-                    Codec.STRING.fieldOf("reactionId").forGetter(ArtefactNode::reactionId)
+                    Codec.STRING.fieldOf("reactionId").forGetter(ArtefactNode::reactionId),
+                    Codec.INT.fieldOf("timer").forGetter(ArtefactNode::timer),
+                    Codec.INT.fieldOf("maxTimer").forGetter(ArtefactNode::maxTimer)
             ).apply(instance, ArtefactNode::new));
-    public ArtefactNode withStatus(NodeStatus newStatus) {
-        return new ArtefactNode(
-                this.id,
-                this.depth,
-                this.points,
-                newStatus,      // Новое значение
-                this.childIds,
-                this.triggerId,
-                this.reactionId
-        );
+
+    public ArtefactNode update(NodeStatus newStatus, int newTimer) {
+        return new ArtefactNode(id, depth, points, newStatus, childIds, triggerId, reactionId, newTimer, maxTimer);
     }
+//    public ArtefactNode withStatus(NodeStatus newStatus) {
+//        return new ArtefactNode(
+//                this.id,
+//                this.depth,
+//                this.points,
+//                newStatus,      // Новое значение
+//                this.childIds,
+//                this.triggerId,
+//                this.reactionId
+//        );
+//    }
 }

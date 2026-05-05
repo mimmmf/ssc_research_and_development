@@ -2,12 +2,23 @@ package net.mcreator.sscresearchanddevelopment.component;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
+import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactanalyzerBlockEntity;
+import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,12 +52,15 @@ public record ArtifactProperties(
                 buf.writeMap(val.nodes(), ByteBufCodecs.VAR_INT, (b, node) -> {
                     b.writeVarInt(node.id());
                     b.writeVarInt(node.depth());
-                    b.writeVarInt(node.points()); // Добавлены скобки
+                    b.writeVarInt(node.points());
                     b.writeUtf(node.status().name());
-                    // Запись списка
+                    // Список детей
                     ByteBufCodecs.VAR_INT.apply(ByteBufCodecs.list()).encode(b, node.childIds());
-                    b.writeUtf(node.triggerId());  // Добавлены скобки
-                    b.writeUtf(node.reactionId()); // Добавлены скобки
+                    b.writeUtf(node.triggerId());
+                    b.writeUtf(node.reactionId());
+                    // НОВОЕ: Записываем таймеры
+                    b.writeVarInt(node.timer());
+                    b.writeVarInt(node.maxTimer());
                 });
             },
             buf -> {
@@ -56,13 +70,15 @@ public record ArtifactProperties(
                         HashMap::new,
                         ByteBufCodecs.VAR_INT,
                         b -> new ArtefactNode(
-                                b.readVarInt(),
-                                b.readVarInt(),
-                                b.readVarInt(),
-                                NodeStatus.valueOf(b.readUtf()),
-                                ByteBufCodecs.VAR_INT.apply(ByteBufCodecs.list()).decode(b),
+                                b.readVarInt(), // id
+                                b.readVarInt(), // depth
+                                b.readVarInt(), // points
+                                NodeStatus.valueOf(b.readUtf()), // status
+                                ByteBufCodecs.VAR_INT.apply(ByteBufCodecs.list()).decode(b), // childIds
                                 b.readUtf(), // triggerId
-                                b.readUtf() // reactionId
+                                b.readUtf(), // reactionId
+                                b.readVarInt(), // НОВОЕ: читаем текущий timer
+                                b.readVarInt()  // НОВОЕ: читаем maxTimer
                         )
                 );
                 return new ArtifactProperties(tier, total, nodes);
@@ -83,7 +99,7 @@ public record ArtifactProperties(
 
         ArtefactNode root = new ArtefactNode(
                 nodeIdCounter++, 0, rootPoints, NodeStatus.ACTIVE,
-                new ArrayList<>(), "timer", "none"
+                new ArrayList<>(), ArtefactRegistries.getRandomTrigger(0, tier, random), ArtefactRegistries.getRandomReaction(0, tier, random), 0, 40
         );
         nodes.put(root.id(), root);
 
@@ -93,35 +109,84 @@ public record ArtifactProperties(
         while (remainingPoints > 30 && nodes.size() < 12) {
             int parentId = availableParents.get(random.nextInt(availableParents.size()));
             ArtefactNode parent = nodes.get(parentId);
-
             int nodePoints = random.nextInt(30, Math.max(31, remainingPoints / 2));
             int newId = nodeIdCounter++;
             int depth = parent.depth() + 1;
 
+            // Рандомим задержку: от 20 до 100 тиков (1-5 секунд)
+            // Чем глубже, тем непредсказуемее может быть задержка
+            int delay = 20 + random.nextInt(Math.min(200, 20 * depth));
+
+            String randomTriggerId = ArtefactRegistries.getRandomTrigger(depth, tier, random);
+            String randomReactionId = ArtefactRegistries.getRandomReaction(depth, tier, random);
+
             ArtefactNode newNode = new ArtefactNode(
                     newId, depth, nodePoints, NodeStatus.LOCKED,
-                    new ArrayList<>(), "timer", "reaction_type_" + depth
+                    new ArrayList<>(),
+                    randomTriggerId,
+                    randomReactionId,
+                    0,
+                    delay
             );
 
             parent.childIds().add(newId);
-
             nodes.put(newId, newNode);
             availableParents.add(newId);
             remainingPoints -= nodePoints;
         }
+        return new ArtifactProperties(tier, 0, nodes);
+    }
+    // -- ВСПОМОГАТЕЛЬНЫЕ МЕТОДЫ --
+    public static void extractNodePoints(ServerPlayer player, BlockPos pos, int nodeId) {
+        if (player.level().getBlockEntity(pos) instanceof ArtefactconsoleBlockEntity console) {
+            BlockPos analyzerPos = console.getLinkedPos().orElse(null);
+            if (analyzerPos == null) return;
 
-        return new ArtifactProperties(tier, budget, nodes);
-    }
-    public ArtifactProperties withNodeStatus(int nodeId, NodeStatus newStatus) {
-        Map<Integer, ArtefactNode> newNodes = new HashMap<>(this.nodes);
-        ArtefactNode oldNode = newNodes.get(nodeId);
-        if (oldNode != null) {
-            // Создаем копию узла с новым статусом
-            newNodes.put(nodeId, new ArtefactNode(
-                    oldNode.id(), oldNode.depth(), oldNode.points(),
-                    newStatus, oldNode.childIds(), oldNode.triggerId(), oldNode.reactionId()
-            ));
+            if (player.level().getBlockEntity(analyzerPos) instanceof ArtefactanalyzerBlockEntity analyzer) {
+                ItemStack stack = analyzer.getItem(0);
+
+                if (stack.isEmpty()) return;
+
+                ArtifactProperties props = stack.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
+                if (props == null) return;
+
+                ArtefactNode node = props.nodes().get(nodeId);
+
+                if (node != null && node.status() == NodeStatus.READY_TO_EXTRACT) {
+                    Map<Integer, ArtefactNode> updatedNodes = new HashMap<>(props.nodes());
+                    updatedNodes.put(nodeId, node.update(NodeStatus.SOLVED, 0));
+
+                    int newStoredEnergy = Math.max(0, props.totalPoints() - node.points());
+
+                    ArtifactProperties newProps = new ArtifactProperties(props.tier(), newStoredEnergy, updatedNodes);
+                    stack.set(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get(), newProps);
+
+                    analyzer.setItem(0, stack);
+
+                    analyzer.setChanged();
+                    player.level().sendBlockUpdated(analyzerPos, analyzer.getBlockState(), analyzer.getBlockState(), 3);
+
+                    player.containerMenu.broadcastChanges();
+
+                    player.level().playSound(null, pos, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.BLOCKS, 1.0f, 0.8f);
+
+                    // Сюда можно добавить код для начисления очков на "баланс игрока", если нужно
+                    // player.addScore(node.points());
+                }
+            }
         }
-        return new ArtifactProperties(this.tier, this.totalPoints, newNodes);
     }
+
+
+//    public ArtifactProperties withNodeStatus(int nodeId, NodeStatus newStatus) {
+//        Map<Integer, ArtefactNode> newNodes = new HashMap<>(this.nodes);
+//        ArtefactNode oldNode = newNodes.get(nodeId);
+//        if (oldNode != null) {
+//            newNodes.put(nodeId, new ArtefactNode(
+//                    oldNode.id(), oldNode.depth(), oldNode.points(),
+//                    newStatus, oldNode.childIds(), oldNode.triggerId(), oldNode.reactionId()
+//            ));
+//        }
+//        return new ArtifactProperties(this.tier, this.totalPoints, newNodes);
+//    }
 }

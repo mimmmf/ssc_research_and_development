@@ -1,16 +1,19 @@
 package net.mcreator.sscresearchanddevelopment.block.entity;
 
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactContext;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactLogic;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactContext;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
 import net.mcreator.sscresearchanddevelopment.component.ArtifactProperties;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactReaction;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactTrigger;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.Connection;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -58,44 +61,53 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 
 		Object[] args = tickEvents.toArray();
 		ArtefactContext context = new ArtefactContext(level, worldPosition, stack, args, null);
+
+		Map<Integer, ArtefactNode> updatedNodes = new HashMap<>(props.nodes());
 		boolean dirty = false;
 
-		// Внимание: создаем новую карту узлов, так как рекорды неизменяемы
-		Map<Integer, ArtefactNode> updatedNodes = new HashMap<>(props.nodes());
-		boolean anyNodeChanged = false;
+		for (ArtefactNode node : props.nodes().values()) {
+			if (node.status() == NodeStatus.ACTIVE) {
+				ResourceLocation triggerLoc = ResourceLocation.parse(node.triggerId().contains(":") ? node.triggerId() : "ssc_research_and_development:" + node.triggerId());
+				ArtefactTrigger trigger = ArtefactRegistries.TRIGGERS.getRegistry().get().getValue(triggerLoc);
 
-		for (Map.Entry<Integer, ArtefactNode> entry : props.nodes().entrySet()) {
-			ArtefactNode node = entry.getValue();
-
-			if (node.status() != NodeStatus.ACTIVE) continue;
-
-			ArtefactContext.IArtefactTrigger trigger = ArtefactLogic.TRIGGERS.get(node.triggerId());
-			if (trigger != null && trigger.check(context, node)) {
-
-				// Выполняем реакцию
-				ArtefactContext.IArtefactReaction reaction = ArtefactLogic.REACTIONS.getOrDefault(node.reactionId(), (ctx, n) -> {});
-				reaction.execute(context, node);
-
-				// Заменяем узел на новый с измененным статусом
-				updatedNodes.put(entry.getKey(), new ArtefactNode(
-						node.id(), node.depth(), node.points(),
-						NodeStatus.READY_TO_EXTRACT, // Узел "сработал"
-						node.childIds(), node.triggerId(), node.reactionId()
-				));
-
-				anyNodeChanged = true;
-				dirty = true;
+				if (trigger != null && trigger.check(context, node)) {
+					updatedNodes.put(node.id(), node.update(NodeStatus.PRIMED, node.maxTimer()));
+					dirty = true;
+				}
 			}
-			tickEvents.clear();
+
+			if (node.status() == NodeStatus.PRIMED) {
+				if (node.timer() > 0) {
+					updatedNodes.put(node.id(), node.update(NodeStatus.PRIMED, node.timer() - 1));
+					dirty = true;
+				} else {
+					ResourceLocation reactionLoc = ResourceLocation.parse(node.reactionId().contains(":") ? node.reactionId() : "ssc_research_and_development:" + node.reactionId());
+					ArtefactReaction reaction = ArtefactRegistries.REACTIONS.getRegistry().get().getValue(reactionLoc);
+
+					if (reaction != null) reaction.execute(context, node);
+
+					int newTotalPoints = props.totalPoints() + node.points();
+
+					updatedNodes.put(node.id(), node.update(NodeStatus.READY_TO_EXTRACT, 0));
+
+					for (int childId : node.childIds()) {
+						ArtefactNode child = updatedNodes.get(childId);
+						if (child != null && child.status() == NodeStatus.LOCKED) {
+							updatedNodes.put(childId, child.update(NodeStatus.ACTIVE, 0));
+						}
+					}
+					props = new ArtifactProperties(props.tier(), newTotalPoints, updatedNodes);
+					dirty = true;
+				}
+			}
 		}
 
-		if (dirty) {
-			// Создаем новый объект свойств с обновленной картой узлов
-			ArtifactProperties newProps = new ArtifactProperties(props.tier(), props.totalPoints(), updatedNodes);
-			stack.set(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get(), newProps);
+		tickEvents.clear(); // Очищаем события в конце каждого тика
 
+		if (dirty) {
+			stack.set(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get(),
+					new ArtifactProperties(props.tier(), props.totalPoints(), updatedNodes));
 			this.setChanged();
-			// Синхронизируем с клиентом, чтобы консоль сразу увидела изменения
 			level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
 		}
 	}
