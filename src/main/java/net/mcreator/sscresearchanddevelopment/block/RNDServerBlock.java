@@ -1,5 +1,16 @@
 package net.mcreator.sscresearchanddevelopment.block;
 
+import net.mcreator.sscresearchanddevelopment.block.entity.RNDServerBlockEntity;
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
+import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
+import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -7,19 +18,15 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
 
-public class RNDServerBlock extends Block {
+public class RNDServerBlock extends Block implements EntityBlock {
 	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
@@ -76,5 +83,29 @@ public class RNDServerBlock extends Block {
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	@Override
+	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+		if(!level.isClientSide && level.getBlockEntity(pos) instanceof RNDServerBlockEntity be) {
+			be.initializeServer();;
+		}
+	}
+
+	@Nullable
+	@Override
+	public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+		return new RNDServerBlockEntity(blockPos, blockState);
+	}
+
+	@Override
+	public void destroy(LevelAccessor world, BlockPos pos, BlockState state) {
+		if (world instanceof Level level && !level.isClientSide) {
+			NetworkSavedData data = NetworkSavedData.get(level);
+			if (data != null) {
+				data.removeServerAt(pos);
+			}
+		}
+		super.destroy(world, pos, state);
 	}
 }

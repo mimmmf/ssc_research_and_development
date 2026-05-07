@@ -8,7 +8,7 @@ java.lang.IllegalStateException: already at the bottom of the stack
 	at MC-BOOTSTRAP/org.joml@1.10.8/org.joml.Matrix3x2fStack.popMatrix(Matrix3x2fStack.java:117) ~[joml-1.10.8.jar%23187!/:1.10.8] {}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderContents(AbstractContainerScreen.java:123) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:101) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleGUIScreen.render(ArtefactConsoleGUIScreen.java:53) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen.render(ArtefactConsoleGUIScreen.java:53) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
@@ -45,13 +45,13 @@ Stacktrace:
 	at MC-BOOTSTRAP/org.joml@1.10.8/org.joml.Matrix3x2fStack.popMatrix(Matrix3x2fStack.java:117) ~[joml-1.10.8.jar%23187!/:1.10.8] {}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderContents(AbstractContainerScreen.java:123) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:101) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleGUIScreen.render(ArtefactConsoleGUIScreen.java:53) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen.render(ArtefactConsoleGUIScreen.java:53) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 -- Screen render details --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleGUIScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen
 	Mouse location: Scaled: (275.548438, 94.432319). Absolute: (826.000000, 283.000000)
 	Screen size: ~~ERROR~~ IllegalFormatConversionException: f != java.lang.Integer
 Stacktrace:

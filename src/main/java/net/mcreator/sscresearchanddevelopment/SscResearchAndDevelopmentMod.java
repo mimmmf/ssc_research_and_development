@@ -1,5 +1,8 @@
 package net.mcreator.sscresearchanddevelopment;
 
+import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
+import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
+import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
 import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -80,8 +83,25 @@ public class SscResearchAndDevelopmentMod {
 					ExtractPointsPayload.STREAM_CODEC,
 					ExtractPointsPayload::handle
 			);
+			registrar.playToServer(
+					C2SRequestServerList.TYPE,
+					C2SRequestServerList.STREAM_CODEC,
+					C2SRequestServerList::handleServer
+			);
+
+			registrar.playToClient(
+					S2CUpdateServerList.TYPE,
+					S2CUpdateServerList.STREAM_CODEC,
+					S2CUpdateServerList::handleClient
+			);
+			registrar.playToServer(
+					C2SConnectServer.TYPE,
+					C2SConnectServer.STREAM_CODEC,
+					C2SConnectServer::handleServer
+			);
 		}
 	}
+
 	// End of user code block mod methods
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();

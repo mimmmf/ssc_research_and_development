@@ -71,11 +71,8 @@ public interface ILinkable {
     static void staticNotifyRemoval(Level level, BlockPos pos) {
         if (level.isClientSide) return;
 
-        SscResearchAndDevelopmentMod.LOGGER.debug("Удаление связей для блока: " + level.dimension().location() + " " + pos);
-
         GlobalPos thisPos = GlobalPos.of(level.dimension(), pos);
 
-        // 1. Очистка инвентарей игроков (64 блока)
         double radius = 64.0;
         List<Player> players = level.getEntitiesOfClass(Player.class, new AABB(pos).inflate(radius));
         for (Player player : players) {
@@ -84,7 +81,6 @@ public interface ILinkable {
             }
         }
 
-        // 2. Очистка связей в других блоках (16 блоков)
         int r = 16;
         for (BlockPos nearbyPos : BlockPos.betweenClosed(pos.offset(-r, -r, -r), pos.offset(r, r, r))) {
             if (level.getBlockEntity(nearbyPos) instanceof ILinkable linkable) {
@@ -96,7 +92,6 @@ public interface ILinkable {
     private static void cleanupItemStack(ItemStack stack, GlobalPos posToRemove) {
         if (stack.isEmpty()) return;
 
-        // Чистим список LINKED_BLOCKS
         var multiKey = SscResearchAndDevelopmentDataComponents.LINKED_BLOCKS.get();
         if (stack.has(multiKey)) {
             List<GlobalPos> links = stack.get(multiKey);
@@ -108,7 +103,6 @@ public interface ILinkable {
             }
         }
 
-        // Чистим одиночную связь LINKED_BLOCK
         var singleKey = SscResearchAndDevelopmentDataComponents.LINKED_BLOCK.get();
         if (stack.has(singleKey)) {
             var component = stack.get(singleKey);

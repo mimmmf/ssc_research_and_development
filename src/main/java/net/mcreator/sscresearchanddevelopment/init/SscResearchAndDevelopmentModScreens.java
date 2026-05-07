@@ -8,13 +8,13 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
-import net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleGUIScreen;
+import net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen;
 
 @EventBusSubscriber(Dist.CLIENT)
 public class SscResearchAndDevelopmentModScreens {
 	@SubscribeEvent
 	public static void clientLoad(RegisterMenuScreensEvent event) {
-		event.register(SscResearchAndDevelopmentModMenus.ARTEFACT_CONSOLE_GUI.get(), ArtefactConsoleGUIScreen::new);
+		event.register(SscResearchAndDevelopmentModMenus.ARTEFACT_CONSOLE_GUI.get(), ArtefactConsoleScreen::new);
 	}
 
 	public interface ScreenAccessor {

@@ -24,3 +24,10 @@
 /data get block
 /data get block 20 113 -31
 /data get block 20 113 -29
+/data get block -9 56 2
+/data get block -9 56 1
+/data get block -7 56 4
+/save-all
+/data get block 10 56 9
+/data get block -10 56 2
+/data get block -12 56 2

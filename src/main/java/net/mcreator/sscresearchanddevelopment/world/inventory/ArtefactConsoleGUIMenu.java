@@ -18,6 +18,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModMenus;
 
+import java.util.UUID;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
@@ -42,22 +43,22 @@ public class ArtefactConsoleGUIMenu extends AbstractContainerMenu implements Ssc
 	private Supplier<Boolean> boundItemMatcher = null;
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
-
+	private UUID connectedServer;
 	public ArtefactConsoleGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
 		super(SscResearchAndDevelopmentModMenus.ARTEFACT_CONSOLE_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(0);
-		BlockPos pos = null;
-		if (extraData != null) {
-			pos = extraData.readBlockPos();
-			this.x = pos.getX();
-			this.y = pos.getY();
-			this.z = pos.getZ();
-			access = ContainerLevelAccess.create(world, pos);
-		}
+		BlockPos pos = extraData.readBlockPos();
+
+		this.x = pos.getX();
+		this.y = pos.getY();
+		this.z = pos.getZ();
+		access = ContainerLevelAccess.create(world, pos);
+		this.connectedServer =
+				extraData.readNullable(b -> b.readUUID());
 	}
-	public ArtefactConsoleGUIMenu(int id, Inventory inv, BlockPos pos) {
+	public ArtefactConsoleGUIMenu(int id, Inventory inv, BlockPos pos, UUID connectedServer) {
 		super(SscResearchAndDevelopmentModMenus.ARTEFACT_CONSOLE_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
@@ -94,5 +95,9 @@ public class ArtefactConsoleGUIMenu extends AbstractContainerMenu implements Ssc
 	@Override
 	public Map<String, Object> getMenuState() {
 		return menuState;
+	}
+
+	public UUID getConnectedServer() {
+		return this.connectedServer;
 	}
 }

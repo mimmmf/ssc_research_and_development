@@ -24,7 +24,6 @@ public record ExtractPointsPayload(BlockPos pos, int nodeId) implements CustomPa
     @Override
     public Type<? extends CustomPacketPayload> type() { return TYPE; }
 
-    // Обработчик на стороне сервера
     public static void handle(ExtractPointsPayload payload, IPayloadContext context) {
         context.enqueueWork(() -> {
             if (context.player() instanceof ServerPlayer serverPlayer) {

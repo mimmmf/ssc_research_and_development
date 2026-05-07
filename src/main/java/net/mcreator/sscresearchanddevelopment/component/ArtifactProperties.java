@@ -6,9 +6,12 @@ import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactanalyzerBlockEntity;
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
 import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
+import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -44,7 +47,6 @@ public record ArtifactProperties(
                     NODES_MAP_CODEC.fieldOf("nodes").forGetter(ArtifactProperties::nodes)
             ).apply(instance, ArtifactProperties::new));
 
-    // StreamCodec (для сети) лучше оставить ручным для стабильности и производительности
     public static final StreamCodec<RegistryFriendlyByteBuf, ArtifactProperties> STREAM_CODEC = StreamCodec.of(
             (buf, val) -> {
                 buf.writeVarInt(val.tier());
@@ -54,11 +56,9 @@ public record ArtifactProperties(
                     b.writeVarInt(node.depth());
                     b.writeVarInt(node.points());
                     b.writeUtf(node.status().name());
-                    // Список детей
                     ByteBufCodecs.VAR_INT.apply(ByteBufCodecs.list()).encode(b, node.childIds());
                     b.writeUtf(node.triggerId());
                     b.writeUtf(node.reactionId());
-                    // НОВОЕ: Записываем таймеры
                     b.writeVarInt(node.timer());
                     b.writeVarInt(node.maxTimer());
                 });
@@ -113,8 +113,6 @@ public record ArtifactProperties(
             int newId = nodeIdCounter++;
             int depth = parent.depth() + 1;
 
-            // Рандомим задержку: от 20 до 100 тиков (1-5 секунд)
-            // Чем глубже, тем непредсказуемее может быть задержка
             int delay = 20 + random.nextInt(Math.min(200, 20 * depth));
 
             String randomTriggerId = ArtefactRegistries.getRandomTrigger(depth, tier, random);
@@ -170,23 +168,21 @@ public record ArtifactProperties(
 
                     player.level().playSound(null, pos, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.BLOCKS, 1.0f, 0.8f);
 
-                    // Сюда можно добавить код для начисления очков на "баланс игрока", если нужно
-                    // player.addScore(node.points());
+                    if (console instanceof IServerLinked linked) {
+
+                        ServerInstance server = linked.resolveServer();
+
+                        if (server != null) {
+                            NetworkSavedData data =
+                                    NetworkSavedData.get(player.level());
+
+                            if (data != null) {
+                                data.addPoints(server.getServerId(), node.points());
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-
-
-//    public ArtifactProperties withNodeStatus(int nodeId, NodeStatus newStatus) {
-//        Map<Integer, ArtefactNode> newNodes = new HashMap<>(this.nodes);
-//        ArtefactNode oldNode = newNodes.get(nodeId);
-//        if (oldNode != null) {
-//            newNodes.put(nodeId, new ArtefactNode(
-//                    oldNode.id(), oldNode.depth(), oldNode.points(),
-//                    newStatus, oldNode.childIds(), oldNode.triggerId(), oldNode.reactionId()
-//            ));
-//        }
-//        return new ArtifactProperties(this.tier, this.totalPoints, newNodes);
-//    }
 }
