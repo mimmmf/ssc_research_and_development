@@ -1,80 +1,34 @@
 package net.mcreator.sscresearchanddevelopment.block;
 
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.StateDefinition;
+import net.mcreator.sscresearchanddevelopment.block.entity.AutolatheBlockEntity;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlock;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModBlockEntities;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Function;
+import static net.mcreator.sscresearchanddevelopment.block.ArtefactconsoleBlock.createTickerHelper;
 
-public class AutolatheBlock extends Block {
-	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
-	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
-
+public class AutolatheBlock extends AbstractFabricatorBlock {
 	public AutolatheBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.METAL).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		super(properties);
 	}
 
-	private Function<BlockState, VoxelShape> makeShapes() {
-		return this.getShapeForEachState(state -> {
-			return switch (state.getValue(FACING)) {
-				default -> box(0, 0, 0, 16, 24, 16);
-				case NORTH -> box(0, 0, 0, 16, 24, 16);
-				case EAST -> box(0, 0, 0, 16, 24, 16);
-				case WEST -> box(0, 0, 0, 16, 24, 16);
-			};
-		});
-	}
-
+	@Nullable
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return shapes.apply(state);
+	public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+		return new AutolatheBlockEntity(blockPos, blockState);
 	}
 
+	@Nullable
 	@Override
-	public boolean propagatesSkylightDown(BlockState state) {
-		return true;
-	}
-
-	@Override
-	public int getLightBlock(BlockState state) {
-		return 0;
-	}
-
-	@Override
-	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return Shapes.empty();
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
-	}
-
-	public BlockState rotate(BlockState state, Rotation rot) {
-		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
-	}
-
-	public BlockState mirror(BlockState state, Mirror mirrorIn) {
-		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+		return createTickerHelper(type, SscResearchAndDevelopmentModBlockEntities.AUTOLATHE.get(),
+				level.isClientSide ? AutolatheBlockEntity::clientTick : AutolatheBlockEntity::tick);
 	}
 }

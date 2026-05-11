@@ -26,7 +26,7 @@ import static net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopm
 
 public class MultitoolItem extends Item {
 	public MultitoolItem(Item.Properties properties) {
-		super(properties);
+		super(properties.stacksTo(1));
 	}
 	@Override
 	public InteractionResult useOn(UseOnContext context) {

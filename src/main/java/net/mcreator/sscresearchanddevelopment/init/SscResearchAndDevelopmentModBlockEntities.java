@@ -3,6 +3,8 @@
  */
 package net.mcreator.sscresearchanddevelopment.init;
 
+import net.mcreator.sscresearchanddevelopment.block.AutolatheBlock;
+import net.mcreator.sscresearchanddevelopment.block.entity.AutolatheBlockEntity;
 import net.mcreator.sscresearchanddevelopment.block.entity.RNDServerBlockEntity;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -29,6 +31,7 @@ public class SscResearchAndDevelopmentModBlockEntities {
 
 	// Start of user code block custom block entities
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RNDServerBlockEntity>> RNDSERVER = register("rndserver", SscResearchAndDevelopmentModBlocks.RND_SERVER, RNDServerBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AutolatheBlockEntity>> AUTOLATHE = register("autolathe", SscResearchAndDevelopmentModBlocks.AUTOLATHE, AutolatheBlockEntity::new);
 	// End of user code block custom block entities
 	private static <T extends BlockEntity> DeferredHolder<BlockEntityType<?>, BlockEntityType<T>> register(String registryname, DeferredHolder<Block, Block> block, BlockEntityType.BlockEntitySupplier<T> supplier) {
 		return REGISTRY.register(registryname, () -> new BlockEntityType(supplier, block.get()));

@@ -4,8 +4,13 @@ import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
 import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
 import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
 import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SStartCraft;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SWithdrawMaterial;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.FabricatorManager;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.S2CSyncCraftingState;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -66,6 +71,7 @@ public class SscResearchAndDevelopmentMod {
 		SscResearchAndDevelopmentModTabs.REGISTRY.register(modEventBus);
 		SscResearchAndDevelopmentModMenus.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
+		SscResearchAndDevelopmentModRecipes.register(modEventBus);
 		SscResearchAndDevelopmentDataComponents.COMPONENTS.register(modEventBus);
 		ArtefactRegistries.init(modEventBus);
 		// End of user code block mod init
@@ -101,7 +107,34 @@ public class SscResearchAndDevelopmentMod {
 			);
 		}
 	}
-
+	@EventBusSubscriber(modid = MODID)
+	public static class FabricatorDataHandler {
+		public static FabricatorManager MANAGER;
+		@SubscribeEvent
+		public static void onReloadListener(AddServerReloadListenersEvent event) {
+			MANAGER = new FabricatorManager(event.getRegistryAccess());
+			event.addListener(ResourceLocation.fromNamespaceAndPath(MODID, "fabricator_recipes"), MANAGER);
+		}
+		@SubscribeEvent
+		public static void register(final RegisterPayloadHandlersEvent event) {
+			final PayloadRegistrar registrar = event.registrar("ssc");
+			registrar.playToServer(
+					C2SStartCraft.TYPE,
+					C2SStartCraft.STREAM_CODEC,
+					C2SStartCraft::handleServer
+			);
+			registrar.playToClient(
+					S2CSyncCraftingState.TYPE,
+					S2CSyncCraftingState.STREAM_CODEC,
+					S2CSyncCraftingState::handleClient
+			);
+			registrar.playToServer(
+					C2SWithdrawMaterial.TYPE,
+					C2SWithdrawMaterial.STREAM_CODEC,
+					C2SWithdrawMaterial::handleServer
+			);
+		}
+	}
 	// End of user code block mod methods
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();

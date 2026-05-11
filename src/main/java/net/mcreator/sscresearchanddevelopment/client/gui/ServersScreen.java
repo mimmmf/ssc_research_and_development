@@ -15,7 +15,6 @@ import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 public class ServersScreen extends Screen {
@@ -71,9 +70,8 @@ public class ServersScreen extends Screen {
             boolean isSelected = info.id().equals(selectedId);
             boolean isConnected = info.id().equals(connectedId);
 
-            //int bgColor = isSelected ? 0x6655FF55 : (isHovered ? 0x33FFFFFF : 0x00000000);
             int bgColor =
-                    isConnected ? 0xAA55FF55 : // подключённый (зелёный сильнее)
+                    isConnected ? 0xAA55FF55 :
                             isSelected ? 0x6655FF55 :
                                     (isHovered ? 0x33FFFFFF : 0x00000000);
             if (bgColor != 0) g.fill(startX, itemY, startX + 104, itemY + 14, bgColor);

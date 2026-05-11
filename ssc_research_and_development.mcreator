@@ -98,7 +98,7 @@
       "name": "Autolathe",
       "type": "block",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "autolathe",
       "metadata": {
         "files": [
@@ -115,7 +115,7 @@
       "name": "Protolathe",
       "type": "block",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "protolathe",
       "metadata": {
         "files": [

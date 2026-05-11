@@ -46,14 +46,11 @@ public class ArtefactconsoleBlock extends Block implements EntityBlock {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
-	// --- ГЕОМЕТРИЯ ---
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		// Консоль выше одного блока (24 пикселя), поэтому box(0,0,0, 16,24,16) оправдан
 		return Block.box(0, 0, 0, 16, 24, 16);
 	}
 
-	// --- ВЗАИМОДЕЙСТВИЕ ---
 	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
 		if (world.isClientSide) return InteractionResult.SUCCESS;
@@ -65,7 +62,6 @@ public class ArtefactconsoleBlock extends Block implements EntityBlock {
 		return InteractionResult.CONSUME;
 	}
 
-	// --- BLOCK ENTITY ---
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -83,7 +79,6 @@ public class ArtefactconsoleBlock extends Block implements EntityBlock {
 		return expectedType == actualType ? (BlockEntityTicker<A>) ticker : null;
 	}
 
-	// --- СИСТЕМА СВЯЗИ ---
 	@Override
 	public void destroy(LevelAccessor world, BlockPos pos, BlockState state) {
 		if (world instanceof Level level && !level.isClientSide) {
@@ -92,7 +87,6 @@ public class ArtefactconsoleBlock extends Block implements EntityBlock {
 		super.destroy(world, pos, state);
 	}
 
-	// --- ПОВОРОТЫ ---
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));

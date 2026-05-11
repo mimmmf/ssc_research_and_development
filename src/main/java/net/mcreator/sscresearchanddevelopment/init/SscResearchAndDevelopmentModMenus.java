@@ -3,6 +3,7 @@
  */
 package net.mcreator.sscresearchanddevelopment.init;
 
+import net.mcreator.sscresearchanddevelopment.world.inventory.FabricatorMenu;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -16,7 +17,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleGUIMenu;
+import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleMenu;
 import net.mcreator.sscresearchanddevelopment.network.MenuStateUpdateMessage;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 
@@ -24,7 +25,8 @@ import java.util.Map;
 
 public class SscResearchAndDevelopmentModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, SscResearchAndDevelopmentMod.MODID);
-	public static final DeferredHolder<MenuType<?>, MenuType<ArtefactConsoleGUIMenu>> ARTEFACT_CONSOLE_GUI = REGISTRY.register("artefact_console_gui", () -> IMenuTypeExtension.create(ArtefactConsoleGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<ArtefactConsoleMenu>> ARTEFACT_CONSOLE = REGISTRY.register("artefact_console_gui", () -> IMenuTypeExtension.create(ArtefactConsoleMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<FabricatorMenu>> FABRICATOR = REGISTRY.register("fabricator", () -> IMenuTypeExtension.create(FabricatorMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

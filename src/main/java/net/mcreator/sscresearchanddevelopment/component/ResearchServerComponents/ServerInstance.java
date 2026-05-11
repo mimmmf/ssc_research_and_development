@@ -5,6 +5,8 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import static net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData.UUID_CODEC;
@@ -42,4 +44,5 @@ public class ServerInstance {
     public int getPoints() { return points; }
     public void setPoints(int points) { this.points = points; }
     public String getName() { return name; }
+    public Set<String> getUnlockedTechs() {return this.unlockedTechs;}
 }

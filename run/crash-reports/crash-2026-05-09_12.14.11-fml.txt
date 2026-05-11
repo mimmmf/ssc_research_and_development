@@ -1,0 +1,107 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 2026-05-09 12:14:11
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:124) ~[bus-8.0.5.jar%23171!/:?] {}
+-- Mod loading issue for: ssc_research_and_development --
+Details:
+	Mod file: /C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/classes/java/main/
+	Failure message: SSC14 Research and Development (ssc_research_and_development) has failed to load correctly
+		java.lang.IllegalArgumentException: Expected @SubscribeEvent method public static void net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod.onReloadListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent) to NOT be static
+		because register() was called with an instance type.
+		Either make the method non-static, or call register(SscResearchAndDevelopmentMod.class).
+		
+	Mod version: 1.0.0
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.IllegalArgumentException: Expected @SubscribeEvent method public static void net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod.onReloadListener(net.neoforged.neoforge.event.AddServerReloadListenersEvent) to NOT be static
+because register() was called with an instance type.
+Either make the method non-static, or call register(SscResearchAndDevelopmentMod.class).
+
+Stacktrace:
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.register(EventBus.java:124) ~[bus-8.0.5.jar%23171!/:?] {}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod.<init>(SscResearchAndDevelopmentMod.java:63) ~[%23214!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:118) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:151) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:229) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.8
+	Minecraft Version ID: 1.21.8
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 231756024 bytes (221 MiB) / 790626304 bytes (754 MiB) up to 4246732800 bytes (4050 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i3-12100F
+	Identifier: Intel64 Family 6 Model 151 Stepping 5
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 3.30
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9186
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 22597.38
+	Virtual memory used (MiB): 15738.62
+	Swap memory total (MiB): 6400.00
+	Swap memory used (MiB): 95.29
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 168006.06, total: 487469.00
+	Space in storage for workdir (MiB): available: 168006.06, total: 487469.00
+	JVM Flags: 0 total; 
+	ModLauncher: 9.0
+	ModLauncher launch target: neoforgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-9.0.16.jar neoforgedevdistcleaner PLUGINSERVICE 
+		loader-9.0.16.jar slf4jfixer PLUGINSERVICE 
+		loader-9.0.16.jar runtime_enum_extender PLUGINSERVICE 
+		loader-9.0.16.jar accesstransformer PLUGINSERVICE 
+		loader-9.0.16.jar mixin TRANSFORMATIONSERVICE 
+		loader-9.0.16.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@9.0
+		minecraft@9.0
+	Mod List: 
+		neoforge-21.8.31-merged.jar                       |Minecraft                     |minecraft                     |1.21.8              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |NeoForge                      |neoforge                      |21.8.31             |Manifest: NOSIGNATURE
+		main                                              |SSC14 Research and Development|ssc_research_and_development  |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: bdbdc7b6-c3ad-4ae7-8512-77f4c47ed61f
+	FML: 9.0.16
+	NeoForge: 21.8.31

@@ -41,7 +41,6 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyContainer, ILinkable {
-	// Используем ContainerHelper для удобства, но храним только 1 слот
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
 	private boolean connected = false;
 
@@ -49,7 +48,6 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		super(SscResearchAndDevelopmentModBlockEntities.ARTEFACTANALYZER.get(), position, state);
 	}
 
-	// --- ЛОГИКА ТИКА (Ядро системы) ---
 	public void tick() {
 		if (level == null || level.isClientSide) return;
 
@@ -102,7 +100,7 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 			}
 		}
 
-		tickEvents.clear(); // Очищаем события в конце каждого тика
+		tickEvents.clear();
 
 		if (dirty) {
 			stack.set(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get(),
@@ -112,7 +110,6 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		}
 	}
 
-	// --- СОХРАНЕНИЕ ДАННЫХ ---
 	@Override
 	protected void saveAdditional(ValueOutput valueOutput) {
 		super.saveAdditional(valueOutput);
@@ -128,7 +125,6 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		ContainerHelper.loadAllItems(valueInput, this.stacks);
 	}
 
-	// --- СЕТЕВАЯ СИНХРОНИЗАЦИЯ ---
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
 		return ClientboundBlockEntityDataPacket.create(this);
@@ -144,13 +140,11 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		this.loadAdditional(valueInput);
 	}
 
-	// --- ИНТЕРФЕЙС WorldlyContainer (Для воронок и труб) ---
 	@Override
 	public int[] getSlotsForFace(Direction side) { return new int[]{0}; }
 
 	@Override
 	public boolean canPlaceItemThroughFace(int index, ItemStack stack, @Nullable Direction dir) {
-		// Принимаем только если это артефакт (есть компонент)
 		return stack.has(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
 	}
 
@@ -197,7 +191,6 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 	@Override
 	public void clearContent() { this.stacks.clear(); }
 
-	// --- ILinkable (Твоя система связи) ---
 	@Override
 	public void setLinkedPos(@Nullable BlockPos pos) {
 		this.connected = (pos != null);

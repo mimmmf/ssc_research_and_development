@@ -1,16 +1,13 @@
 package net.mcreator.sscresearchanddevelopment.client.gui;
 
-import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
 import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
 import net.mcreator.sscresearchanddevelopment.component.ArtifactProperties;
-import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
-import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.core.BlockPos;
@@ -21,7 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
-import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleGUIMenu;
+import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleMenu;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModScreens;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
@@ -29,7 +26,7 @@ import javax.annotation.Nullable;
 import java.awt.Color;
 import java.util.*;
 
-public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConsoleGUIMenu> implements SscResearchAndDevelopmentModScreens.ScreenAccessor {
+public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConsoleMenu> implements SscResearchAndDevelopmentModScreens.ScreenAccessor {
     private static final ResourceLocation BG_TEXTURE = ResourceLocation.parse("ssc_research_and_development:textures/screens/artefact-console-gui.png");
 
     private final int x, y, z;
@@ -43,7 +40,7 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
     private Button extractButton, serversButton;
     private UUID connectedServer;
 
-    public ArtefactConsoleScreen(ArtefactConsoleGUIMenu menu, Inventory inv, Component title) {
+    public ArtefactConsoleScreen(ArtefactConsoleMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
         this.x = menu.x; this.y = menu.y; this.z = menu.z;
         this.imageWidth = 200; this.imageHeight = 150;
@@ -85,7 +82,7 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
 
     @Override
     public void render(GuiGraphics g, int mx, int my, float pt) {
-        renderBackground(g, mx, my, pt);
+        //renderBackground(g, mx, my, pt);
         renderBg(g, pt, mx, my);
 
         ItemStack current = getStackFromAnalyzer();

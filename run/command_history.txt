@@ -31,3 +31,10 @@
 /data get block 10 56 9
 /data get block -10 56 2
 /data get block -12 56 2
+/data get block 6 56 2
+/data get block 8 56 0
+/data get block 8 56 -2
+/data get block -1 56 10
+/data get block -1 56 9
+/data get block 2 56 6
+/data get block 7 56 8

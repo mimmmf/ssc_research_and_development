@@ -3,10 +3,9 @@ package net.mcreator.sscresearchanddevelopment.block.entity;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
-import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleGUIMenu;
+import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleMenu;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -175,7 +174,7 @@ public class ArtefactconsoleBlockEntity extends BlockEntity implements ILinkable
 			this.connectedServer = null;
 			setChanged();
 		}
-		return new ArtefactConsoleGUIMenu(i, inventory, this.worldPosition, connectedServer);
+		return new ArtefactConsoleMenu(i, inventory, this.worldPosition, connectedServer);
 	}
 	@Override
 	public Component getDisplayName() {
