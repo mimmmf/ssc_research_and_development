@@ -4,11 +4,12 @@ import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
 import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
 import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
 import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SStartCraft;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SWithdrawMaterial;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.FabricatorManager;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.S2CSyncCraftingState;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.*;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
+import net.mcreator.sscresearchanddevelopment.component.technologies.C2SRequestConsoleData;
+import net.mcreator.sscresearchanddevelopment.component.technologies.C2SUnlockResearch;
+import net.mcreator.sscresearchanddevelopment.component.technologies.ResearchManager;
+import net.mcreator.sscresearchanddevelopment.component.technologies.S2CUpdateConsoleData;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import org.apache.logging.log4j.Logger;
@@ -132,6 +133,39 @@ public class SscResearchAndDevelopmentMod {
 					C2SWithdrawMaterial.TYPE,
 					C2SWithdrawMaterial.STREAM_CODEC,
 					C2SWithdrawMaterial::handleServer
+			);
+			registrar.playToServer(
+					C2SRequestFabricatorSync.TYPE,
+					C2SRequestFabricatorSync.STREAM_CODEC,
+					C2SRequestFabricatorSync::handle
+			);
+		}
+	}
+	@EventBusSubscriber(modid = MODID)
+	public class ResearchDataHandler {
+		public static ResearchManager MANAGER;
+		@SubscribeEvent
+		public static void onReloadListener(AddServerReloadListenersEvent event) {
+			MANAGER = new ResearchManager(event.getRegistryAccess());
+			event.addListener(ResourceLocation.fromNamespaceAndPath(MODID, "research_techs"), MANAGER);
+		}
+		@SubscribeEvent
+		public static void register(final RegisterPayloadHandlersEvent event) {
+			final PayloadRegistrar registrar = event.registrar("ssc_research_and_development");
+			registrar.playToServer(
+					C2SUnlockResearch.TYPE,
+					C2SUnlockResearch.STREAM_CODEC,
+					C2SUnlockResearch::handleServer
+			);
+			registrar.playToClient(
+					S2CUpdateConsoleData.TYPE,
+					S2CUpdateConsoleData.STREAM_CODEC,
+					S2CUpdateConsoleData::handle
+			);
+			registrar.playToServer(
+					C2SRequestConsoleData.TYPE,
+					C2SRequestConsoleData.STREAM_CODEC,
+					C2SRequestConsoleData::handle
 			);
 		}
 	}

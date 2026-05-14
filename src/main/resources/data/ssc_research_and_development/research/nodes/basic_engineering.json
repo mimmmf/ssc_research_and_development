@@ -1,0 +1,10 @@
+{
+  "id": "basic_engineering",
+  "name": { "text": "Основы инженерии" },
+  "description": { "text": "[КРУТЫЕ] инструменты по [СКИДКАМ]" },
+  "icon": "ssc_research_and_development:textures/ui/tech/basic_engineering.png",
+  "cost": 100,
+  "parents": [],
+  "x": 100,
+  "y": 10
+}

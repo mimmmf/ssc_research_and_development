@@ -2,6 +2,7 @@ package net.mcreator.sscresearchanddevelopment.client;
 
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
+import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -41,10 +42,11 @@ public record C2SRequestServerList(BlockPos pos) implements CustomPacketPayload 
 
             UUID connected = C2SConnectServer.EMPTY;
 
-            if (be instanceof ArtefactconsoleBlockEntity console) {
-                connected = console.connectedServer != null
-                        ? console.connectedServer
-                        : C2SConnectServer.EMPTY;
+            if (be instanceof IServerLinked linked) {
+                UUID serverId = linked.getConnectedServerId();
+                if (serverId != null) {
+                    connected = serverId;
+                }
             }
 
             context.reply(new S2CUpdateServerList(this.pos, list, connected));

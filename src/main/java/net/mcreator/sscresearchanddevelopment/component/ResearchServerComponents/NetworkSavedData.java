@@ -2,6 +2,7 @@ package net.mcreator.sscresearchanddevelopment.component.ResearchServerComponent
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.mcreator.sscresearchanddevelopment.component.technologies.ResearchNode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.datafix.DataFixTypes;
@@ -86,7 +87,6 @@ public class NetworkSavedData extends SavedData {
         if (server != null) {
             server.setPoints(server.getPoints() + points);
             setDirty();
-            System.out.println("RND DATA DIRTY");
         }
     }
     @Override
@@ -104,7 +104,31 @@ public class NetworkSavedData extends SavedData {
         if (toRemove != null) {
             servers.remove(toRemove);
             setDirty();
-            System.out.println("Server at " + pos + " removed from network registry.");
         }
+    }
+    public boolean unlockTechnology(UUID serverId, ResearchNode node) {
+        ServerInstance server = servers.get(serverId);
+        if (server == null) return false;
+
+        if (server.getUnlockedTechs().contains(node.getId())) return false;
+
+        if (server.getPoints() < node.getCost()) return false;
+
+        for (String parentId : node.getParents()) {
+            if (!server.getUnlockedTechs().contains(parentId)) {
+                return false;
+            }
+        }
+
+        server.setPoints(server.getPoints() - node.getCost());
+        server.getUnlockedTechs().add(node.getId());
+
+        setDirty();
+        return true;
+    }
+    public int getServerPoints(UUID serverId) {
+        ServerInstance server = servers.get(serverId);
+        if (server == null) return 0;
+        else return server.getPoints();
     }
 }

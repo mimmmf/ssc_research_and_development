@@ -38,3 +38,5 @@
 /data get block -1 56 9
 /data get block 2 56 6
 /data get block 7 56 8
+/data get block 7 56 6
+/data get block -2 56 -6

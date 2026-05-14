@@ -1,0 +1,148 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 2026-05-14 18:37:26
+Description: Exception ticking world
+
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143) ~[?:?] {}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.saveAdditional(AbstractFabricatorBlockEntity.java:208) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.entity.BlockEntity.saveWithoutMetadata(BlockEntity.java:151) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:130) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:122) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.getUpdateTag(AbstractFabricatorBlockEntity.java:222) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:32) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:36) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.getUpdatePacket(AbstractFabricatorBlockEntity.java:220) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.getUpdatePacket(AbstractFabricatorBlockEntity.java:33) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ChunkHolder.broadcastBlockEntity(ChunkHolder.java:233) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ChunkHolder.broadcastBlockEntityIfNeeded(ChunkHolder.java:226) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ChunkHolder.broadcastChanges(ChunkHolder.java:204) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerChunkCache.broadcastChangedChunks(ServerChunkCache.java:378) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerChunkCache.tickChunks(ServerChunkCache.java:367) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerChunkCache.tick(ServerChunkCache.java:344) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:372) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1083) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:956) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:108) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:716) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:277) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at java.base/java.util.Optional.get(Optional.java:143) ~[?:?] {}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.saveAdditional(AbstractFabricatorBlockEntity.java:208) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.entity.BlockEntity.saveWithoutMetadata(BlockEntity.java:151) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:130) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.entity.BlockEntity.saveWithFullMetadata(BlockEntity.java:122) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.getUpdateTag(AbstractFabricatorBlockEntity.java:222) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:32) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket.create(ClientboundBlockEntityDataPacket.java:36) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.getUpdatePacket(AbstractFabricatorBlockEntity.java:220) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity.getUpdatePacket(AbstractFabricatorBlockEntity.java:33) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ChunkHolder.broadcastBlockEntity(ChunkHolder.java:233) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ChunkHolder.broadcastBlockEntityIfNeeded(ChunkHolder.java:226) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ChunkHolder.broadcastChanges(ChunkHolder.java:204) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerChunkCache.broadcastChangedChunks(ServerChunkCache.java:378) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerChunkCache.tickChunks(ServerChunkCache.java:367) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerChunkCache.tick(ServerChunkCache.java:344) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+-- Affected level --
+Details:
+	All players: 1 total; ServerPlayer{name=Dev, id=1, pos=(-7.8254555065570965, 56.0, -0.6768736800780116), mode=CREATIVE, permission=4}
+	Chunk stats: 1369
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,56,0), Section: (at 0,8,0 in 0,3,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 299 game time, 0 day time
+	Level name: Новый мир
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Commands: true
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Known server brands: neoforge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Loaded entity count: 1
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.level.ServerLevel.fillReportDetails(ServerLevel.java:1787) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1086) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:956) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:108) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:716) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:277) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.8
+	Minecraft Version ID: 1.21.8
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 233240304 bytes (222 MiB) / 763363328 bytes (728 MiB) up to 4246732800 bytes (4050 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i3-12100F
+	Identifier: Intel64 Family 6 Model 151 Stepping 5
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 3.30
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9186
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 22597.38
+	Virtual memory used (MiB): 14884.64
+	Swap memory total (MiB): 6400.00
+	Swap memory used (MiB): 143.89
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 166084.06, total: 487469.00
+	Space in storage for workdir (MiB): available: 166084.06, total: 487469.00
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/1, l='ServerLevel[Новый мир]', x=-7.83, y=56.00, z=-0.68]]
+	Active Data Packs: vanilla, mod_data, mod/neoforge, mod/ssc_research_and_development
+	Available Data Packs: minecart_improvements, redstone_experiments, trade_rebalance, vanilla, mod/neoforge, mod/ssc_research_and_development, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: -4856640573655942535
+	Suppressed Exceptions: ~~NONE~~
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Launched Version: 21.8.31
+	ModLauncher: 9.0
+	ModLauncher launch target: neoforgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-9.0.16.jar neoforgedevdistcleaner PLUGINSERVICE 
+		loader-9.0.16.jar slf4jfixer PLUGINSERVICE 
+		loader-9.0.16.jar runtime_enum_extender PLUGINSERVICE 
+		loader-9.0.16.jar accesstransformer PLUGINSERVICE 
+		loader-9.0.16.jar mixin TRANSFORMATIONSERVICE 
+		loader-9.0.16.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@9.0
+		minecraft@9.0
+	Mod List: 
+		neoforge-21.8.31-merged.jar                       |Minecraft                     |minecraft                     |1.21.8              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |NeoForge                      |neoforge                      |21.8.31             |Manifest: NOSIGNATURE
+		main                                              |SSC14 Research and Development|ssc_research_and_development  |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: fc6bebf4-057b-4c87-ac5b-759789bd92fd
+	FML: 9.0.16
+	NeoForge: 21.8.31

@@ -1,5 +1,7 @@
 package net.mcreator.sscresearchanddevelopment.block.entity;
 
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.component.fabricator.*;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModBlockEntities;
 import net.mcreator.sscresearchanddevelopment.world.inventory.FabricatorMenu;
@@ -15,7 +17,6 @@ import java.util.*;
 
 public class AutolatheBlockEntity extends AbstractFabricatorBlockEntity {
     private static final List<String> MATERIALS = List.of("steel", "copper", "gold", "glass");
-
     public AutolatheBlockEntity(BlockPos position, BlockState state) {
         super(SscResearchAndDevelopmentModBlockEntities.AUTOLATHE.get(), position, state);
     }
@@ -38,6 +39,11 @@ public class AutolatheBlockEntity extends AbstractFabricatorBlockEntity {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new FabricatorMenu(i, inventory, this.worldPosition);
+        ServerInstance server = resolveServer();
+        if (server == null) {
+            this.linkedServerId = null;
+            setChanged();
+        }
+        return new FabricatorMenu(i, inventory, this.worldPosition, server.getServerId());
     }
 }

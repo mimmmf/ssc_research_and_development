@@ -1,0 +1,10 @@
+{
+  "id": "advanced_tools",
+  "name": { "text": "Продвинутые инструменты" },
+  "description": { "text": "Позволяет создавать ничего." },
+  "icon": "ssc_research_and_development:textures/ui/tech/extra_engineering.png",
+  "cost": 250,
+  "parents": ["basic_engineering"],
+  "x": 100,
+  "y": 60
+}

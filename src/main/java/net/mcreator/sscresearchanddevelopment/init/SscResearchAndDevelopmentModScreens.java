@@ -4,6 +4,7 @@
 package net.mcreator.sscresearchanddevelopment.init;
 
 import net.mcreator.sscresearchanddevelopment.client.gui.FabricatorScreen;
+import net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,6 +18,7 @@ public class SscResearchAndDevelopmentModScreens {
 	public static void clientLoad(RegisterMenuScreensEvent event) {
 		event.register(SscResearchAndDevelopmentModMenus.ARTEFACT_CONSOLE.get(), ArtefactConsoleScreen::new);
 		event.register(SscResearchAndDevelopmentModMenus.FABRICATOR.get(), FabricatorScreen::new);
+		event.register(SscResearchAndDevelopmentModMenus.RESEARCH_CONSOLE.get(), ResearchConsoleScreen::new);
 	}
 
 	public interface ScreenAccessor {

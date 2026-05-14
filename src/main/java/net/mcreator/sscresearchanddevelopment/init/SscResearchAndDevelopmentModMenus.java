@@ -4,6 +4,7 @@
 package net.mcreator.sscresearchanddevelopment.init;
 
 import net.mcreator.sscresearchanddevelopment.world.inventory.FabricatorMenu;
+import net.mcreator.sscresearchanddevelopment.world.inventory.ResearchConsoleMenu;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -27,7 +28,7 @@ public class SscResearchAndDevelopmentModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(Registries.MENU, SscResearchAndDevelopmentMod.MODID);
 	public static final DeferredHolder<MenuType<?>, MenuType<ArtefactConsoleMenu>> ARTEFACT_CONSOLE = REGISTRY.register("artefact_console_gui", () -> IMenuTypeExtension.create(ArtefactConsoleMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<FabricatorMenu>> FABRICATOR = REGISTRY.register("fabricator", () -> IMenuTypeExtension.create(FabricatorMenu::new));
-
+	public static final DeferredHolder<MenuType<?>, MenuType<ResearchConsoleMenu>> RESEARCH_CONSOLE = REGISTRY.register("research_console", () -> IMenuTypeExtension.create(ResearchConsoleMenu::new));
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
 

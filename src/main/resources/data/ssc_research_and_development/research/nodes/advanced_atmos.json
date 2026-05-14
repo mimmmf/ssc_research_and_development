@@ -1,0 +1,10 @@
+{
+  "id": "advanced_atmos",
+  "name": { "text": "Продвинутая атмосфера" },
+  "description": { "text": "Позволяет создавать охладители, нагреватели и атмосферные голопроекторы." },
+  "icon": "ssc_research_and_development:textures/ui/tech/extra_engineering.png",
+  "cost": 300,
+  "parents": ["basic_engineering"],
+  "x": 150,
+  "y": 60
+}
