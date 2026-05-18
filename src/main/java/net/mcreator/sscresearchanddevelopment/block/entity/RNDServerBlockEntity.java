@@ -87,18 +87,4 @@ public class RNDServerBlockEntity extends BlockEntity {
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return saveWithoutMetadata(registries);
     }
-
-//    @Override
-//    public void setRemoved() {
-//        super.setRemoved();
-//
-//        if (level instanceof ServerLevel serverLevel && !serverLevel.isClientSide) {
-//
-//            NetworkSavedData data = NetworkSavedData.get(serverLevel);
-//
-//            if (data != null && serverId != null) {
-//                data.removeServer(serverId);
-//            }
-//        }
-//    }
 }

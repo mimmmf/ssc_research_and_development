@@ -1,10 +1,8 @@
 /*
- *    MCreator note: This file will be REGENERATED on each build.
- */
+*    MCreator note: This file will be REGENERATED on each build.
+*/
 package net.mcreator.sscresearchanddevelopment.init;
 
-import net.mcreator.sscresearchanddevelopment.block.AutolatheBlock;
-import net.mcreator.sscresearchanddevelopment.block.entity.*;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.items.wrapper.SidedInvWrapper;
@@ -18,6 +16,11 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.BuiltInRegistries;
 
+import net.mcreator.sscresearchanddevelopment.block.entity.ResearchConsoleBlockEntity;
+import net.mcreator.sscresearchanddevelopment.block.entity.RNDServerBlockEntity;
+import net.mcreator.sscresearchanddevelopment.block.entity.AutolatheBlockEntity;
+import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
+import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactanalyzerBlockEntity;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 
 @EventBusSubscriber

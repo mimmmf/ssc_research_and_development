@@ -3,14 +3,13 @@
  */
 package net.mcreator.sscresearchanddevelopment.init;
 
+import net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen;
 import net.mcreator.sscresearchanddevelopment.client.gui.FabricatorScreen;
 import net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
-
-import net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen;
 
 @EventBusSubscriber(Dist.CLIENT)
 public class SscResearchAndDevelopmentModScreens {

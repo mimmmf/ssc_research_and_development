@@ -26,5 +26,6 @@ public class SscResearchAndDevelopmentModTabs {
 				tabData.accept(SscResearchAndDevelopmentModBlocks.PROTOLATHE.get().asItem());
 				tabData.accept(SscResearchAndDevelopmentModBlocks.CIRCUITIMPRINTER.get().asItem());
 				tabData.accept(SscResearchAndDevelopmentModItems.MULTITOOL.get());
+				tabData.accept(SscResearchAndDevelopmentModItems.RESEARCHDISK.get());
 			}).build());
 }

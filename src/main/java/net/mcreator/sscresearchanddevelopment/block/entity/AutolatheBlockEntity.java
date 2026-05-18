@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 public class AutolatheBlockEntity extends AbstractFabricatorBlockEntity {
-    private static final List<String> MATERIALS = List.of("steel", "copper", "gold", "glass");
+    private static final List<String> MATERIALS = List.of("ssc_14:steel", "ssc_14:glass", "ssc_14:plastic");
     public AutolatheBlockEntity(BlockPos position, BlockState state) {
         super(SscResearchAndDevelopmentModBlockEntities.AUTOLATHE.get(), position, state);
     }
@@ -44,6 +44,6 @@ public class AutolatheBlockEntity extends AbstractFabricatorBlockEntity {
             this.linkedServerId = null;
             setChanged();
         }
-        return new FabricatorMenu(i, inventory, this.worldPosition, server.getServerId());
+        return new FabricatorMenu(i, inventory, this.worldPosition, server != null ? server.getServerId() : null);
     }
 }

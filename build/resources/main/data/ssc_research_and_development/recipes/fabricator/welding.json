@@ -1,0 +1,21 @@
+{
+  "type": "ssc_research_and_development:fabricator",
+  "category": "autolathe",
+  "result": {
+    "count": 1,
+    "id": "ssc_14:welding"
+  },
+  "materials": [
+    {
+      "ingredient": "ssc_14:steel",
+      "count": 5
+    },
+    {
+      "ingredient": "ssc_14:plastic",
+      "count": 3
+    }
+  ],
+  "required_technologies": [
+  ],
+  "craft_time": 200
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "ssc_research_and_development:custom/research_disk",
+  "textures": {
+    "0": "ssc_research_and_development:block/research_disk_texture",
+    "particle": "minecraft:item/music_disc_13"
+  }
+}

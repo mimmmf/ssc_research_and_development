@@ -7,12 +7,15 @@ import net.mcreator.sscresearchanddevelopment.component.MultitoolComponent;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.util.ExtraCodecs;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class SscResearchAndDevelopmentDataComponents {
 	public static final DeferredRegister<DataComponentType<?>> COMPONENTS = 
@@ -44,4 +47,6 @@ public class SscResearchAndDevelopmentDataComponents {
                     .persistent(LinkedBlockComponent.CODEC)
                     .networkSynchronized(LinkedBlockComponent.STREAM_CODEC)
                     .build());
+    public static final Supplier<DataComponentType<Integer>> SCORE = COMPONENTS.register("score",
+            () -> DataComponentType.<Integer>builder().persistent(ExtraCodecs.NON_NEGATIVE_INT).build());
 }

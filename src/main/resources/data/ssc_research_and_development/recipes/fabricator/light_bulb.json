@@ -1,0 +1,21 @@
+{
+  "type": "ssc_research_and_development:fabricator",
+  "category": "autolathe",
+  "result": {
+    "count": 1,
+    "id": "ssc_14:light_bulb"
+  },
+  "materials": [
+    {
+      "ingredient": "ssc_14:steel",
+      "count": 1
+    },
+    {
+      "ingredient": "ssc_14:glass",
+      "count": 1
+    }
+  ],
+  "required_technologies": [
+  ],
+  "craft_time": 50
+}

@@ -1,17 +1,5 @@
 package net.mcreator.sscresearchanddevelopment;
 
-import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
-import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
-import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.*;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
-import net.mcreator.sscresearchanddevelopment.component.technologies.C2SRequestConsoleData;
-import net.mcreator.sscresearchanddevelopment.component.technologies.C2SUnlockResearch;
-import net.mcreator.sscresearchanddevelopment.component.technologies.ResearchManager;
-import net.mcreator.sscresearchanddevelopment.component.technologies.S2CUpdateConsoleData;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -20,11 +8,13 @@ import net.neoforged.neoforge.network.handling.IPayloadHandler;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.capabilities.EntityCapability;
 import net.neoforged.fml.util.thread.SidedThreadGroups;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.ModList;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.IEventBus;
@@ -39,6 +29,20 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 import net.mcreator.sscresearchanddevelopment.init.*;
+import net.mcreator.sscresearchanddevelopment.component.technologies.S2CUpdateConsoleData;
+import net.mcreator.sscresearchanddevelopment.component.technologies.ResearchManager;
+import net.mcreator.sscresearchanddevelopment.component.technologies.C2SUnlockResearch;
+import net.mcreator.sscresearchanddevelopment.component.technologies.C2SRequestConsoleData;
+import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.S2CSyncCraftingState;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.FabricatorManager;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SWithdrawMaterial;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SStartCraft;
+import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SRequestFabricatorSync;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
+import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
+import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
+import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
 
 import javax.annotation.Nullable;
 
@@ -84,91 +88,52 @@ public class SscResearchAndDevelopmentMod {
 		@SubscribeEvent
 		public static void register(final RegisterPayloadHandlersEvent event) {
 			final PayloadRegistrar registrar = event.registrar(MODID);
-
-			registrar.playToServer(
-					ExtractPointsPayload.TYPE,
-					ExtractPointsPayload.STREAM_CODEC,
-					ExtractPointsPayload::handle
-			);
-			registrar.playToServer(
-					C2SRequestServerList.TYPE,
-					C2SRequestServerList.STREAM_CODEC,
-					C2SRequestServerList::handleServer
-			);
-
-			registrar.playToClient(
-					S2CUpdateServerList.TYPE,
-					S2CUpdateServerList.STREAM_CODEC,
-					S2CUpdateServerList::handleClient
-			);
-			registrar.playToServer(
-					C2SConnectServer.TYPE,
-					C2SConnectServer.STREAM_CODEC,
-					C2SConnectServer::handleServer
-			);
+			registrar.playToServer(ExtractPointsPayload.TYPE, ExtractPointsPayload.STREAM_CODEC, ExtractPointsPayload::handle);
+			registrar.playToServer(C2SRequestServerList.TYPE, C2SRequestServerList.STREAM_CODEC, C2SRequestServerList::handleServer);
+			registrar.playToClient(S2CUpdateServerList.TYPE, S2CUpdateServerList.STREAM_CODEC, S2CUpdateServerList::handleClient);
+			registrar.playToServer(C2SConnectServer.TYPE, C2SConnectServer.STREAM_CODEC, C2SConnectServer::handleServer);
 		}
 	}
+
 	@EventBusSubscriber(modid = MODID)
 	public static class FabricatorDataHandler {
 		public static FabricatorManager MANAGER;
+
 		@SubscribeEvent
 		public static void onReloadListener(AddServerReloadListenersEvent event) {
 			MANAGER = new FabricatorManager(event.getRegistryAccess());
 			event.addListener(ResourceLocation.fromNamespaceAndPath(MODID, "fabricator_recipes"), MANAGER);
 		}
+
 		@SubscribeEvent
 		public static void register(final RegisterPayloadHandlersEvent event) {
 			final PayloadRegistrar registrar = event.registrar("ssc");
-			registrar.playToServer(
-					C2SStartCraft.TYPE,
-					C2SStartCraft.STREAM_CODEC,
-					C2SStartCraft::handleServer
-			);
-			registrar.playToClient(
-					S2CSyncCraftingState.TYPE,
-					S2CSyncCraftingState.STREAM_CODEC,
-					S2CSyncCraftingState::handleClient
-			);
-			registrar.playToServer(
-					C2SWithdrawMaterial.TYPE,
-					C2SWithdrawMaterial.STREAM_CODEC,
-					C2SWithdrawMaterial::handleServer
-			);
-			registrar.playToServer(
-					C2SRequestFabricatorSync.TYPE,
-					C2SRequestFabricatorSync.STREAM_CODEC,
-					C2SRequestFabricatorSync::handle
-			);
+			registrar.playToServer(C2SStartCraft.TYPE, C2SStartCraft.STREAM_CODEC, C2SStartCraft::handleServer);
+			registrar.playToClient(S2CSyncCraftingState.TYPE, S2CSyncCraftingState.STREAM_CODEC, S2CSyncCraftingState::handleClient);
+			registrar.playToServer(C2SWithdrawMaterial.TYPE, C2SWithdrawMaterial.STREAM_CODEC, C2SWithdrawMaterial::handleServer);
+			registrar.playToServer(C2SRequestFabricatorSync.TYPE, C2SRequestFabricatorSync.STREAM_CODEC, C2SRequestFabricatorSync::handle);
 		}
 	}
+
 	@EventBusSubscriber(modid = MODID)
 	public class ResearchDataHandler {
 		public static ResearchManager MANAGER;
+
 		@SubscribeEvent
 		public static void onReloadListener(AddServerReloadListenersEvent event) {
 			MANAGER = new ResearchManager(event.getRegistryAccess());
 			event.addListener(ResourceLocation.fromNamespaceAndPath(MODID, "research_techs"), MANAGER);
 		}
+
 		@SubscribeEvent
 		public static void register(final RegisterPayloadHandlersEvent event) {
 			final PayloadRegistrar registrar = event.registrar("ssc_research_and_development");
-			registrar.playToServer(
-					C2SUnlockResearch.TYPE,
-					C2SUnlockResearch.STREAM_CODEC,
-					C2SUnlockResearch::handleServer
-			);
-			registrar.playToClient(
-					S2CUpdateConsoleData.TYPE,
-					S2CUpdateConsoleData.STREAM_CODEC,
-					S2CUpdateConsoleData::handle
-			);
-			registrar.playToServer(
-					C2SRequestConsoleData.TYPE,
-					C2SRequestConsoleData.STREAM_CODEC,
-					C2SRequestConsoleData::handle
-			);
+			registrar.playToServer(C2SUnlockResearch.TYPE, C2SUnlockResearch.STREAM_CODEC, C2SUnlockResearch::handleServer);
+			registrar.playToClient(S2CUpdateConsoleData.TYPE, S2CUpdateConsoleData.STREAM_CODEC, S2CUpdateConsoleData::handle);
+			registrar.playToServer(C2SRequestConsoleData.TYPE, C2SRequestConsoleData.STREAM_CODEC, C2SRequestConsoleData::handle);
 		}
 	}
+
 	// End of user code block mod methods
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();

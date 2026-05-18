@@ -18,5 +18,7 @@
   "gui.ssc_research_and_development.artefact_console_gui.label_klass": "Класс:",
   "item.ssc_research_and_development.multitool": "Мультитул",
   "gui.ssc_research_and_development.multitool_overlay.label_sviaz": "Связь",
-  "gui.ssc_research_and_development.multitool_overlay.label_riezhim": "Режим:"
+  "gui.ssc_research_and_development.multitool_overlay.label_riezhim": "Режим:",
+  "item.ssc_research_and_development.researchdisk": "Диск исследований",
+  "item.ssc_research_and_development.screwdrive": "Отвёртка"
 }

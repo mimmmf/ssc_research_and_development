@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.FileToIdConverter;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -60,25 +61,48 @@ public class FabricatorManager extends SimpleJsonResourceReloadListener<JsonElem
         System.out.println("Loaded fabricator recipes: " + recipes.size());
     }
 
+//    public static String getStorageKeyFromItem(ItemStack stack) {
+//        if (stack.isEmpty()) return null;
+//
+//        if (stack.is(net.minecraft.world.item.Items.IRON_INGOT)) return "steel";
+//        if (stack.is(net.minecraft.world.item.Items.COPPER_INGOT)) return "copper";
+//        if (stack.is(net.minecraft.world.item.Items.GOLD_INGOT)) return "gold";
+//        if (stack.is(net.minecraft.world.item.Items.GLASS)) return "glass";
+//
+//        return null;
+//    }
     public static String getStorageKeyFromItem(ItemStack stack) {
-        if (stack.isEmpty()) return null;
+        if (stack.isEmpty()) return "";
 
-        if (stack.is(net.minecraft.world.item.Items.IRON_INGOT)) return "steel";
-        if (stack.is(net.minecraft.world.item.Items.COPPER_INGOT)) return "copper";
-        if (stack.is(net.minecraft.world.item.Items.GOLD_INGOT)) return "gold";
-        if (stack.is(net.minecraft.world.item.Items.GLASS)) return "glass";
-
-        return null;
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
+        return id.toString();
     }
     public static ItemStack getItemFromStorageKey(String key) {
-        Item item = switch (key.toLowerCase()) {
-            case "steel"  -> Items.IRON_INGOT;
-            case "copper" -> Items.COPPER_INGOT;
-            case "gold"   -> Items.GOLD_INGOT;
-            case "glass"  -> Items.GLASS;
-            default -> null;
-        };
+        if (key == null || key.isEmpty()) return ItemStack.EMPTY;
 
-        return item != null ? new ItemStack(item) : ItemStack.EMPTY;
+        try {
+            ResourceLocation id = ResourceLocation.parse(key);
+
+            Item item = BuiltInRegistries.ITEM.get(id).get().value();
+
+            if (item == Items.AIR) {
+                return ItemStack.EMPTY;
+            }
+
+            return new ItemStack(item);
+        } catch (Exception e) {
+            return ItemStack.EMPTY;
+        }
     }
+//    public static ItemStack getItemFromStorageKey(String key) {
+//        Item item = switch (key.toLowerCase()) {
+//            case "steel"  -> Items.IRON_INGOT;
+//            case "copper" -> Items.COPPER_INGOT;
+//            case "gold"   -> Items.GOLD_INGOT;
+//            case "glass"  -> Items.GLASS;
+//            default -> null;
+//        };
+//
+//        return item != null ? new ItemStack(item) : ItemStack.EMPTY;
+//    }
 }

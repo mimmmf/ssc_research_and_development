@@ -3,6 +3,7 @@
  */
 package net.mcreator.sscresearchanddevelopment.init;
 
+import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleMenu;
 import net.mcreator.sscresearchanddevelopment.world.inventory.FabricatorMenu;
 import net.mcreator.sscresearchanddevelopment.world.inventory.ResearchConsoleMenu;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -18,7 +19,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleMenu;
 import net.mcreator.sscresearchanddevelopment.network.MenuStateUpdateMessage;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 

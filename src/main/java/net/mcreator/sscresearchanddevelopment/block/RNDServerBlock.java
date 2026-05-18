@@ -2,15 +2,24 @@ package net.mcreator.sscresearchanddevelopment.block;
 
 import net.mcreator.sscresearchanddevelopment.block.entity.RNDServerBlockEntity;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModItems;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
+import net.mcreator.sscresearchanddevelopment.item.ResearchdiskItem;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -107,5 +116,28 @@ public class RNDServerBlock extends Block implements EntityBlock {
 			}
 		}
 		super.destroy(world, pos, state);
+	}
+
+	@Override
+	protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+		if (level.isClientSide) {
+			return stack.is(SscResearchAndDevelopmentModItems.RESEARCHDISK.get()) ? InteractionResult.SUCCESS : InteractionResult.PASS;
+		}
+		if (stack.is(SscResearchAndDevelopmentModItems.RESEARCHDISK.get())) {
+			if (level.getBlockEntity(pos) instanceof RNDServerBlockEntity be) {
+				NetworkSavedData data = NetworkSavedData.get(level);
+				ServerInstance server = data.getServer(be.serverId);
+				if (server != null) {
+					int pointsToAdd = stack.getOrDefault(SscResearchAndDevelopmentDataComponents.SCORE.get(), 0);
+					server.setPoints(server.getPoints() + pointsToAdd);
+					if (!player.getAbilities().instabuild) {
+						stack.shrink(1);
+					}
+
+					return InteractionResult.SUCCESS;
+				}
+			}
+		}
+		return InteractionResult.PASS;
 	}
 }

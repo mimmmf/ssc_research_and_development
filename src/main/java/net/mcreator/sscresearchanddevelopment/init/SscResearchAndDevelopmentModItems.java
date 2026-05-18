@@ -12,6 +12,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import net.mcreator.sscresearchanddevelopment.item.ResearchdiskItem;
 import net.mcreator.sscresearchanddevelopment.item.MultitoolItem;
 import net.mcreator.sscresearchanddevelopment.item.ArtefactItem;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
@@ -29,6 +30,7 @@ public class SscResearchAndDevelopmentModItems {
 	public static final DeferredItem<Item> PROTOLATHE;
 	public static final DeferredItem<Item> CIRCUITIMPRINTER;
 	public static final DeferredItem<Item> MULTITOOL;
+	public static final DeferredItem<Item> RESEARCHDISK;
 	static {
 		ARTEFACTCONSOLE = block(SscResearchAndDevelopmentModBlocks.ARTEFACTCONSOLE, new Item.Properties().rarity(Rarity.UNCOMMON));
 		ARTEFACTANALYZER = block(SscResearchAndDevelopmentModBlocks.ARTEFACTANALYZER, new Item.Properties().rarity(Rarity.UNCOMMON));
@@ -39,6 +41,7 @@ public class SscResearchAndDevelopmentModItems {
 		PROTOLATHE = block(SscResearchAndDevelopmentModBlocks.PROTOLATHE, new Item.Properties().rarity(Rarity.UNCOMMON));
 		CIRCUITIMPRINTER = block(SscResearchAndDevelopmentModBlocks.CIRCUITIMPRINTER, new Item.Properties().rarity(Rarity.UNCOMMON));
 		MULTITOOL = register("multitool", MultitoolItem::new);
+		RESEARCHDISK = register("researchdisk", ResearchdiskItem::new);
 	}
 
 	// Start of user code block custom items

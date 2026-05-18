@@ -65,7 +65,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
     protected void containerTick() {
         super.containerTick();
         var be = menu.getBlockEntity();
-        if (be != null && !be.getMaterials().equals(lastMaterials)) {
+        if (be != null) {
             if (!be.getMaterials().equals(lastMaterials)) {
                 updateStorageMaterials(be);
             }
@@ -86,7 +86,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
                 .sorted(Map.Entry.comparingByKey())
                 .forEach(e -> {
                     ItemStack icon = FabricatorManager.getItemFromStorageKey(e.getKey());
-                    storageList.publicAdd(new StorageEntry(e.getKey(), e.getKey() + " " + e.getValue(), icon));
+                    storageList.publicAdd(new StorageEntry(e.getKey(), icon.getHoverName().getString() + " " + e.getValue(), icon));
                 });
     }
     private void refreshRecipes() {
@@ -153,7 +153,16 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
     protected void renderLabels(GuiGraphics g, int mx, int my) {
 
     }
-
+    @Override
+    public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
+        if (this.recipeList != null && this.recipeList.isMouseOver(mouseX, mouseY)) {
+            return this.recipeList.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
+        }
+        if (this.storageList != null && this.storageList.isMouseOver(mouseX, mouseY)) {
+            return this.storageList.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
+        }
+        return super.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
+    }
     private void renderRecipeTooltip(GuiGraphics g, FabricatorRecipe recipe, int mx, int my) {
         var be = menu.getBlockEntity();
         if (be == null) return;
@@ -197,7 +206,36 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         public BaseList(Minecraft mc, int w, int h, int t, int i) { super(mc, w, h, t, i); }
         public void publicAdd(E entry) { addEntry(entry); }
         public void publicClear() { clearEntries(); }
-        @Override protected int scrollBarX() { return getX() + width - 6; }
+
+        @Override
+        protected void renderSelection(GuiGraphics p_283589_, int p_240142_, int p_240143_, int p_240144_, int p_240145_, int p_240146_) {
+            
+        }
+
+        @Override protected int scrollBarX() { return getX() + width + 1; }
+        @Override
+        protected void renderScrollbar(GuiGraphics g) {
+            int maxScroll = this.maxScrollAmount();
+            if (maxScroll > 0) {
+                int scrollX1 = this.scrollBarX();
+                int scrollX2 = scrollX1 + 3;
+
+                int barHeight = (int)((float)(this.height * this.height) / (float)this.maxScrollAmount());
+                barHeight = net.minecraft.util.Mth.clamp(barHeight, 32, this.height - 8);
+
+                int barY1 = (int)this.scrollAmount() * (this.height - barHeight) / maxScroll + this.getY();
+                if (barY1 < this.getY()) {
+                    barY1 = this.getY();
+                }
+                int barY2 = barY1 + barHeight;
+
+                g.fill(scrollX1, this.getY(), scrollX2, this.getY() + this.height, 0x55000000);
+
+                g.fill(scrollX1, barY1, scrollX2, barY2, 0xFF4A4D66);
+
+                g.fill(scrollX1, barY1, scrollX2 - 1, barY2 - 1, 0xFF6B6E8F);
+            }
+        }
     }
     public class RecipeList extends BaseList<RecipeEntry> {
         public RecipeList(Minecraft mc, int w, int h, int t, int i) { super(mc, w, h, t, i); }
