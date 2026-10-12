@@ -1,0 +1,3383 @@
+[
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:capacitor"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "components"
+    ],
+    "craft_time": 50
+  },{
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:crowbar"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "basic_tools"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:high_voltage_cable"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "basic_networks"
+    ],
+    "craft_time": 40
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:led_light_tube"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "lighting"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:light_bulb"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "lighting"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:low_batterie"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "components"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 3,
+      "id": "ssc_14:low_voltage_cable"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "basic_networks"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:matter_bin"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "components"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 2,
+      "id": "ssc_14:medium_voltage_cable"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "basic_networks"
+    ],
+    "craft_time": 30
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:micro_manipulator"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "components"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_research_and_development:multitool"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "multitool"
+    ],
+    "craft_time": 150
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:multitul"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "advanced_tools"
+    ],
+    "craft_time": 150
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:nippers"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "basic_tools"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:screwdriver"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "basic_tools"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:spanner"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "basic_tools"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:welding"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "advanced_tools"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:network_configurator"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "advanced_tools"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:gas_analyser"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "atmosphere"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:portable_sheater"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "atmosphere"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:rsu"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plasma",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:silver",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "compact_construction"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:rc_dcartridge"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "compact_construction"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:substation_board"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plasma",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "power_supply"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:smes_board"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "power_supply"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:apc_board"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "power_supply"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:reagent_container"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "basic_medbay"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:health_analyzer"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "basic_medbay"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:brutepack"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "field_pharmacology"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:bloodpack"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "field_pharmacology"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:gauze"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "field_pharmacology"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:ointment"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "field_pharmacology"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:microwawe"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 6
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plasma",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "microwaves"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:communication_servers"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 6
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "communications"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_research_and_development:autolathe"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 6
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:plasma",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "automation"
+    ],
+    "craft_time": 300
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_research_and_development:research_console"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "basic_research"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_research_and_development:rnd_server"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 10
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:silver",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "basic_research"
+    ],
+    "craft_time": 300
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_research_and_development:artefactconsole"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "xenoarchaeology"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_research_and_development:artefactanalyzer"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 6
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 10
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plasma",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "xenoarchaeology"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:fire_axe"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plasma",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "fire_safety"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:extinguisher"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "fire_safety"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:gas_mask"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "fire_safety"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:shutters"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "security"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:button"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "security"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:base_airlock_d_1"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "security"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_secure"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_emerg"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_fire"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:steel_table"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:wood_table"
+    },
+    "materials": [
+      {
+        "ingredient": "minecraft:oak_planks",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:wood_chair"
+    },
+    "materials": [
+      {
+        "ingredient": "minecraft:oak_planks",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:steel_chair"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:ofice_black_chair"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:ofice_white_chair"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:bar_chair"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:fence_point"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:fence_line"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:fence_g"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:fence_p"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:up_title"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:up_title_steel"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:up_title_dark"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_diagonal_mini"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_diagonal"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_mono"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_offset"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_mini"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_pavement"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_pavement_vertical"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steel_herringbone"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_plastic"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_diagonal_mini"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_diagonal"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_mini"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_mono"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_offset"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_pavement"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_pavement_vertical"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_herringbone"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_dark_plastic"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_diagonal_mini"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_diagonal"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_mini"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_mono"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_offset"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_pavement"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_pavement_vertical"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_herringbone"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_white_plastic"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:titleeighties"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:titlearcadeblue_2"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_arcadeblue"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_arcadered"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_carpetoffice"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_carpetclown"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_laundry"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_blue"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_clown"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_bar"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_cafeteria"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_mime"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_kitchen"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_checkerdark"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_lime"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_hydro"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_boxing"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_gym"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_lino"
+    },
+    "materials": [
+      {
+        "ingredient": "minecraft:oak_planks",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_freezer"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_gold"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_silver"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:silver",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_redcircuit"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_greencircuit"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_blue_circuit"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_showroom"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_miningfloordark"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_miningfloorlight"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_miningfloor"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_mono"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttleblack"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttleblue"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttlegrey"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttleorange"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttlepurple"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttlered"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_shuttlewhite"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_reinforced"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 8,
+      "id": "ssc_14:title_superreinforced"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_metaldiamond"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_techmaintdark"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_techmaint"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_steelmaint"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_metaldiamond"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_gratingmaint"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_wood"
+    },
+    "materials": [
+      {
+        "ingredient": "minecraft:oak_planks",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_woodtile"
+    },
+    "materials": [
+      {
+        "ingredient": "minecraft:oak_planks",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_woodlarge"
+    },
+    "materials": [
+      {
+        "ingredient": "minecraft:oak_planks",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_elevatorshaft"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_exoborg"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_hullreinforced"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_hull"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 4,
+      "id": "ssc_14:title_rockvault"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "floor_coverings"
+    ],
+    "craft_time": 10
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:steel_staircase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "stairs"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:up_steel_staircase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "stairs"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:dark_staircase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "stairs"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:up_dark_staircase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "stairs"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:white_staircase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "stairs"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:up_white_staircase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "stairs"
+    ],
+    "craft_time": 20
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:wall_carcase"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:rod_up_floor"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:rod_floor"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:base_window"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:armored_window"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:directed_base_window"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 50
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:directed_armored_window"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:shuttle_wall"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:silver",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:armored_shuttle_wall"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 4
+      },
+      {
+        "ingredient": "ssc_14:plasteel",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:silver",
+        "count": 2
+      }
+    ],
+    "required_technologies": [
+      "walls_and_windows"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:magnetic_boots_item"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 2
+      },
+      {
+        "ingredient": "ssc_14:ssc_14_gold",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "mag_boots"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:helmets_eva"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 3
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "scafanders"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:outerclothing_eva"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:plastic",
+        "count": 5
+      },
+      {
+        "ingredient": "ssc_14:silver",
+        "count": 1
+      }
+    ],
+    "required_technologies": [
+      "scafanders"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:glass_table"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 1
+      },
+      {
+        "ingredient": "ssc_14:glass",
+        "count": 3
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 100
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_n_2"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_pink"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_black"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_orange"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_blue"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_green"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_mixed"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  },
+  {
+    "type": "ssc_research_and_development:fabricator",
+    "category": "autolathe",
+    "result": {
+      "count": 1,
+      "id": "ssc_14:closet_gray"
+    },
+    "materials": [
+      {
+        "ingredient": "ssc_14:steel",
+        "count": 5
+      }
+    ],
+    "required_technologies": [
+      "furniture"
+    ],
+    "craft_time": 200
+  }
+]

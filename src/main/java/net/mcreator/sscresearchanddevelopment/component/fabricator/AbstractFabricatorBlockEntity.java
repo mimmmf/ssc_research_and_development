@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
+import net.mcreator.sscresearchanddevelopment.network.S2CSyncCraftingState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;

@@ -1,20 +1,15 @@
 package net.mcreator.sscresearchanddevelopment.world.inventory;
 
-import net.mcreator.sscresearchanddevelopment.block.entity.AutolatheBlockEntity;
-import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.component.fabricator.AbstractFabricatorBlockEntity;
-import net.mcreator.sscresearchanddevelopment.component.technologies.S2CUpdateConsoleData;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModMenus;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.ArrayList;
 import java.util.UUID;
 
 public class FabricatorMenu extends AbstractContainerMenu {

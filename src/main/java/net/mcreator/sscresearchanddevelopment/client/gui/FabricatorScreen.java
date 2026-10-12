@@ -1,16 +1,17 @@
 package net.mcreator.sscresearchanddevelopment.client.gui;
 
-import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
-import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
+import net.mcreator.sscresearchanddevelopment.network.C2SRequestFabricatorSync;
+import net.mcreator.sscresearchanddevelopment.network.C2SRequestServerList;
+import net.mcreator.sscresearchanddevelopment.client.ClientFabricatorCache;
 import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
 import net.mcreator.sscresearchanddevelopment.component.fabricator.*;
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
+import net.mcreator.sscresearchanddevelopment.network.C2SStartCraft;
+import net.mcreator.sscresearchanddevelopment.network.C2SWithdrawMaterial;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.ObjectSelectionList;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
@@ -24,8 +25,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 
-import javax.annotation.Nullable;
-import java.awt.Color;
 import java.util.*;
 
 public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> implements IScreenHelper {
@@ -36,15 +35,18 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
     private final Map<String, Integer> lastMaterials = new HashMap<>();
     private FabricatorRecipe hoveredRecipe = null;
     private final Set<String> lastUnlockedTechs = new HashSet<>();
+
     public FabricatorScreen(FabricatorMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.imageWidth = 236;
         this.imageHeight = 180;
     }
+
     @Override
     protected void init() {
         super.init();
-        addRenderableWidget(new FlatButton(leftPos + 9, topPos + 160, 99, 10, "Сервера", 0.7f, 0xFF3D3F56, 0xFF633B00, font, b -> {
+        String serversBtnText = Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString();
+        addRenderableWidget(new FlatButton(leftPos + 9, topPos + 160, 99, 10, serversBtnText, 0.7f, 0xFF3D3F56, 0xFF633B00, font, b -> {
             if (menu.getBlockEntity() != null)
                 ClientPacketDistributor.sendToServer(new C2SRequestServerList(menu.getBlockEntity().getBlockPos()));
         }));
@@ -61,6 +63,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
             ClientPacketDistributor.sendToServer(new C2SRequestFabricatorSync(menu.getBlockEntity().getBlockPos()));
         }
     }
+
     @Override
     protected void containerTick() {
         super.containerTick();
@@ -76,6 +79,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
             }
         }
     }
+
     private void updateStorageMaterials(AbstractFabricatorBlockEntity be) {
         storageList.publicClear();
         lastMaterials.clear();
@@ -89,17 +93,17 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
                     storageList.publicAdd(new StorageEntry(e.getKey(), icon.getHoverName().getString() + " " + e.getValue(), icon));
                 });
     }
+
     private void refreshRecipes() {
-        if (SscResearchAndDevelopmentMod.FabricatorDataHandler.MANAGER == null) return;
         var be = menu.getBlockEntity();
         if (be == null) return;
-
         recipeList.publicClear();
-        SscResearchAndDevelopmentMod.FabricatorDataHandler.MANAGER.getRecipes().values().stream()
+        ClientFabricatorCache.getRecipes().values().stream()
                 .filter(be::canCraftRecipe)
                 .sorted(Comparator.comparing(r -> r.getResult().getHoverName().getString()))
                 .forEach(r -> recipeList.publicAdd(new RecipeEntry(r.getResult().getHoverName().getString(), r.getResult(), r)));
     }
+
     @Override
     public void render(GuiGraphics g, int mx, int my, float pt) {
         this.hoveredRecipe = null;
@@ -109,12 +113,18 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         var be = menu.getBlockEntity();
         renderCraftingStatus(g, be, pt);
 
-        renderScaledText(font, g, be != null ? be.getDisplayName().getString() : "Фабрикатор", leftPos + 30, topPos + 7, 1.0f, -26368, true);
-        renderScaledText(font, g, "Очередь", leftPos + 170, topPos + 19, 0.6f, 0xFFFFFFFF, true);
-        renderScaledText(font, g, "Материалы", leftPos + 170, topPos + 76, 0.6f, 0xFFFFFFFF, true);
+        String titleText = be != null ? be.getDisplayName().getString() : Component.translatable("gui.ssc_research_and_development.fabricator_gui.title").getString();
+        renderScaledText(font, g, titleText, leftPos + 30, topPos + 7, 1.0f, -26368, true);
+
+        String queueText = Component.translatable("gui.ssc_research_and_development.fabricator_gui.queue").getString();
+        renderScaledText(font, g, queueText, leftPos + 170, topPos + 19, 0.6f, 0xFFFFFFFF, true);
+
+        String materialsText = Component.translatable("gui.ssc_research_and_development.fabricator_gui.materials").getString();
+        renderScaledText(font, g, materialsText, leftPos + 170, topPos + 76, 0.6f, 0xFFFFFFFF, true);
 
         if (hoveredRecipe != null) renderRecipeTooltip(g, hoveredRecipe, mx, my);
     }
+
     private void renderCraftingStatus(GuiGraphics g, AbstractFabricatorBlockEntity be, float pt) {
         int ax = leftPos + 150, ay = topPos + 30;
         var recipeId = be != null ? be.getActiveRecipeId() : null;
@@ -122,7 +132,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         renderScaledIcon(ICON_TEXTURE, g, ax, ay, 2f, 16, 16);
 
         if (recipeId != null) {
-            var recipe = SscResearchAndDevelopmentMod.FabricatorDataHandler.MANAGER.getRecipes().get(recipeId);
+            var recipe = ClientFabricatorCache.getRecipes().get(recipeId);
             if (recipe != null) {
                 int fill = (int) (32 * be.getCraftProgressPercent(pt));
                 g.fill(ax, ay + 32 - fill, ax + 32, ay + 32, 0x88FF9800);
@@ -135,8 +145,10 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
                 return;
             }
         }
-        renderScaledText(font, g, "Ничего", ax + 15, ay + 34, 0.7f, 0xFFFFFFFF, true);
+        String noneText = Component.translatable("gui.ssc_research_and_development.fabricator_gui.none").getString();
+        renderScaledText(font, g, noneText, ax + 15, ay + 34, 0.7f, 0xFFFFFFFF, true);
     }
+
     private void renderScaledItem(GuiGraphics g, ItemStack stack, int x, int y, float scale) {
         g.pose().pushMatrix();
         g.pose().translate(x, y);
@@ -144,15 +156,15 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         g.renderFakeItem(stack, 0, 0);
         g.pose().popMatrix();
     }
+
     @Override
     protected void renderBg(GuiGraphics g, float pt, int mx, int my) {
         g.blit(RenderPipelines.GUI_TEXTURED, BG_TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
     }
 
     @Override
-    protected void renderLabels(GuiGraphics g, int mx, int my) {
+    protected void renderLabels(GuiGraphics g, int mx, int my) {}
 
-    }
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
         if (this.recipeList != null && this.recipeList.isMouseOver(mouseX, mouseY)) {
@@ -163,6 +175,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         }
         return super.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
     }
+
     private void renderRecipeTooltip(GuiGraphics g, FabricatorRecipe recipe, int mx, int my) {
         var be = menu.getBlockEntity();
         if (be == null) return;
@@ -171,7 +184,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
 
         tooltipLines.add(recipe.getResult().getHoverName().copy().withStyle(ChatFormatting.GOLD));
         tooltipLines.add(Component.empty());
-        tooltipLines.add(Component.literal("Необходимые ресурсы:").withStyle(ChatFormatting.GRAY));
+        tooltipLines.add(Component.translatable("gui.ssc_research_and_development.fabricator_gui.required_resources").withStyle(ChatFormatting.GRAY));
 
         var storage = be.getMaterials();
 
@@ -185,9 +198,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
             int amountInStorage = storage.getOrDefault(storageKey, 0);
             boolean hasEnough = amountInStorage >= cost.count();
 
-            MutableComponent line = Component.literal(" • ")
-                    .append(item.getName())
-                    .append(": " + amountInStorage + "/" + cost.count());
+            MutableComponent line = Component.translatable("gui.ssc_research_and_development.fabricator_gui.cost_line", item.getName(), amountInStorage, cost.count());
 
             line.withStyle(hasEnough ? ChatFormatting.GREEN : ChatFormatting.RED);
             if (!hasEnough) line.withStyle(ChatFormatting.UNDERLINE);
@@ -202,17 +213,17 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
 
         g.renderTooltip(font, clientComponents, mx, my, DefaultTooltipPositioner.INSTANCE, null);
     }
+
     public abstract class BaseList<E extends ObjectSelectionList.Entry<E>> extends ObjectSelectionList<E> {
         public BaseList(Minecraft mc, int w, int h, int t, int i) { super(mc, w, h, t, i); }
         public void publicAdd(E entry) { addEntry(entry); }
         public void publicClear() { clearEntries(); }
 
         @Override
-        protected void renderSelection(GuiGraphics p_283589_, int p_240142_, int p_240143_, int p_240144_, int p_240145_, int p_240146_) {
-            
-        }
+        protected void renderSelection(GuiGraphics p_283589_, int p_240142_, int p_240143_, int p_240144_, int p_240145_, int p_240146_) {}
 
         @Override protected int scrollBarX() { return getX() + width + 1; }
+
         @Override
         protected void renderScrollbar(GuiGraphics g) {
             int maxScroll = this.maxScrollAmount();
@@ -230,19 +241,20 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
                 int barY2 = barY1 + barHeight;
 
                 g.fill(scrollX1, this.getY(), scrollX2, this.getY() + this.height, 0x55000000);
-
                 g.fill(scrollX1, barY1, scrollX2, barY2, 0xFF4A4D66);
-
                 g.fill(scrollX1, barY1, scrollX2 - 1, barY2 - 1, 0xFF6B6E8F);
             }
         }
     }
+
     public class RecipeList extends BaseList<RecipeEntry> {
         public RecipeList(Minecraft mc, int w, int h, int t, int i) { super(mc, w, h, t, i); }
     }
+
     public class StorageList extends BaseList<StorageEntry> {
         public StorageList(Minecraft mc, int w, int h, int t, int i) { super(mc, w, h, t, i); }
     }
+
     public class RecipeEntry extends ObjectSelectionList.Entry<RecipeEntry> {
         private final String text;
         private final ItemStack icon;
@@ -280,9 +292,13 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         public boolean mouseClicked(double mx, double my, int btn) {
             recipeList.setSelected(this);
             var be = menu.getBlockEntity();
-            if (be != null && SscResearchAndDevelopmentMod.FabricatorDataHandler.MANAGER != null) {
-                ResourceLocation id = SscResearchAndDevelopmentMod.FabricatorDataHandler.MANAGER.getRecipes()
-                        .entrySet().stream().filter(e -> e.getValue() == recipe).map(Map.Entry::getKey).findFirst().orElse(null);
+            if (be != null) {
+                ResourceLocation id = ClientFabricatorCache.getRecipes()
+                        .entrySet().stream()
+                        .filter(e -> e.getValue() == recipe)
+                        .map(Map.Entry::getKey)
+                        .findFirst()
+                        .orElse(null);
                 if (id != null) ClientPacketDistributor.sendToServer(new C2SStartCraft(be.getBlockPos(), id));
             }
             return true;

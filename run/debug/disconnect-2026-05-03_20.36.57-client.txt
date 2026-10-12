@@ -36,9 +36,9 @@ io.netty.handler.codec.DecoderException: Failed to decode packet 'clientbound/mi
 	at MC-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.118.Final.jar%23150!/:4.1.118.Final] {}
 	at MC-BOOTSTRAP/io.netty.common@4.1.118.Final/io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.118.Final.jar%23150!/:4.1.118.Final] {}
 	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
-Caused by: java.lang.IllegalArgumentException: No enum constant net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus.
+Caused by: java.lang.IllegalArgumentException: No enum constant net.mcreator.sscresearchanddevelopment.enums.NodeStatus.
 	at java.base/java.lang.Enum.valueOf(Enum.java:293) ~[?:?] {}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus.valueOf(NodeStatus.java:3) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.enums.NodeStatus.valueOf(NodeStatus.java:3) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.ArtifactProperties.lambda$static$7(ArtifactProperties.java:62) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.network.FriendlyByteBuf.readMap(FriendlyByteBuf.java:171) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.ArtifactProperties.lambda$static$8(ArtifactProperties.java:55) ~[%23214!/:?] {re:classloading}

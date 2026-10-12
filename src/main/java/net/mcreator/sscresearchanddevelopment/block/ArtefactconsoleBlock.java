@@ -1,8 +1,10 @@
 package net.mcreator.sscresearchanddevelopment.block;
 
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModBlockEntities;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentSoundSets;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
-import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -57,6 +59,8 @@ public class ArtefactconsoleBlock extends Block implements EntityBlock {
 
 		BlockEntity be = world.getBlockEntity(pos);
 		if (be instanceof ArtefactconsoleBlockEntity consoleBE) {
+			SoundEvent randomSound = SscResearchAndDevelopmentSoundSets.KEYBOARD.get(world.getRandom().nextInt(SscResearchAndDevelopmentSoundSets.KEYBOARD.size())).get();
+			world.playSound(null, pos, randomSound, SoundSource.BLOCKS, 1.0f, 1.0f);
 			player.openMenu((MenuProvider) be, pos);
 		}
 		return InteractionResult.CONSUME;

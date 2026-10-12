@@ -12,12 +12,12 @@ import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ResearchManager extends SimpleJsonResourceReloadListener<JsonElement> {
     private final Map<String, ResearchNode> nodes = new HashMap<>();
     private final HolderLookup.Provider registries;
-
 
     public ResearchManager(HolderLookup.Provider registries) {
         super(
@@ -25,7 +25,7 @@ public class ResearchManager extends SimpleJsonResourceReloadListener<JsonElemen
                         dynamic -> dynamic.convert(JsonOps.INSTANCE).getValue(),
                         json -> new Dynamic<>(JsonOps.INSTANCE, json)
                 ),
-                FileToIdConverter.json("research/nodes")
+                FileToIdConverter.json("research")
         );
         this.registries = registries;
     }
@@ -39,12 +39,15 @@ public class ResearchManager extends SimpleJsonResourceReloadListener<JsonElemen
         nodes.clear();
         object.forEach((location, element) -> {
             try {
-                ResearchNode node = ResearchNode.Serializer.CODEC
+                List<ResearchNode> parsedNodes = ResearchNode.Serializer.LIST_CODEC
                         .parse(JsonOps.INSTANCE, element)
                         .getOrThrow();
-                nodes.put(node.getId(), node);
+
+                for (ResearchNode node : parsedNodes) {
+                    nodes.put(node.getId(), node);
+                }
             } catch (Exception e) {
-                System.err.println("Failed to load research node " + location + ": " + e.getMessage());
+                System.err.println("Failed to load research file " + location + ": " + e.getMessage());
             }
         });
         System.out.println("Loaded research nodes: " + nodes.size());

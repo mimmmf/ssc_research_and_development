@@ -39,8 +39,19 @@ neoForge {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation files('libs/ssc_14.jar')
+    implementation files('libs/curios.jar')
+}
+
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }
 
 apply from: 'mcreator.gradle'

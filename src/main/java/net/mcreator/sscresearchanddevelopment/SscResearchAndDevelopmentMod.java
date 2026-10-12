@@ -1,5 +1,9 @@
 package net.mcreator.sscresearchanddevelopment;
 
+import net.mcreator.sscresearchanddevelopment.component.fabricator.*;
+import net.mcreator.sscresearchanddevelopment.network.*;
+import net.neoforged.neoforge.event.OnDatapackSyncEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -29,20 +33,9 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.registries.BuiltInRegistries;
 
 import net.mcreator.sscresearchanddevelopment.init.*;
-import net.mcreator.sscresearchanddevelopment.component.technologies.S2CUpdateConsoleData;
 import net.mcreator.sscresearchanddevelopment.component.technologies.ResearchManager;
-import net.mcreator.sscresearchanddevelopment.component.technologies.C2SUnlockResearch;
-import net.mcreator.sscresearchanddevelopment.component.technologies.C2SRequestConsoleData;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.S2CSyncCraftingState;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.FabricatorManager;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SWithdrawMaterial;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SStartCraft;
-import net.mcreator.sscresearchanddevelopment.component.fabricator.C2SRequestFabricatorSync;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
-import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
-import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
-import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
+import net.mcreator.sscresearchanddevelopment.network.ExtractPointsPayload;
+import net.mcreator.sscresearchanddevelopment.init.ArtefactRegistries;
 
 import javax.annotation.Nullable;
 
@@ -79,6 +72,7 @@ public class SscResearchAndDevelopmentMod {
 		SscResearchAndDevelopmentModRecipes.register(modEventBus);
 		SscResearchAndDevelopmentDataComponents.COMPONENTS.register(modEventBus);
 		ArtefactRegistries.init(modEventBus);
+		SscResearchAndDevelopmentSounds.SOUND_EVENTS.register(modEventBus);
 		// End of user code block mod init
 	}
 
@@ -112,6 +106,18 @@ public class SscResearchAndDevelopmentMod {
 			registrar.playToClient(S2CSyncCraftingState.TYPE, S2CSyncCraftingState.STREAM_CODEC, S2CSyncCraftingState::handleClient);
 			registrar.playToServer(C2SWithdrawMaterial.TYPE, C2SWithdrawMaterial.STREAM_CODEC, C2SWithdrawMaterial::handleServer);
 			registrar.playToServer(C2SRequestFabricatorSync.TYPE, C2SRequestFabricatorSync.STREAM_CODEC, C2SRequestFabricatorSync::handle);
+			registrar.playToClient(S2CSyncFabricatorRecipes.TYPE, S2CSyncFabricatorRecipes.STREAM_CODEC, S2CSyncFabricatorRecipes::handle);
+		}
+		@SubscribeEvent
+		public static void onDatapackSync(OnDatapackSyncEvent event) {
+			if (MANAGER == null) return;
+			Map<ResourceLocation, FabricatorRecipe> map = MANAGER.getRecipes();
+			S2CSyncFabricatorRecipes packet = new S2CSyncFabricatorRecipes(map);
+			if (event.getPlayer() != null) {
+				PacketDistributor.sendToPlayer(event.getPlayer(), packet);
+			} else {
+				PacketDistributor.sendToAllPlayers(packet);
+			}
 		}
 	}
 
@@ -131,6 +137,15 @@ public class SscResearchAndDevelopmentMod {
 			registrar.playToServer(C2SUnlockResearch.TYPE, C2SUnlockResearch.STREAM_CODEC, C2SUnlockResearch::handleServer);
 			registrar.playToClient(S2CUpdateConsoleData.TYPE, S2CUpdateConsoleData.STREAM_CODEC, S2CUpdateConsoleData::handle);
 			registrar.playToServer(C2SRequestConsoleData.TYPE, C2SRequestConsoleData.STREAM_CODEC, C2SRequestConsoleData::handle);
+		}
+	}
+
+	@EventBusSubscriber(modid = MODID)
+	public class ClientProgressHandler {
+		@SubscribeEvent
+		public static void register(final RegisterPayloadHandlersEvent event) {
+			final PayloadRegistrar registrar = event.registrar("ssc_research_and_development");
+			registrar.playToClient(S2CProgressSyncPacket.TYPE, S2CProgressSyncPacket.STREAM_CODEC, S2CProgressSyncPacket::handleClient);
 		}
 	}
 

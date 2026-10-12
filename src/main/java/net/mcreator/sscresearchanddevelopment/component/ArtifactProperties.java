@@ -2,15 +2,15 @@ package net.mcreator.sscresearchanddevelopment.component;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
+import net.mcreator.sscresearchanddevelopment.init.ArtefactRegistries;
+import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
+import net.mcreator.sscresearchanddevelopment.enums.NodeStatus;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactanalyzerBlockEntity;
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
-import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
-import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
+import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
+
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -21,12 +21,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public record ArtifactProperties(
@@ -77,64 +73,74 @@ public record ArtifactProperties(
                                 ByteBufCodecs.VAR_INT.apply(ByteBufCodecs.list()).decode(b), // childIds
                                 b.readUtf(), // triggerId
                                 b.readUtf(), // reactionId
-                                b.readVarInt(), // НОВОЕ: читаем текущий timer
-                                b.readVarInt()  // НОВОЕ: читаем maxTimer
+                                b.readVarInt(), // timer
+                                b.readVarInt()  // maxTimer
                         )
                 );
                 return new ArtifactProperties(tier, total, nodes);
             }
     );
+
     public static ArtifactProperties generate(int tier, RandomSource random) {
-        int budget = switch (tier) {
-            case 0 -> random.nextInt(100, 301);
-            case 1 -> random.nextInt(400, 801);
-            default -> random.nextInt(1000, 2001);
+        int BASE_POINTS = 250;
+        int FIXED_TIMER = 200; // 10 секунд (20 tps * 10)
+
+        int targetNodeCount = switch (tier) {
+            case 0 -> random.nextInt(5, 11);   // 5-10
+            case 1 -> random.nextInt(10, 16);  // 10-15
+            default -> random.nextInt(15, 21); // 15-20
         };
 
         Map<Integer, ArtefactNode> nodes = new HashMap<>();
         int nodeIdCounter = 0;
 
-        int rootPoints = (int) (budget * 0.15);
-        int remainingPoints = budget - rootPoints;
-
         ArtefactNode root = new ArtefactNode(
-                nodeIdCounter++, 0, rootPoints, NodeStatus.ACTIVE,
-                new ArrayList<>(), ArtefactRegistries.getRandomTrigger(0, tier, random), ArtefactRegistries.getRandomReaction(0, tier, random), 0, 40
+                nodeIdCounter++,
+                0,
+                BASE_POINTS,
+                NodeStatus.ACTIVE,
+                new ArrayList<>(),
+                ArtefactRegistries.getRandomTrigger(0, tier, random),
+                ArtefactRegistries.getRandomReaction(0, tier, random),
+                0,
+                FIXED_TIMER
         );
         nodes.put(root.id(), root);
 
         List<Integer> availableParents = new ArrayList<>();
         availableParents.add(root.id());
 
-        while (remainingPoints > 30 && nodes.size() < 12) {
+        while (nodes.size() < targetNodeCount) {
             int parentId = availableParents.get(random.nextInt(availableParents.size()));
             ArtefactNode parent = nodes.get(parentId);
-            int nodePoints = random.nextInt(30, Math.max(31, remainingPoints / 2));
+
             int newId = nodeIdCounter++;
             int depth = parent.depth() + 1;
-
-            int delay = 20 + random.nextInt(Math.min(200, 20 * depth));
+            int nodePoints = (depth + 1) * BASE_POINTS;
 
             String randomTriggerId = ArtefactRegistries.getRandomTrigger(depth, tier, random);
             String randomReactionId = ArtefactRegistries.getRandomReaction(depth, tier, random);
 
             ArtefactNode newNode = new ArtefactNode(
-                    newId, depth, nodePoints, NodeStatus.LOCKED,
+                    newId,
+                    depth,
+                    nodePoints,
+                    NodeStatus.LOCKED,
                     new ArrayList<>(),
                     randomTriggerId,
                     randomReactionId,
                     0,
-                    delay
+                    FIXED_TIMER
             );
 
             parent.childIds().add(newId);
             nodes.put(newId, newNode);
             availableParents.add(newId);
-            remainingPoints -= nodePoints;
         }
+
         return new ArtifactProperties(tier, 0, nodes);
     }
-    // -- ВСПОМОГАТЕЛЬНЫЕ МЕТОДЫ --
+
     public static void extractNodePoints(ServerPlayer player, BlockPos pos, int nodeId) {
         if (player.level().getBlockEntity(pos) instanceof ArtefactconsoleBlockEntity console) {
             BlockPos analyzerPos = console.getLinkedPos().orElse(null);
@@ -142,7 +148,6 @@ public record ArtifactProperties(
 
             if (player.level().getBlockEntity(analyzerPos) instanceof ArtefactanalyzerBlockEntity analyzer) {
                 ItemStack stack = analyzer.getItem(0);
-
                 if (stack.isEmpty()) return;
 
                 ArtifactProperties props = stack.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
@@ -160,22 +165,16 @@ public record ArtifactProperties(
                     stack.set(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get(), newProps);
 
                     analyzer.setItem(0, stack);
-
                     analyzer.setChanged();
                     player.level().sendBlockUpdated(analyzerPos, analyzer.getBlockState(), analyzer.getBlockState(), 3);
 
                     player.containerMenu.broadcastChanges();
-
                     player.level().playSound(null, pos, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.BLOCKS, 1.0f, 0.8f);
 
                     if (console instanceof IServerLinked linked) {
-
                         ServerInstance server = linked.resolveServer();
-
                         if (server != null) {
-                            NetworkSavedData data =
-                                    NetworkSavedData.get(player.level());
-
+                            NetworkSavedData data = NetworkSavedData.get(player.level());
                             if (data != null) {
                                 data.addPoints(server.getServerId(), node.points());
                             }

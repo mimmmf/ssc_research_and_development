@@ -419,6 +419,22 @@
           "src/main/java/net/mcreator/sscresearchanddevelopment/item/ResearchdiskItem.java"
         ]
       }
+    },
+    {
+      "name": "FloraAnomaly",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flora_anomaly",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/ssc_research_and_development/neoforge/biome_modifier/flora_anomaly_biome_modifier.json",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/entity/FloraAnomalyEntity.java",
+          "src/main/java/net/mcreator/sscresearchanddevelopment/client/renderer/FloraAnomalyRenderer.java",
+          "src/main/resources/assets/ssc_research_and_development/models/item/flora_anomaly_spawn_egg.json",
+          "src/main/resources/assets/ssc_research_and_development/items/flora_anomaly_spawn_egg.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -447,7 +463,9 @@
       "item.ssc_research_and_development.multitool": "Мультитул",
       "gui.ssc_research_and_development.multitool_overlay.label_sviaz": "Связь",
       "gui.ssc_research_and_development.multitool_overlay.label_riezhim": "Режим:",
-      "item.ssc_research_and_development.researchdisk": "Диск исследований"
+      "item.ssc_research_and_development.researchdisk": "Диск исследований",
+      "item.ssc_research_and_development.flora_anomaly_spawn_egg": "Аномалия Spawn Egg",
+      "entity.ssc_research_and_development.flora_anomaly": "Аномалия"
     }
   },
   "metadata": {
@@ -458,10 +476,13 @@
       "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModBlocks.java",
       "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModBlockEntities.java",
       "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModItems.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModEntities.java",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModEntityRenderers.java",
       "src/main/java/net/mcreator/sscresearchanddevelopment/SscResearchAndDevelopmentMod.java",
       "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModTabs.java",
       "src/main/resources/META-INF/neoforge.mods.toml",
-      "src/main/resources/pack.mcmeta"
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/sscresearchanddevelopment/init/SscResearchAndDevelopmentModModels.java"
     ]
   },
   "foldersRoot": {

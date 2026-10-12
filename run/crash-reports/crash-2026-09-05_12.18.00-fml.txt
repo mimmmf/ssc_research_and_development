@@ -1,0 +1,139 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 2026-09-05 12:18:00
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Stacktrace:
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.moddiscovery.locators.NeoForgeDevDistCleaner.handlesClass(NeoForgeDevDistCleaner.java:54) ~[loader-9.0.16.jar%23121!/:9.0] {}
+-- Mod loading issue for: ssc_14 --
+Details:
+	Caused by 0: java.lang.NoClassDefFoundError: net/minecraft/client/player/LocalPlayer
+		at java.base/java.lang.Class.forName0(Native Method) ~[?:?] {}
+		at java.base/java.lang.Class.forName(Class.java:534) ~[?:?] {}
+		at java.base/java.lang.Class.forName(Class.java:513) ~[?:?] {}
+		at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:55) ~[loader-9.0.16.jar%23121!/:9.0] {}
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {}
+		at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:48) ~[loader-9.0.16.jar%23121!/:9.0] {}
+		at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:129) ~[loader-9.0.16.jar%23121!/:9.0] {}
+		at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:151) ~[loader-9.0.16.jar%23121!/:9.0] {}
+		at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:229) ~[loader-9.0.16.jar%23121!/:9.0] {}
+		at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+		at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+		at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+		at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+	Mod file: /C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/run/mods/SSC14__PA-0.1.22__.1.21.8-NeoForge.jar
+	Failure message: Space Station Craft 14 (ssc_14) has failed to load correctly
+		java.lang.NoClassDefFoundError: net/minecraft/client/player/LocalPlayer
+	Mod version: 0.1.22
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.ClassNotFoundException: Attempted to load class net.minecraft.client.player.LocalPlayer which is not present on the dedicated server
+Stacktrace:
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.moddiscovery.locators.NeoForgeDevDistCleaner.handlesClass(NeoForgeDevDistCleaner.java:54) ~[loader-9.0.16.jar:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.serviceapi.ILaunchPluginService.handlesClass(ILaunchPluginService.java:108) ~[loader-9.0.16.jar:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchPluginHandler.computeLaunchPluginTransformerSet(LaunchPluginHandler.java:78) ~[loader-9.0.16.jar:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:77) ~[loader-9.0.16.jar:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:54) ~[loader-9.0.16.jar:9.0] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:202) ~[securejarhandler-9.0.16.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:310) ~[securejarhandler-9.0.16.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:323) ~[securejarhandler-9.0.16.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:310) ~[securejarhandler-9.0.16.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:226) ~[securejarhandler-9.0.16.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at java.base/java.lang.Class.forName0(Native Method) ~[?:?] {}
+	at java.base/java.lang.Class.forName(Class.java:534) ~[?:?] {}
+	at java.base/java.lang.Class.forName(Class.java:513) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.lambda$inject$4(AutomaticEventSubscriber.java:55) ~[loader-9.0.16.jar%23121!/:9.0] {}
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:48) ~[loader-9.0.16.jar%23121!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:129) ~[loader-9.0.16.jar%23121!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:151) ~[loader-9.0.16.jar%23121!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:229) ~[loader-9.0.16.jar%23121!/:9.0] {}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) ~[?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?] {}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.8
+	Minecraft Version ID: 1.21.8
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 39246744 bytes (37 MiB) / 385875968 bytes (368 MiB) up to 4246732800 bytes (4050 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i3-12100F
+	Identifier: Intel64 Family 6 Model 151 Stepping 5
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 3.30
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9186
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 27973.38
+	Virtual memory used (MiB): 16688.25
+	Swap memory total (MiB): 11776.00
+	Swap memory used (MiB): 146.02
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 90283.39, total: 487401.00
+	Space in storage for workdir (MiB): available: 90283.39, total: 487401.00
+	JVM Flags: 0 total; 
+	ModLauncher: 9.0
+	ModLauncher launch target: neoforgeserverdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-9.0.16.jar neoforgedevdistcleaner PLUGINSERVICE 
+		loader-9.0.16.jar slf4jfixer PLUGINSERVICE 
+		loader-9.0.16.jar runtime_enum_extender PLUGINSERVICE 
+		loader-9.0.16.jar accesstransformer PLUGINSERVICE 
+		loader-9.0.16.jar mixin TRANSFORMATIONSERVICE 
+		loader-9.0.16.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@9.0
+		minecraft@9.0
+	Mod List: 
+		CreativeCore_NEOFORGE_v2.14.7_mc1.21.8.jar        |CreativeCore                  |creativecore                  |2.14.7              |Manifest: NOSIGNATURE
+		curios-neoforge-12.0.0+1.21.8.jar                 |Curios API                    |curios                        |12.0.0+1.21.8       |Manifest: NOSIGNATURE
+		fusion-1.3.14a-neoforge-mc1.21.8.jar              |Fusion                        |fusion                        |1.3.14+a            |Manifest: NOSIGNATURE
+		geckolib-neoforge-1.21.8-5.2.2.jar                |GeckoLib 5                    |geckolib                      |5.2.2               |Manifest: NOSIGNATURE
+		ItemPhysic_NEOFORGE_v1.8.11_mc1.21.8.jar          |ItemPhysic                    |itemphysic                    |1.8.11              |Manifest: NOSIGNATURE
+		jeg-1.2.2_1.21.8.jar                              |Just Enough Guns              |jeg                           |1.2.2               |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |Minecraft                     |minecraft                     |1.21.8              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |NeoForge                      |neoforge                      |21.8.31             |Manifest: NOSIGNATURE
+		SSC14__PA-0.1.22__.1.21.8-NeoForge.jar            |Space Station Craft 14        |ssc_14                        |0.1.22              |Manifest: NOSIGNATURE
+		main                                              |SSC14 Research and Development|ssc_research_and_development  |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: 31d2af0f-2a12-45e8-9b6a-41f250de638b
+	FML: 9.0.16
+	NeoForge: 21.8.31

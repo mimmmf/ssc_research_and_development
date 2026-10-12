@@ -2,6 +2,7 @@ package net.mcreator.sscresearchanddevelopment.component.subcomponents;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.mcreator.sscresearchanddevelopment.enums.NodeStatus;
 
 import java.util.List;
 

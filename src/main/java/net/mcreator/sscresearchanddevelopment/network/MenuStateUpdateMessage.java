@@ -1,9 +1,8 @@
 package net.mcreator.sscresearchanddevelopment.network;
 
+import net.mcreator.sscresearchanddevelopment.init.ClientNetworkHandler;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -12,9 +11,6 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.client.Minecraft;
-
-import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModScreens;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModMenus;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 
@@ -60,18 +56,15 @@ public record MenuStateUpdateMessage(int elementType, String name, Object elemen
 		context.enqueueWork(() -> {
 			if (context.player().containerMenu instanceof SscResearchAndDevelopmentModMenus.MenuAccessor menu) {
 				menu.getMenuState().put(message.elementType + ":" + message.name, message.elementState);
-				if (context.flow() == PacketFlow.CLIENTBOUND && Minecraft.getInstance().screen instanceof SscResearchAndDevelopmentModScreens.ScreenAccessor accessor) {
-					accessor.updateMenuState(message.elementType, message.name, message.elementState);
+				if (context.flow() == PacketFlow.CLIENTBOUND) {
+					ClientNetworkHandler.handleMenuStateUpdate(
+							message.elementType, message.name, message.elementState
+					);
 				}
 			}
 		}).exceptionally(e -> {
 			context.connection().disconnect(Component.literal(e.getMessage()));
 			return null;
 		});
-	}
-
-	@SubscribeEvent
-	public static void registerMessage(FMLCommonSetupEvent event) {
-		SscResearchAndDevelopmentMod.addNetworkMessage(MenuStateUpdateMessage.TYPE, MenuStateUpdateMessage.STREAM_CODEC, MenuStateUpdateMessage::handleMenuState);
 	}
 }

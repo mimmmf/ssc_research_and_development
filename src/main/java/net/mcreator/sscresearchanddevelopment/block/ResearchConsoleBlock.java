@@ -1,12 +1,24 @@
 package net.mcreator.sscresearchanddevelopment.block;
 
 import net.mcreator.sscresearchanddevelopment.block.entity.ResearchConsoleBlockEntity;
+import net.mcreator.sscresearchanddevelopment.component.subcomponents.InteractionStage;
+import net.mcreator.sscresearchanddevelopment.enums.ToolType;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModBlocks;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModItems;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentSoundSets;
+import net.mcreator.sscresearchanddevelopment.interfaces.IInteractable;
+import net.mcreator.sscresearchanddevelopment.interfaces.IMultiStageBlock;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -21,15 +33,20 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
-public class ResearchConsoleBlock extends Block implements EntityBlock {
+public class ResearchConsoleBlock extends Block implements EntityBlock, IMultiStageBlock {
 	public static final EnumProperty<Direction> FACING = HorizontalDirectionalBlock.FACING;
 	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
+	public static final BooleanProperty PANEL_OPEN = BooleanProperty.create("panel_open");
+	private final List<InteractionStage> deconstructionStages = new ArrayList<>();
+	private final List<InteractionStage> constructionStages = new ArrayList<>();
 
 	public ResearchConsoleBlock(BlockBehaviour.Properties properties) {
 		super(properties.sound(SoundType.METAL).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(PANEL_OPEN, false));
 	}
 
 	private Function<BlockState, VoxelShape> makeShapes() {
@@ -66,7 +83,7 @@ public class ResearchConsoleBlock extends Block implements EntityBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
+		builder.add(FACING, PANEL_OPEN);
 	}
 
 	@Override
@@ -93,8 +110,47 @@ public class ResearchConsoleBlock extends Block implements EntityBlock {
 
 		BlockEntity be = level.getBlockEntity(pos);
 		if (be instanceof ResearchConsoleBlockEntity consoleBE) {
+			SoundEvent randomSound = SscResearchAndDevelopmentSoundSets.KEYBOARD.get(level.getRandom().nextInt(SscResearchAndDevelopmentSoundSets.KEYBOARD.size())).get();
+			level.playSound(null, pos, randomSound, SoundSource.BLOCKS, 1.0f, 1.0f);
 			player.openMenu((MenuProvider) be, pos);
 		}
 		return InteractionResult.CONSUME;
 	}
+	private void setupStages() {
+		deconstructionStages.add(new InteractionStage(
+				ToolType.SCREWING, null, 20, new ItemStack(SscResearchAndDevelopmentModItems.MULTITOOL.get()),
+				state -> state.setValue(PANEL_OPEN, true)
+		));
+
+		deconstructionStages.add(new InteractionStage(
+				ToolType.CUTTING, null, 30, new ItemStack(SscResearchAndDevelopmentModItems.MULTITOOL.get()),
+				state -> SscResearchAndDevelopmentModBlocks.AUTOLATHE.get().defaultBlockState()
+		));
+	}
+
+	@Override
+	public InteractionStage getCurrentStage(BlockState state, ToolType tool, ItemStack heldItem) {
+		if (this.deconstructionStages.isEmpty() && this.constructionStages.isEmpty()) {
+			this.setupStages();
+		}
+		boolean isPanelOpen = state.getValue(PANEL_OPEN);
+
+		if (!isPanelOpen) {
+			if (deconstructionStages.get(0).matches(tool, heldItem)) {
+				return deconstructionStages.get(0);
+			}
+		}
+		else {
+			if (deconstructionStages.get(1).matches(tool, heldItem)) {
+				return deconstructionStages.get(1);
+			}
+		}
+
+		return null;
+	}
+
+	@Override
+	public List<InteractionStage> getDeconstructionStages() { return deconstructionStages; }
+	@Override
+	public List<InteractionStage> getConstructionStages() { return constructionStages; }
 }

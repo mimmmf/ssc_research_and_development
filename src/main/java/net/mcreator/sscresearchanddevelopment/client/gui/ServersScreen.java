@@ -1,7 +1,7 @@
 package net.mcreator.sscresearchanddevelopment.client.gui;
 
-import net.mcreator.sscresearchanddevelopment.client.C2SConnectServer;
-import net.mcreator.sscresearchanddevelopment.client.S2CUpdateServerList;
+import net.mcreator.sscresearchanddevelopment.network.C2SConnectServer;
+import net.mcreator.sscresearchanddevelopment.network.S2CUpdateServerList;
 import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
 import net.minecraft.client.gui.GuiGraphics;
@@ -33,7 +33,7 @@ public class ServersScreen extends Screen implements IScreenHelper {
     private Button selectButton;
 
     public ServersScreen(BlockPos pos, List<S2CUpdateServerList.ServerInfo> servers, UUID connectedServer) {
-        super(Component.literal("Сервера"));
+        super(Component.translatable("gui.ssc_research_and_development.servers_gui.title"));
         this.consolePos = pos;
         this.servers.addAll(servers);
         this.connectedId = C2SConnectServer.EMPTY.equals(connectedServer) ? null : connectedServer;
@@ -45,8 +45,9 @@ public class ServersScreen extends Screen implements IScreenHelper {
         this.topPos = (this.height - 160) / 2;
 
         this.selectButton = this.addRenderableWidget(new FlatButton(
-                leftPos + 70, topPos + 138, 100, 12, "Подключить", 0.8f,
-                COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
+                leftPos + 70, topPos + 138, 100, 12,
+                Component.translatable("gui.ssc_research_and_development.servers_gui.connect").getString(),
+                0.8f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
             if (selectedId != null) {
                 ClientPacketDistributor.sendToServer(new C2SConnectServer(consolePos, selectedId));
             }
@@ -61,7 +62,8 @@ public class ServersScreen extends Screen implements IScreenHelper {
     public void render(GuiGraphics g, int mx, int my, float pt) {
         g.blit(RenderPipelines.GUI_TEXTURED, BG_TEXTURE, this.leftPos + 60, this.topPos - 1, 0, 0, 120, 160, 120, 160);
 
-        renderScaledText(font, g, "Сервера", leftPos + 120, topPos + 7, 1.0f, 0xFF55FFFF, true);
+        String titleText = Component.translatable("gui.ssc_research_and_development.servers_gui.title").getString();
+        renderScaledText(font, g, titleText, leftPos + 120, topPos + 7, 1.0f, 0xFF55FFFF, true);
 
         int startX = listStartX();
         int startY = listStartY();
@@ -81,7 +83,9 @@ public class ServersScreen extends Screen implements IScreenHelper {
             }
 
             renderScaledText(font, g, info.name(), startX + 30, itemY + 4, 0.8f, isSelected ? 0xFFFFFF00 : 0xFFFFFFFF, true);
-            renderScaledText(font, g, info.points() + " ОИ", startX + 80, itemY + 4, 0.8f, 0xFFAAAAAA, true);
+
+            String pointsText = Component.translatable("gui.ssc_research_and_development.servers_gui.points", info.points()).getString();
+            renderScaledText(font, g, pointsText, startX + 80, itemY + 4, 0.8f, 0xFFAAAAAA, true);
         }
 
         super.render(g, mx, my, pt);

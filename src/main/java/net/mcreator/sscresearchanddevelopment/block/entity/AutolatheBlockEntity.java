@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 public class AutolatheBlockEntity extends AbstractFabricatorBlockEntity {
-    private static final List<String> MATERIALS = List.of("ssc_14:steel", "ssc_14:glass", "ssc_14:plastic");
+    private static final List<String> MATERIALS = List.of("ssc_14:steel", "ssc_14:glass", "ssc_14:plastic", "ssc_14:plasteel", "ssc_14:plasma", "ssc_14:ssc_14_gold","ssc_14:silver","ssc_14:uran","minecraft:oak_planks");
     public AutolatheBlockEntity(BlockPos position, BlockState state) {
         super(SscResearchAndDevelopmentModBlockEntities.AUTOLATHE.get(), position, state);
     }

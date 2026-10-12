@@ -1,0 +1,6 @@
+# Default: 10
+# Range: 0 ~ 72000
+cooldownTicks = 10
+# Default: 16.0
+# Range: 1.0 ~ 256.0
+broadcastRadius = 16.0

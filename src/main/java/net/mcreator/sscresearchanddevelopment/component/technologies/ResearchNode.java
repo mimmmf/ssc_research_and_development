@@ -29,7 +29,6 @@ public class ResearchNode {
         this.y = y;
     }
 
-    // Геттеры
     public String getId() { return id; }
     public Component getName() { return name; }
     public Component getDescription() { return description; }
@@ -46,9 +45,11 @@ public class ResearchNode {
                 ComponentSerialization.CODEC.fieldOf("description").forGetter(ResearchNode::getDescription),
                 ResourceLocation.CODEC.fieldOf("icon").forGetter(ResearchNode::getIcon),
                 Codec.INT.fieldOf("cost").forGetter(ResearchNode::getCost),
-                Codec.STRING.listOf().fieldOf("parents").forGetter(ResearchNode::getParents),
+                Codec.STRING.listOf().optionalFieldOf("parents", List.of()).forGetter(ResearchNode::getParents),
                 Codec.INT.fieldOf("x").forGetter(ResearchNode::getX),
                 Codec.INT.fieldOf("y").forGetter(ResearchNode::getY)
         ).apply(instance, ResearchNode::new));
+
+        public static final Codec<List<ResearchNode>> LIST_CODEC = CODEC.listOf();
     }
 }

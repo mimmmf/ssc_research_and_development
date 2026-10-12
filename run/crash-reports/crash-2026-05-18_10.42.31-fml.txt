@@ -1,0 +1,209 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 2026-05-18 10:42:31
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.state.StateHolder.setValue(StateHolder.java:112) ~[neoforge-21.8.31-merged.jar%23216!/:?] {re:classloading}
+-- Mod loading issue for: ssc_research_and_development --
+Details:
+	Mod file: /C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/classes/java/main/
+	Failure message: SSC14 Research and Development (ssc_research_and_development) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+		java.lang.IllegalArgumentException: Cannot set property BooleanProperty{name=panel_open, clazz=class java.lang.Boolean, values=[true, false]} as it does not exist in Block{[unregistered]}
+	Mod version: 1.0.0
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.IllegalArgumentException: Cannot set property BooleanProperty{name=panel_open, clazz=class java.lang.Boolean, values=[true, false]} as it does not exist in Block{[unregistered]}
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.world.level.block.state.StateHolder.setValue(StateHolder.java:112) ~[neoforge-21.8.31-merged.jar%23216!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.block.ResearchConsoleBlock.<init>(ResearchConsoleBlock.java:37) ~[%23222!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister$Blocks.lambda$registerBlock$1(DeferredRegister.java:432) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$1(DeferredRegister.java:234) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$addEntries$2(DeferredRegister.java:375) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.RegisterEvent.register(RegisterEvent.java:48) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.addEntries(DeferredRegister.java:375) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$16(ModLoader.java:377) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:375) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:366) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:89) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.internal.CommonModLoader.lambda$begin$0(CommonModLoader.java:54) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {}
+
+
+-- Mod loading issue for: ssc_research_and_development --
+Details:
+	Mod file: /C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/classes/java/main/
+	Failure message: SSC14 Research and Development (ssc_research_and_development) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+		java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / ssc_research_and_development:research_console]
+	Mod version: 1.0.0
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / ssc_research_and_development:research_console]
+Stacktrace:
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredHolder.value(DeferredHolder.java:103) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredHolder.get(DeferredHolder.java:117) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModItems.lambda$block$0(SscResearchAndDevelopmentModItems.java:61) ~[%23222!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister$Items.lambda$registerItem$2(DeferredRegister.java:593) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$1(DeferredRegister.java:234) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$addEntries$2(DeferredRegister.java:375) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.RegisterEvent.register(RegisterEvent.java:48) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.addEntries(DeferredRegister.java:375) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$16(ModLoader.java:377) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:375) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:366) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:89) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.internal.CommonModLoader.lambda$begin$0(CommonModLoader.java:54) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {}
+
+
+-- Mod loading issue for: ssc_research_and_development --
+Details:
+	Mod file: /C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/classes/java/main/
+	Failure message: SSC14 Research and Development (ssc_research_and_development) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+		java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / ssc_research_and_development:autolathe]
+	Mod version: 1.0.0
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / ssc_research_and_development:autolathe]
+Stacktrace:
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredHolder.value(DeferredHolder.java:103) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredHolder.get(DeferredHolder.java:117) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModBlockEntities.lambda$register$0(SscResearchAndDevelopmentModBlockEntities.java:38) ~[%23222!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$0(DeferredRegister.java:215) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$register$1(DeferredRegister.java:234) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.lambda$addEntries$2(DeferredRegister.java:375) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.RegisterEvent.register(RegisterEvent.java:48) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.addEntries(DeferredRegister.java:375) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$16(ModLoader.java:377) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:375) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:366) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:89) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.internal.CommonModLoader.lambda$begin$0(CommonModLoader.java:54) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {}
+
+
+-- Mod loading issue for: ssc_14 --
+Details:
+	Mod file: /C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/run/mods/SSC14__PA-0.1.14__.1.21.8-NeoForge.jar
+	Failure message: Space Station Craft 14 (ssc_14) encountered an error while dispatching the net.neoforged.neoforge.registries.RegisterEvent event
+		java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / ssc_14:spaced_portal]
+	Mod version: 0.1.14
+	Mod issues URL: <No issues URL found>
+	Exception message: java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / ssc_14:spaced_portal]
+Stacktrace:
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredHolder.value(DeferredHolder.java:103) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredHolder.get(DeferredHolder.java:117) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/ssc_14@0.1.14/net.mcreator.ssc.world.teleporter.SpacedTeleporter.lambda$registerPointOfInterest$0(SpacedTeleporter.java:41) ~[SSC14__PA-0.1.14__.1.21.8-NeoForge.jar%23221!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.RegisterEvent.register(RegisterEvent.java:62) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/ssc_14@0.1.14/net.mcreator.ssc.world.teleporter.SpacedTeleporter.registerPointOfInterest(SpacedTeleporter.java:40) ~[SSC14__PA-0.1.14__.1.21.8-NeoForge.jar%23221!/:?] {re:classloading}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:342) ~[bus-8.0.5.jar%23171!/:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModContainer.acceptEvent(ModContainer.java:177) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.lambda$postEventWithWrapInModOrder$16(ModLoader.java:377) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModList.forEachModInOrder(ModList.java:174) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWithWrapInModOrder(ModLoader.java:375) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.ModLoader.postEventWrapContainerInModOrder(ModLoader.java:366) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.GameData.postRegisterEvents(GameData.java:89) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.internal.CommonModLoader.lambda$begin$0(CommonModLoader.java:54) ~[neoforge-21.8.31-merged.jar%23217!/:?] {re:classloading}
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?] {}
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.8
+	Minecraft Version ID: 1.21.8
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 277973600 bytes (265 MiB) / 606076928 bytes (578 MiB) up to 4246732800 bytes (4050 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i3-12100F
+	Identifier: Intel64 Family 6 Model 151 Stepping 5
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 3.30
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9186
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 23109.38
+	Virtual memory used (MiB): 16807.57
+	Swap memory total (MiB): 6912.00
+	Swap memory used (MiB): 737.73
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 162557.72, total: 487469.00
+	Space in storage for workdir (MiB): available: 162557.72, total: 487469.00
+	JVM Flags: 0 total; 
+	ModLauncher: 9.0
+	ModLauncher launch target: neoforgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-9.0.16.jar neoforgedevdistcleaner PLUGINSERVICE 
+		loader-9.0.16.jar slf4jfixer PLUGINSERVICE 
+		loader-9.0.16.jar runtime_enum_extender PLUGINSERVICE 
+		loader-9.0.16.jar accesstransformer PLUGINSERVICE 
+		loader-9.0.16.jar mixin TRANSFORMATIONSERVICE 
+		loader-9.0.16.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@9.0
+		minecraft@9.0
+	Mod List: 
+		CreativeCore_NEOFORGE_v2.14.7_mc1.21.8.jar        |CreativeCore                  |creativecore                  |2.14.7              |Manifest: NOSIGNATURE
+		curios-neoforge-12.0.0+1.21.8.jar                 |Curios API                    |curios                        |12.0.0+1.21.8       |Manifest: NOSIGNATURE
+		ItemPhysic_NEOFORGE_v1.8.11_mc1.21.8.jar          |ItemPhysic                    |itemphysic                    |1.8.11              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |Minecraft                     |minecraft                     |1.21.8              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |NeoForge                      |neoforge                      |21.8.31             |Manifest: NOSIGNATURE
+		SSC14__PA-0.1.14__.1.21.8-NeoForge.jar            |Space Station Craft 14        |ssc_14                        |0.1.14              |Manifest: NOSIGNATURE
+		main                                              |SSC14 Research and Development|ssc_research_and_development  |1.0.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: fd04b617-86b3-40a4-9e0f-a9f8cbf33e3c
+	FML: 9.0.16
+	NeoForge: 21.8.31

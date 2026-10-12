@@ -1,0 +1,242 @@
+[
+  {
+    "id": "basic_tools",
+    "name": { "text": "Базовые инструменты" },
+    "description": { "text": "Стандартный инженерный инструментарий для первичных работ." },
+    "icon": "ssc_research_and_development:textures/ui/tech/basic_tools.png",
+    "cost": 1000,
+    "parents": [],
+    "x": 0,
+    "y": 0
+  },
+  {
+    "id": "advanced_tools",
+    "name": { "text": "Продвинутые инструменты" },
+    "description": { "text": "Специализированное снаряжение для сложных монтажных работ." },
+    "icon": "ssc_research_and_development:textures/ui/tech/advanced_tools.png",
+    "cost": 2500,
+    "parents": ["basic_tools"],
+    "x": -35,
+    "y": -40
+  },
+  {
+    "id": "compact_construction",
+    "name": { "text": "Компактное строительство" },
+    "description": { "text": "Передовые технологии экспресс-сборки и быстрой формовки." },
+    "icon": "ssc_research_and_development:textures/ui/tech/compact_construction.png",
+    "cost": 10000,
+    "parents": ["advanced_tools"],
+    "x": -35,
+    "y": -80
+  },
+  {
+    "id": "atmosphere",
+    "name": { "text": "Атмосфера" },
+    "description": { "text": "Системы контроля параметров газовой среды и климата." },
+    "icon": "ssc_research_and_development:textures/ui/tech/atmosphere.png",
+    "cost": 2500,
+    "parents": ["basic_tools"],
+    "x": 0,
+    "y": -40
+  },
+  {
+    "id": "basic_networks",
+    "name": { "text": "Базовые сети" },
+    "description": { "text": "Основы коммутации и первичные силовые магистрали." },
+    "icon": "ssc_research_and_development:textures/ui/tech/basic_networks.png",
+    "cost": 1000,
+    "parents": ["basic_tools"],
+    "x": 35,
+    "y": -40
+  },
+  {
+    "id": "power_supply",
+    "name": { "text": "Электропитание" },
+    "description": { "text": "Высоковольтные узлы, аккумуляторы и подстанции." },
+    "icon": "ssc_research_and_development:textures/ui/tech/power_supply.png",
+    "cost": 2500,
+    "parents": ["basic_networks"],
+    "x": 35,
+    "y": -80
+  },
+  {
+    "id": "multitool",
+    "name": { "text": "Мультитул" },
+    "description": { "text": "Компактное вычислительное устройство для тонкой настройки." },
+    "icon": "ssc_research_and_development:textures/ui/tech/multitool.png",
+    "cost": 500,
+    "parents": ["basic_tools"],
+    "x": -40,
+    "y": 0
+  },
+  {
+    "id": "automation",
+    "name": { "text": "Автоматизация" },
+    "description": { "text": "Промышленная печать и высокоточное воспроизведение." },
+    "icon": "ssc_research_and_development:textures/ui/tech/automation.png",
+    "cost": 5000,
+    "parents": ["multitool"],
+    "x": -120,
+    "y": 0
+  },
+  {
+    "id": "components",
+    "name": { "text": "Компоненты" },
+    "description": { "text": "Стандартизированные чипы и базовые радиодетали." },
+    "icon": "ssc_research_and_development:textures/ui/tech/components.png",
+    "cost": 1000,
+    "parents": ["multitool"],
+    "x": -80,
+    "y": 0
+  },
+  {
+    "id": "basic_research",
+    "name": { "text": "Базовые исследования" },
+    "description": { "text": "Аппаратные мощности для обработки и анализа данных." },
+    "icon": "ssc_research_and_development:textures/ui/tech/basic_research.png",
+    "cost": 2500,
+    "parents": ["multitool"],
+    "x": -80,
+    "y": 30
+  },
+  {
+    "id": "xenoarchaeology",
+    "name": { "text": "Ксеноархеология" },
+    "description": { "text": "Методы сканирования и извлечения энергии из аномалий." },
+    "icon": "ssc_research_and_development:textures/ui/tech/xenoarchaeology.png",
+    "cost": 5000,
+    "parents": ["basic_research"],
+    "x": -120,
+    "y": 30
+  },
+  {
+    "id": "basic_medbay",
+    "name": { "text": "Базовый медпункт" },
+    "description": { "text": "Первичные средства диагностики и оказания помощи." },
+    "icon": "ssc_research_and_development:textures/ui/tech/basic_medbay.png",
+    "cost": 1000,
+    "parents": ["basic_tools"],
+    "x": 40,
+    "y": 0
+  },
+  {
+    "id": "field_pharmacology",
+    "name": { "text": "Полевая фармакология" },
+    "description": { "text": "Синтез специализированных реагентов и медикаментов." },
+    "icon": "ssc_research_and_development:textures/ui/tech/field_pharmacology.png",
+    "cost": 2500,
+    "parents": ["basic_medbay"],
+    "x": 80,
+    "y": 0
+  },
+  {
+    "id": "lighting",
+    "name": { "text": "Освещение" },
+    "description": { "text": "Обеспечение видимости в жилых и технических зонах." },
+    "icon": "ssc_research_and_development:textures/ui/tech/lighting.png",
+    "cost": 500,
+    "parents": ["basic_tools"],
+    "x": 0,
+    "y": 40
+  },
+  {
+    "id": "fire_safety",
+    "name": { "text": "Пожаротушение" },
+    "description": { "text": "Средства локализации возгораний и индивидуальной защиты." },
+    "icon": "ssc_research_and_development:textures/ui/tech/fire_safety.png",
+    "cost": 1000,
+    "parents": ["lighting"],
+    "x": -40,
+    "y": 70
+  },
+  {
+    "id": "security",
+    "name": { "text": "Безопасность" },
+    "description": { "text": "Системы контроля доступа и охраны территории." },
+    "icon": "ssc_research_and_development:textures/ui/tech/security.png",
+    "cost": 2500,
+    "parents": ["fire_safety"],
+    "x": -40,
+    "y": 100
+  },
+  {
+    "id": "microwaves",
+    "name": { "text": "Микроволны" },
+    "description": { "text": "Высокочастотная термическая обработка для бытовых нужд." },
+    "icon": "ssc_research_and_development:textures/ui/tech/microwaves.png",
+    "cost": 1000,
+    "parents": ["lighting"],
+    "x": 0,
+    "y": 70
+  },
+  {
+    "id": "communications",
+    "name": { "text": "Связь" },
+    "description": { "text": "Узлы локального оповещения и передачи сигналов." },
+    "icon": "ssc_research_and_development:textures/ui/tech/communications.png",
+    "cost": 5000,
+    "parents": ["microwaves"],
+    "x": 0,
+    "y": 100
+  },
+  {
+    "id": "furniture",
+    "name": { "text": "Мебель" },
+    "description": { "text": "Базовые элементы для быта и организации рабочих мест." },
+    "icon": "ssc_research_and_development:textures/ui/tech/furniture.png",
+    "cost": 1000,
+    "parents": ["lighting"],
+    "x": 40,
+    "y": 70
+  },
+  {
+    "id": "floor_coverings",
+    "name": { "text": "Покрытия" },
+    "description": { "text": "Износостойкие материалы для отделки пола." },
+    "icon": "ssc_research_and_development:textures/ui/tech/floor_coverings.png",
+    "cost": 2500,
+    "parents": ["furniture"],
+    "x": 25,
+    "y": 100
+  },
+  {
+    "id": "stairs",
+    "name": { "text": "Лестницы" },
+    "description": { "text": "Конструкции межэтажных переходов и пролётов." },
+    "icon": "ssc_research_and_development:textures/ui/tech/stairs.png",
+    "cost": 2500,
+    "parents": ["furniture"],
+    "x": 45,
+    "y": 100
+  },
+  {
+    "id": "walls_and_windows",
+    "name": { "text": "Стены и окна" },
+    "description": { "text": "Защитные перегородки и прочные остеклённые панели." },
+    "icon": "ssc_research_and_development:textures/ui/tech/walls_and_windows.png",
+    "cost": 2500,
+    "parents": ["furniture"],
+    "x": 65,
+    "y": 100
+  },
+  {
+    "id": "mag_boots",
+    "name": { "text": "Магнетизм" },
+    "description": { "text": "Использование магнитных волн и сил гравитации для упрощения работы." },
+    "icon": "ssc_research_and_development:textures/ui/tech/mag_boots.png",
+    "cost": 2500,
+    "parents": ["advanced_tools"],
+    "x": -80,
+    "y": -80
+  },
+  {
+    "id": "scafanders",
+    "name": { "text": "Скафандры" },
+    "description": { "text": "Снаряжение нового поколения, защищающая от космической среды на 50% эффективнее." },
+    "icon": "ssc_research_and_development:textures/ui/tech/eva.png",
+    "cost": 5000,
+    "parents": ["advanced_tools"],
+    "x": -120,
+    "y": -80
+  }
+]

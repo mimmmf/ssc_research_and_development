@@ -1,19 +1,11 @@
 package net.mcreator.sscresearchanddevelopment.block.entity;
 
-import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactContext;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries;
-import net.mcreator.sscresearchanddevelopment.component.ArtifactProperties;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactReaction;
-import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactTrigger;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.*;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.Connection;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -54,57 +46,12 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		ItemStack stack = stacks.get(0);
 		if (stack.isEmpty()) return;
 
-		ArtifactProperties props = stack.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
-		if (props == null) return;
+		ArtefactContext context = new ArtefactContext(level, worldPosition, stack, tickEvents.toArray(), null);
 
-		Object[] args = tickEvents.toArray();
-		ArtefactContext context = new ArtefactContext(level, worldPosition, stack, args, null);
-
-		Map<Integer, ArtefactNode> updatedNodes = new HashMap<>(props.nodes());
-		boolean dirty = false;
-
-		for (ArtefactNode node : props.nodes().values()) {
-			if (node.status() == NodeStatus.ACTIVE) {
-				ResourceLocation triggerLoc = ResourceLocation.parse(node.triggerId().contains(":") ? node.triggerId() : "ssc_research_and_development:" + node.triggerId());
-				ArtefactTrigger trigger = ArtefactRegistries.TRIGGERS.getRegistry().get().getValue(triggerLoc);
-
-				if (trigger != null && trigger.check(context, node)) {
-					updatedNodes.put(node.id(), node.update(NodeStatus.PRIMED, node.maxTimer()));
-					dirty = true;
-				}
-			}
-
-			if (node.status() == NodeStatus.PRIMED) {
-				if (node.timer() > 0) {
-					updatedNodes.put(node.id(), node.update(NodeStatus.PRIMED, node.timer() - 1));
-					dirty = true;
-				} else {
-					ResourceLocation reactionLoc = ResourceLocation.parse(node.reactionId().contains(":") ? node.reactionId() : "ssc_research_and_development:" + node.reactionId());
-					ArtefactReaction reaction = ArtefactRegistries.REACTIONS.getRegistry().get().getValue(reactionLoc);
-
-					if (reaction != null) reaction.execute(context, node);
-
-					int newTotalPoints = props.totalPoints() + node.points();
-
-					updatedNodes.put(node.id(), node.update(NodeStatus.READY_TO_EXTRACT, 0));
-
-					for (int childId : node.childIds()) {
-						ArtefactNode child = updatedNodes.get(childId);
-						if (child != null && child.status() == NodeStatus.LOCKED) {
-							updatedNodes.put(childId, child.update(NodeStatus.ACTIVE, 0));
-						}
-					}
-					props = new ArtifactProperties(props.tier(), newTotalPoints, updatedNodes);
-					dirty = true;
-				}
-			}
-		}
-
+		boolean changed = ArtefactEngine.tickArtifact(stack, context);
 		tickEvents.clear();
 
-		if (dirty) {
-			stack.set(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get(),
-					new ArtifactProperties(props.tier(), props.totalPoints(), updatedNodes));
+		if (changed) {
 			this.setChanged();
 			level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
 		}

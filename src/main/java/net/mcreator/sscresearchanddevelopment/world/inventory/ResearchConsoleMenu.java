@@ -1,9 +1,9 @@
 package net.mcreator.sscresearchanddevelopment.world.inventory;
 
+import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 import net.mcreator.sscresearchanddevelopment.block.entity.ResearchConsoleBlockEntity;
-import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
-import net.mcreator.sscresearchanddevelopment.component.technologies.S2CUpdateConsoleData;
+import net.mcreator.sscresearchanddevelopment.network.S2CUpdateConsoleData;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModMenus;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -38,10 +38,16 @@ public class ResearchConsoleMenu extends AbstractContainerMenu {
         this.connectedServer = (server != null) ? server.getServerId() : null;
 
         if (server != null && inv.player instanceof ServerPlayer serverPlayer) {
+            var nodesMap = SscResearchAndDevelopmentMod.ResearchDataHandler.MANAGER != null
+                    ? SscResearchAndDevelopmentMod.ResearchDataHandler.MANAGER.getNodes()
+                    : java.util.Collections.emptyMap();
+            com.google.gson.Gson gson = new com.google.gson.Gson();
+            String nodesJson = gson.toJson(nodesMap);
             serverPlayer.connection.send(new S2CUpdateConsoleData(
                     server.getServerId(),
                     server.getPoints(),
-                    new ArrayList<>(server.getUnlockedTechs())
+                    new ArrayList<>(server.getUnlockedTechs()),
+                    S2CUpdateConsoleData.getSerializedNodes()
             ));
         }
     }

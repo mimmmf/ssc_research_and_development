@@ -1,38 +1,3 @@
-/fill -530 67 322 -540 67 310 minecraft:se
-/fill -530 67 322 -540 67 310 minecraft:chiseled_
-/fill -530 67 322 -540 67 310 minecraft:chiseled_tuff_bricks
-/effect clear @a
-/kill @a
-/data get entity @e[type=item_display,limit=1]
-/time set night
-/data get block
-/data get block 18 56 2
-/data get block 20 56 2
-/data get block 13 56 0
-/data get block 9 56 3
-/data get block 9 56 5
-/data get block 9 56 3
-/data get block -1 56 13
-/data get block 2 56 13
-/data get block 1 56 11
-/data get block 0 56 14
-/data get block 1 56 11
-/data get block 2 56 12
-/kill @e[type=minecraft:item_display]
-/time set day
-/time set night
-/data get block
-/data get block 20 113 -31
-/data get block 20 113 -29
-/data get block -9 56 2
-/data get block -9 56 1
-/data get block -7 56 4
-/save-all
-/data get block 10 56 9
-/data get block -10 56 2
-/data get block -12 56 2
-/data get block 6 56 2
-/data get block 8 56 0
 /data get block 8 56 -2
 /data get block -1 56 10
 /data get block -1 56 9
@@ -40,3 +5,46 @@
 /data get block 7 56 8
 /data get block 7 56 6
 /data get block -2 56 -6
+/give @a minecraft:debug_stick
+/summon ssc_research_and_development:flora_anomaly
+/kill @e[type=ssc_research_and_development:flora_anomaly]
+/test
+/screentest
+/
+/screentest
+/
+/screentest
+/difficulty easy
+/time set night
+/time set 20000
+/give @a minecraft:command_block
+/give Dev ssc_research_and_development:artefact
+/kill @e[type=minecraft:item]
+/give Dev ssc_research_and_development:artefact
+/kill @e[type=minecraft:item]
+/give Dev ssc_research_and_development:artefact
+/kill @e[type=minecraft:item]
+/give Dev ssc_research_and_development:artefact
+/time set day
+/looc 123
+/me 123
+/difficulty peaceful
+/difficulty ease
+/difficulty easy
+/give Dev ssc_research_and_development:artefact
+/kill @e[type=minecraft:item]
+/give Dev ssc_research_and_development:artefact
+/kill @e[type=minecraft:item]
+/give Dev ssc_research_and_development:artefact
+/tp @a 0 0 0
+/tp @a 0 10 0
+/tp @a 0 100 0
+/tp Dev 0 100 0
+/kill @a
+/give Dev ssc_research_and_development:artefact
+/ssc14 hels
+/ssc14 hels Dev reset
+/kill @e[type=minecraft:item]
+/test
+/difficulty easy
+/difficulty peaceful

@@ -1,0 +1,206 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 2026-09-05 20:07:28
+Description: Unexpected error
+
+java.lang.ClassCastException: class net.neoforged.neoforge.client.blaze3d.validation.ValidationGpuTexture cannot be cast to class com.mojang.blaze3d.opengl.GlTexture (net.neoforged.neoforge.client.blaze3d.validation.ValidationGpuTexture is in module neoforge@21.8.31 of loader 'TRANSFORMER' @7351a16e; com.mojang.blaze3d.opengl.GlTexture is in module minecraft@1.21.8 of loader 'TRANSFORMER' @7351a16e)
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.chunk.ShaderChunkRenderer.begin(ShaderChunkRenderer.java:91) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.chunk.DefaultChunkRenderer.render(DefaultChunkRenderer.java:52) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.chunk.RenderSectionManager.renderLayer(RenderSectionManager.java:319) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.SodiumWorldRenderer.drawChunkLayer(SodiumWorldRenderer.java:274) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.chunk.ChunkSectionsToRender.handler$zej000$sodium$renderGroup(ChunkSectionsToRender.java:540) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading,pl:mixin:APP:sodium-common.mixins.json:core.render.world.ChunkSectionsToRenderMixin from mod sodium,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.chunk.ChunkSectionsToRender.renderGroup(ChunkSectionsToRender.java) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading,pl:mixin:APP:sodium-common.mixins.json:core.render.world.ChunkSectionsToRenderMixin from mod sodium,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.LevelRenderer.lambda$addMainPass$3(LevelRenderer.java:569) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.LevelRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.render.world.sky.LevelRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.LevelRendererMixin from mod securitycraft,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/com.mojang.blaze3d.framegraph.FrameGraphBuilder.execute(FrameGraphBuilder.java:73) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.LevelRenderer.renderLevel(LevelRenderer.java:509) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.LevelRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.render.world.sky.LevelRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.LevelRendererMixin from mod securitycraft,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:689) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.GameRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.gui.hooks.console.GameRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.GameRendererMixin from mod securitycraft,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:487) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.GameRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.gui.hooks.console.GameRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.GameRendererMixin from mod securitycraft,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.runTick(Minecraft.java:1285) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.run(Minecraft.java:882) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.main.Main.main(Main.java:243) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:132) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:120) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.NeoForgeClientDevLaunchHandler.runService(NeoForgeClientDevLaunchHandler.java:49) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:114) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:25) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:55) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:73) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.Launcher.run(Launcher.java:104) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at cpw.mods.bootstraplauncher/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:203) [bootstraplauncher-9.0.16.jar:?] {}
+	at cpw.mods.bootstraplauncher/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:62) [bootstraplauncher-9.0.16.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.chunk.ShaderChunkRenderer.begin(ShaderChunkRenderer.java:91) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.chunk.DefaultChunkRenderer.render(DefaultChunkRenderer.java:52) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.chunk.RenderSectionManager.renderLayer(RenderSectionManager.java:319) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/sodium@0.7.3+mc1.21.8/net.caffeinemc.mods.sodium.client.render.SodiumWorldRenderer.drawChunkLayer(SodiumWorldRenderer.java:274) ~[sodium-neoforge-0.7.3%252Bmc1.21.8.jar%23237!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.chunk.ChunkSectionsToRender.handler$zej000$sodium$renderGroup(ChunkSectionsToRender.java:540) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading,pl:mixin:APP:sodium-common.mixins.json:core.render.world.ChunkSectionsToRenderMixin from mod sodium,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.chunk.ChunkSectionsToRender.renderGroup(ChunkSectionsToRender.java) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading,pl:mixin:APP:sodium-common.mixins.json:core.render.world.ChunkSectionsToRenderMixin from mod sodium,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.LevelRenderer.lambda$addMainPass$3(LevelRenderer.java:569) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.LevelRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.render.world.sky.LevelRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.LevelRendererMixin from mod securitycraft,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/com.mojang.blaze3d.framegraph.FrameGraphBuilder.execute(FrameGraphBuilder.java:73) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.LevelRenderer.renderLevel(LevelRenderer.java:509) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.LevelRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.render.world.sky.LevelRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.LevelRendererMixin from mod securitycraft,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:689) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:sodium-common.mixins.json:core.render.world.GameRendererMixin from mod sodium,pl:mixin:APP:sodium-common.mixins.json:features.gui.hooks.console.GameRendererMixin from mod sodium,pl:mixin:APP:securitycraft.mixins.json:camera.GameRendererMixin from mod securitycraft,pl:mixin:A}
+-- Uptime --
+Details:
+	JVM uptime: 58.732s
+	Wall uptime: 21.582s
+	High-res time: 48.978s
+	Client ticks: 218 ticks / 10.900s
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2335) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.emergencySaveAndCrash(Minecraft.java:946) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.Minecraft.run(Minecraft.java:905) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.main.Main.main(Main.java:243) ~[neoforge-21.8.31-merged.jar%23225!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:132) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:120) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.NeoForgeClientDevLaunchHandler.runService(NeoForgeClientDevLaunchHandler.java:49) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:114) ~[loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:25) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:55) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:73) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.Launcher.run(Launcher.java:104) [loader-9.0.16.jar%23167!/:9.0] {}
+	at MC-BOOTSTRAP/fml_loader@9.0.16/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [loader-9.0.16.jar%23167!/:9.0] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at cpw.mods.bootstraplauncher/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:203) [bootstraplauncher-9.0.16.jar:?] {}
+	at cpw.mods.bootstraplauncher/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:62) [bootstraplauncher-9.0.16.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:57) [DevLaunch-1.0.2.jar:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; LocalPlayer{name=Dev, id=49, pos=(-7.459719980832744, -60.0, 1.3808834713431686), mode=CREATIVE, permission=4}
+	Chunk stats: 289, 33
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 7293 game time, 7293 day time
+	Server brand: neoforge
+	Server type: Integrated singleplayer server
+	Tracked entity count: 20
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, mod/sodium, mod/fabric_renderer_api_v1, mod/fabric_api_base, mod/worldedit, mod/geckolib, mod/creativecore, mod/jeg, mod/itemphysic, mod/fusion, mod/worldeditcui_protocol, mod/nbt_ac, mod/framework, mod/curios, mod/corpse, mod/neoforge, mod/ssc_research_and_development, mod/securitycraft, mod/ssc_14
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.8
+	Minecraft Version ID: 1.21.8
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 456274856 bytes (435 MiB) / 1098907648 bytes (1048 MiB) up to 4246732800 bytes (4050 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 12th Gen Intel(R) Core(TM) i3-12100F
+	Identifier: Intel64 Family 6 Model 151 Stepping 5
+	Microarchitecture: Alder Lake
+	Frequency (GHz): 3.30
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 8192.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.9186
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 27973.38
+	Virtual memory used (MiB): 21824.97
+	Swap memory total (MiB): 11776.00
+	Swap memory used (MiB): 910.22
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 89993.95, total: 487401.00
+	Space in storage for workdir (MiB): available: 89993.95, total: 487401.00
+	JVM Flags: 0 total; 
+	Launched Version: 21.8.31
+	Backend library: LWJGL version 3.3.3+5
+	Backend API: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 3.2.0 NVIDIA 591.86, NVIDIA Corporation
+	Window size: 854x480
+	GFLW Platform: win32
+	Render Extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Universe: 400921fb54442d18
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fabulous
+	Render Distance: 5/5 chunks
+	Resource Packs: vanilla, mod_resources, mod/sodium, mod/fabric_renderer_api_v1, mod/fabric_api_base, mod/worldedit (incompatible), mod/geckolib, mod/creativecore, mod/jeg (incompatible), mod/itemphysic, mod/fusion, mod/worldeditcui_protocol, mod/nbt_ac, mod/framework (incompatible), mod/curios (incompatible), mod/corpse, mod/neoforge, mod/ssc_research_and_development (incompatible), mod/securitycraft, mod/ssc_14 (incompatible)
+	Current Language: ru_ru
+	Locale: ru_RU
+	System encoding: Cp1251
+	File encoding: UTF-8
+	CPU: 8x 12th Gen Intel(R) Core(TM) i3-12100F
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/49, l='ServerLevel[Новый мир]', x=-7.46, y=-60.00, z=1.38]]
+	Active Data Packs: vanilla, mod_data, mod/sodium, mod/fabric_renderer_api_v1, mod/fabric_api_base, mod/worldedit (incompatible), mod/geckolib, mod/creativecore (incompatible), mod/jeg (incompatible), mod/itemphysic (incompatible), mod/fusion, mod/worldeditcui_protocol, mod/nbt_ac, mod/framework (incompatible), mod/curios (incompatible), mod/corpse (incompatible), mod/neoforge, mod/ssc_research_and_development, mod/securitycraft, mod/ssc_14
+	Available Data Packs: minecart_improvements, redstone_experiments, trade_rebalance, vanilla, mod/corpse (incompatible), mod/creativecore (incompatible), mod/curios (incompatible), mod/fabric_api_base, mod/fabric_renderer_api_v1, mod/framework (incompatible), mod/fusion, mod/geckolib, mod/itemphysic (incompatible), mod/jeg (incompatible), mod/nbt_ac, mod/neoforge, mod/securitycraft, mod/sodium, mod/ssc_14, mod/ssc_research_and_development, mod/worldedit (incompatible), mod/worldeditcui_protocol, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	World Seed: -1189388448305563361
+	Suppressed Exceptions: ~~NONE~~
+	ModLauncher: 9.0
+	ModLauncher launch target: neoforgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-9.0.16.jar neoforgedevdistcleaner PLUGINSERVICE 
+		loader-9.0.16.jar slf4jfixer PLUGINSERVICE 
+		loader-9.0.16.jar runtime_enum_extender PLUGINSERVICE 
+		loader-9.0.16.jar accesstransformer PLUGINSERVICE 
+		loader-9.0.16.jar mixin TRANSFORMATIONSERVICE 
+		loader-9.0.16.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@9.0
+		minecraft@9.0
+	Mod List: 
+		corpse-neoforge-1.21.8-1.1.13.jar                 |Corpse                        |corpse                        |1.21.8-1.1.13       |Manifest: NOSIGNATURE
+		CreativeCore_NEOFORGE_v2.14.7_mc1.21.8.jar        |CreativeCore                  |creativecore                  |2.14.7              |Manifest: NOSIGNATURE
+		curios-neoforge-12.0.0%2B1.21.8.jar               |Curios API                    |curios                        |12.0.0+1.21.8       |Manifest: NOSIGNATURE
+		fabric-renderer-api-v1-7.0.0.jar                  |Fabric Renderer API (CaffeineM|fabric_renderer_api_v1        |7.0.0               |Manifest: NOSIGNATURE
+		fabric-api-base-0.4.42+d1308ded19.jar             |Forgified Fabric API Base     |fabric_api_base               |0.4.42+d1308ded19   |Manifest: NOSIGNATURE
+		framework-neoforge-1.21.8-0.12.3.jar              |Framework                     |framework                     |0.12.3              |Manifest: NOSIGNATURE
+		fusion-1.3.12-neoforge-mc1.21.8.jar               |Fusion                        |fusion                        |1.3.12              |Manifest: NOSIGNATURE
+		geckolib-neoforge-1.21.8-5.2.2.jar                |GeckoLib 5                    |geckolib                      |5.2.2               |Manifest: NOSIGNATURE
+		ItemPhysic_NEOFORGE_v1.8.11_mc1.21.8.jar          |ItemPhysic                    |itemphysic                    |1.8.11              |Manifest: NOSIGNATURE
+		jeg-1.2.2_1.21.8.jar                              |Just Enough Guns              |jeg                           |1.2.2               |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |Minecraft                     |minecraft                     |1.21.8              |Manifest: NOSIGNATURE
+		NBTac-NEOFORGE-1.21.8-1.3.14.jar                  |NBT Autocomplete              |nbt_ac                        |1.3.14              |Manifest: NOSIGNATURE
+		neoforge-21.8.31-merged.jar                       |NeoForge                      |neoforge                      |21.8.31             |Manifest: NOSIGNATURE
+		1.21.8-SecurityCraft-v1.10.1.jar                  |SecurityCraft                 |securitycraft                 |1.10.1              |Manifest: NOSIGNATURE
+		sodium-neoforge-0.7.3%2Bmc1.21.8.jar              |Sodium                        |sodium                        |0.7.3+mc1.21.8      |Manifest: NOSIGNATURE
+		SSC14__PA-0.1.24.4E__(1.21.8-NeoForge).jar        |Space Station Craft 14        |ssc_14                        |0.1.24.4e           |Manifest: NOSIGNATURE
+		main                                              |SSC14 Research and Development|ssc_research_and_development  |1.0.0               |Manifest: NOSIGNATURE
+		worldedit-mod-7.3.16-1.21.8.jar                   |WorldEdit                     |worldedit                     |7.3.16+cbf4bd5      |Manifest: NOSIGNATURE
+		worldeditcui-protocol-neoforge-mc1.21.8-4.0.2.jar |WorldEditCUI Protocol (NeoForg|worldeditcui_protocol         |4.0.2               |Manifest: NOSIGNATURE
+	Crash Report UUID: 7f558c0a-a841-43f9-bd3a-33240faf7c72
+	FML: 9.0.16
+	NeoForge: 21.8.31

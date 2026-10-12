@@ -8,14 +8,11 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 @EventBusSubscriber(Dist.CLIENT)
 public class ClientModEvents {
-
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(
                 SscResearchAndDevelopmentModBlockEntities.ARTEFACTANALYZER.get(),
                 ArtefactanalyzerRenderer::new
         );
-
-
     }
 }

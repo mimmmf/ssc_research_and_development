@@ -1,12 +1,12 @@
 package net.mcreator.sscresearchanddevelopment.client.gui;
 
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
-import net.mcreator.sscresearchanddevelopment.client.C2SRequestServerList;
+import net.mcreator.sscresearchanddevelopment.network.C2SRequestServerList;
 import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
 import net.mcreator.sscresearchanddevelopment.component.ArtifactProperties;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.ExtractPointsPayload;
-import net.mcreator.sscresearchanddevelopment.component.subcomponents.NodeStatus;
+import net.mcreator.sscresearchanddevelopment.network.ExtractPointsPayload;
+import net.mcreator.sscresearchanddevelopment.enums.NodeStatus;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
@@ -60,11 +60,11 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
             hasLinked = linkable.getLinkedPos().isPresent();
         }
 
-        this.serversButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 62, 58, 8, "Сервер", 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
+        this.serversButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 62, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
             ClientPacketDistributor.sendToServer(new C2SRequestServerList(new BlockPos(x, y, z)));
         }));
 
-        this.extractButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 71, 58, 8, "Извлечь", 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
+        this.extractButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 71, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.extract").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
             if (selectedNode != null && selectedNode.status() == NodeStatus.READY_TO_EXTRACT) {
                 ClientPacketDistributor.sendToServer(new ExtractPointsPayload(new BlockPos(x, y, z), selectedNode.id()));
             }
@@ -82,10 +82,6 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
 
             ArtifactProperties data = current.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
             rebuildNodes(data);
-
-            if (selectedNode != null && data != null) {
-                this.selectedNode = data.nodes().get(selectedNode.id());
-            }
         }
     }
 
@@ -93,6 +89,11 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
     public void render(GuiGraphics g, int mx, int my, float pt) {
         renderBg(g, pt, mx, my);
         ArtifactProperties currentData = lastStack.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
+
+        // Актуализируем выбранный узел в каждом кадре рендера
+        if (selectedNode != null && currentData != null) {
+            this.selectedNode = currentData.nodes().get(selectedNode.id());
+        }
 
         if (hasArtefact) {
             g.enableScissor(leftPos + vX, topPos + vY, leftPos + vX + vW, topPos + vY + vH);
@@ -157,11 +158,11 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
 
     @Override
     protected void renderLabels(GuiGraphics g, int mx, int my) {
-        g.drawString(font, "Аналитическая консоль", -16, 5, -26368, false);
+        g.drawString(font, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.title").getString(), -16, 5, -26368, false);
 
         ArtifactProperties props = lastStack.get(SscResearchAndDevelopmentDataComponents.ARTIFACT_DATA.get());
         if (props != null) {
-            String chargeText = "Доступных ОИ: " + props.totalPoints();
+            String chargeText = Component.translatable("gui.ssc_research_and_development.artefact_console_gui.available_rp", props.totalPoints()).getString();
             int color = props.totalPoints() > 0 ? 0xFF55FF55 : 0xFF555555;
             renderScaledText(font, g, chargeText, 45, 145, 0.8f, color, false);
         }
@@ -170,23 +171,28 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
         g.pose().scale(0.6f, 0.6f);
         int tx = (int) (-20 / 0.6f), ty = (int) (82 / 0.6f);
 
-        if (!hasLinked) g.drawString(font, "Анализатора нет!", tx, ty, 0xFFFF3737, false);
-        else if (!hasArtefact) g.drawString(font, "Артефакта нет!", tx, ty, 0xFFFF3737, false);
+        if (!hasLinked) g.drawString(font, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.no_analyzer").getString(), tx, ty, 0xFFFF3737, false);
+        else if (!hasArtefact) g.drawString(font, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.no_artefact").getString(), tx, ty, 0xFFFF3737, false);
         else if (selectedNode != null) {
             String statusName = getStatusString(selectedNode);
+            String triggerName = Component.translatable(selectedNode.triggerId()).getString();
+            String reactionName = Component.translatable(selectedNode.reactionId()).getString();
+
             String[] info = {
-                    "ID: " + selectedNode.id(),
-                    "Статус: " + statusName,
-                    "Очков: " + selectedNode.points(),
-                    "Глубина: " + selectedNode.depth(),
-                    "Триггер: " + selectedNode.triggerId(),
-                    "Реакция: " + selectedNode.reactionId()
+                    Component.translatable("gui.ssc_research_and_development.artefact_console_gui.node_id", selectedNode.id()).getString(),
+                    Component.translatable("gui.ssc_research_and_development.artefact_console_gui.node_status", statusName).getString(),
+                    Component.translatable("gui.ssc_research_and_development.artefact_console_gui.node_points", selectedNode.points()).getString(),
+                    Component.translatable("gui.ssc_research_and_development.artefact_console_gui.node_depth", selectedNode.depth()).getString(),
+                    Component.translatable("gui.ssc_research_and_development.artefact_console_gui.node_trigger", triggerName).getString(),
+                    Component.translatable("gui.ssc_research_and_development.artefact_console_gui.node_reaction", reactionName).getString()
             };
             int[] colors = {-3355444, 0xFF35DCBD, 0xFFAAAAAA, 0xFFAAAAAA, 0xFF7BDC35, 0xFFB22222};
             for (int i = 0; i < info.length; i++) g.drawString(font, info[i], tx, ty + (i * 10), colors[i], false);
         }
 
-        String connText = connectedServer != null ? "Подключён" : "Нет подключения";
+        String connText = connectedServer != null
+                ? Component.translatable("gui.ssc_research_and_development.artefact_console_gui.connected").getString()
+                : Component.translatable("gui.ssc_research_and_development.artefact_console_gui.disconnected").getString();
         int connColor = connectedServer != null ? 0xFF55FF55 : 0xFFFF5555;
         g.drawString(font, connText, connectedServer != null ? 290 : 255, 12, connColor, false);
 
@@ -195,13 +201,18 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
 
     private String getStatusString(ArtefactNode node) {
         return switch(node.status()) {
-            case ACTIVE -> "ОЖИДАНИЕ";
-            case PRIMED -> "ЗАРЯДКА (" + String.format("%.1f", node.timer()/20f) + "с)";
-            case EXHAUSTED -> "ИСПОЛЬЗОВАННО";
-            case COOLING_DOWN -> "ОСТЫВАЕТ";
-            case READY_TO_EXTRACT -> "ГОТОВО";
-            case SOLVED -> "ИЗВЛЕЧЕНО";
-            case LOCKED -> "ЗАБЛОКИРОВАНО";
+            case ACTIVE -> Component.translatable("gui.ssc_research_and_development.status.active").getString();
+            case PRIMED -> {
+                long remainingTicks = (minecraft != null && minecraft.level != null)
+                        ? Math.max(0, node.timer() - minecraft.level.getGameTime())
+                        : 0;
+                yield Component.translatable("gui.ssc_research_and_development.status.primed", String.format("%.1f", remainingTicks / 20f)).getString();
+            }
+            case EXHAUSTED -> Component.translatable("gui.ssc_research_and_development.status.exhausted").getString();
+            case COOLING_DOWN -> Component.translatable("gui.ssc_research_and_development.status.cooling_down").getString();
+            case READY_TO_EXTRACT -> Component.translatable("gui.ssc_research_and_development.status.ready_to_extract").getString();
+            case SOLVED -> Component.translatable("gui.ssc_research_and_development.status.solved").getString();
+            case LOCKED -> Component.translatable("gui.ssc_research_and_development.status.locked").getString();
         };
     }
 
@@ -275,19 +286,25 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
 
             g.fill(getX(), getY(), getX() + width, getY() + height, 0xFF000000);
 
+            long remainingTicks = (minecraft != null && minecraft.level != null)
+                    ? Math.max(0, node.timer() - minecraft.level.getGameTime())
+                    : 0;
+
             if (node.status() == NodeStatus.PRIMED && node.maxTimer() > 0) {
-                float progress = 1.0f - ((float)node.timer() / (float)node.maxTimer());
-                g.fill(getX() + 2, getY() + 2, getX() + 2 + (int)((width - 4) * progress), getY() + height - 2, 0x66FFA500);
+                float progress = 1.0f - Math.min(1.0f, (float) remainingTicks / (float) node.maxTimer());
+                int fillWidth = Math.max(0, Math.min(width - 4, (int) ((width - 4) * progress)));
+                g.fill(getX() + 2, getY() + 2, getX() + 2 + fillWidth, getY() + height - 2, 0x66FFA500);
             }
 
             g.renderOutline(getX(), getY(), width, height, color);
 
             Component label = node.status() == NodeStatus.PRIMED
-                    ? Component.literal(Math.round(node.timer() / 20f) + "s")
+                    ? Component.literal(Math.round(remainingTicks / 20f) + "s")
                     : Component.literal(String.valueOf(node.id()));
 
             g.drawCenteredString(font, label, getX() + width / 2, getY() + (height - 8) / 2, color);
         }
+
         public void updateNodeReference(ArtefactNode newNode) {
             if (newNode != null) this.node = newNode;
         }

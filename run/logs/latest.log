@@ -1,57 +1,65 @@
-[18мая2026 09:30:57.446] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, neoforgeclientdev, --version, 21.8.31, --assetIndex, 26, --assetsDir, C:\\Users\\murka\\.mcreator\\gradle\\caches\\neoformruntime\\assets, --fml.fmlVersion, 9.0.16, --fml.mcVersion, 1.21.8, --fml.neoForgeVersion, 21.8.31, --fml.neoFormVersion, 20250717.133445]
-[18мая2026 09:30:57.454] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 21.0.3+7-LTS-152
-[18мая2026 09:30:57.458] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.0 starting: java version 21.0.3 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
-[18мая2026 09:30:57.764] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[18мая2026 09:30:58.364] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/murka/.mcreator/gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23157!/ Service=ModLauncher Env=CLIENT
-[18мая2026 09:30:58.630] [fml-loadingscreen/INFO] [net.neoforged.fml.earlydisplay.render.LoadingScreenRenderer/]: GL info: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 3.2.0 NVIDIA 591.86, NVIDIA Corporation
-[18мая2026 09:30:59.330] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
-[18мая2026 09:30:59.333] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
+[12окт.2026 23:46:07.257] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, neoforgeclientdev, --version, 21.8.31, --assetIndex, 26, --assetsDir, C:\\Users\\murka\\MCreatorWorkspaces\\ssc_research_and_development\\.gradle\\caches\\neoformruntime\\assets, --fml.fmlVersion, 9.0.16, --fml.mcVersion, 1.21.8, --fml.neoForgeVersion, 21.8.31, --fml.neoFormVersion, 20250717.133445]
+[12окт.2026 23:46:07.291] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 21.0.3+7-LTS-152
+[12окт.2026 23:46:07.307] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.0 starting: java version 21.0.3 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[12окт.2026 23:46:07.718] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[12окт.2026 23:46:08.845] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23157!/ Service=ModLauncher Env=CLIENT
+[12окт.2026 23:46:09.133] [fml-loadingscreen/INFO] [net.neoforged.fml.earlydisplay.render.LoadingScreenRenderer/]: GL info: NVIDIA GeForce RTX 3050/PCIe/SSE2 GL version 3.2.0 NVIDIA 591.86, NVIDIA Corporation
+[12окт.2026 23:46:10.060] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 2 dependencies adding them to mods collection
+[12окт.2026 23:46:10.066] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]: 
      Mod List:
 		Name Version (Mod Id)
 
 		CreativeCore 2.14.7 (creativecore)
 		Curios API 12.0.0+1.21.8 (curios)
+		Fusion 1.3.12 (fusion)
+		GeckoLib 5 5.2.2 (geckolib)
 		ItemPhysic 1.8.11 (itemphysic)
 		Minecraft 1.21.8 (minecraft)
 		NeoForge 21.8.31 (neoforge)
-		Space Station Craft 14 0.1.14 (ssc_14)
+		Space Station Craft 14 0.1.24.4e (ssc_14)
 		SSC14 Research and Development 1.0.0 (ssc_research_and_development)
-[18мая2026 09:31:00.328] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
-[18мая2026 09:31:00.347] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'neoforgeclientdev' with arguments [--version, 21.8.31, --assetsDir, C:\Users\murka\.mcreator\gradle\caches\neoformruntime\assets, --assetIndex, 26]
-[18мая2026 09:31:00.397] [main/WARN] [mixin/]: Reference map 'curios.refmap.json' for curios.mixins.json could not be read. If this is a development environment you can ignore this message
-[18мая2026 09:31:00.399] [main/WARN] [mixin/]: Reference map 'creativecore.mixins.refmap.json' for creativecore.mixins.json could not be read. If this is a development environment you can ignore this message
-[18мая2026 09:31:00.401] [main/WARN] [mixin/]: Reference map 'creativecore.mixins.refmap.json' for creativecore.forge.mixins.json could not be read. If this is a development environment you can ignore this message
-[18мая2026 09:31:00.403] [main/WARN] [mixin/]: Reference map 'itemphysic.mixin.refmap.json' for itemphysic.mixins.json could not be read. If this is a development environment you can ignore this message
-[18мая2026 09:31:01.401] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
-[18мая2026 09:31:02.734] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 272 Datafixer optimizations took 623 milliseconds
-[18мая2026 09:31:10.514] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18мая2026 09:31:10.517] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18мая2026 09:31:10.523] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18мая2026 09:31:10.528] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18мая2026 09:31:10.531] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18мая2026 09:31:10.534] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [waypoint, modify, waypoint, color, reset] and [waypoint, modify, waypoint, color, color] with inputs: [reset]
-[18мая2026 09:31:10.671] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.8.31, for MC 1.21.8
-[18мая2026 09:31:12.114] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/moddev/artifacts/neoforge-21.8.31-merged.jar%23216!/assets/.mcassetsroot' uses unexpected schema
-[18мая2026 09:31:12.115] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/moddev/artifacts/neoforge-21.8.31-merged.jar%23216!/data/.mcassetsroot' uses unexpected schema
-[18мая2026 09:31:12.164] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[18мая2026 09:31:12.178] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[18мая2026 09:31:12.314] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
-[18мая2026 09:31:12.487] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
-[18мая2026 09:31:13.818] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources, mod/curios, mod/creativecore, mod/neoforge, mod/ssc_research_and_development, mod/ssc_14, mod/itemphysic
-[18мая2026 09:31:13.976] [resourceLoad/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_pua-16.0.03.hex, loading
-[18мая2026 09:31:13.998] [resourceLoad/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-16.0.03.hex, loading
-[18мая2026 09:31:14.245] [resourceLoad/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-16.0.03.hex, loading
-[18мая2026 09:31:14.375] [resourceLoad/ERROR] [net.minecraft.client.resources.model.ModelManager/]: Failed to load model ssc_research_and_development:models/custom/artefact1.json
+		SSC14_DLC 1.4.0 (ssc14_dlc)
+		ssc_librarian_addon 0.1 (ssc_librarian_addon)
+[12окт.2026 23:46:12.356] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[12окт.2026 23:46:12.364] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[12окт.2026 23:46:12.424] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'neoforgeclientdev' with arguments [--version, 21.8.31, --assetsDir, C:\Users\murka\MCreatorWorkspaces\ssc_research_and_development\.gradle\caches\neoformruntime\assets, --assetIndex, 26]
+[12окт.2026 23:46:12.843] [main/WARN] [mixin/]: Reference map 'curios.refmap.json' for curios.mixins.json could not be read. If this is a development environment you can ignore this message
+[12окт.2026 23:46:12.847] [main/WARN] [mixin/]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+[12окт.2026 23:46:12.849] [main/WARN] [mixin/]: Reference map 'creativecore.mixins.refmap.json' for creativecore.mixins.json could not be read. If this is a development environment you can ignore this message
+[12окт.2026 23:46:12.850] [main/WARN] [mixin/]: Reference map 'creativecore.mixins.refmap.json' for creativecore.forge.mixins.json could not be read. If this is a development environment you can ignore this message
+[12окт.2026 23:46:12.850] [main/WARN] [mixin/]: Reference map 'itemphysic.mixin.refmap.json' for itemphysic.mixins.json could not be read. If this is a development environment you can ignore this message
+[12окт.2026 23:46:13.587] [main/WARN] [mixin/]: Error loading class: org/jetbrains/annotations/ApiStatus$Internal (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$Internal)
+[12окт.2026 23:46:14.622] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[12окт.2026 23:46:19.222] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 272 Datafixer optimizations took 3082 milliseconds
+[12окт.2026 23:46:27.453] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[12окт.2026 23:46:27.456] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[12окт.2026 23:46:27.463] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[12окт.2026 23:46:27.465] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[12окт.2026 23:46:27.468] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[12окт.2026 23:46:27.479] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [waypoint, modify, waypoint, color, reset] and [waypoint, modify, waypoint, color, color] with inputs: [reset]
+[12окт.2026 23:46:27.668] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.8.31, for MC 1.21.8
+[12окт.2026 23:46:30.300] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/moddev/artifacts/neoforge-21.8.31-merged.jar%23220!/assets/.mcassetsroot' uses unexpected schema
+[12окт.2026 23:46:30.303] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/murka/MCreatorWorkspaces/ssc_research_and_development/build/moddev/artifacts/neoforge-21.8.31-merged.jar%23220!/data/.mcassetsroot' uses unexpected schema
+[12окт.2026 23:46:30.360] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12окт.2026 23:46:30.378] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[12окт.2026 23:46:30.538] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[12окт.2026 23:46:30.802] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
+[12окт.2026 23:46:33.004] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources, mod/fusion, mod/curios, mod/geckolib, mod/creativecore, mod/ssc_librarian_addon, mod/neoforge, mod/ssc_research_and_development, mod/ssc14_dlc, mod/ssc_14, mod/itemphysic
+[12окт.2026 23:46:33.164] [resourceLoad/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-16.0.03.hex, loading
+[12окт.2026 23:46:33.165] [resourceLoad/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_pua-16.0.03.hex, loading
+[12окт.2026 23:46:33.754] [resourceLoad/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-16.0.03.hex, loading
+[12окт.2026 23:46:34.167] [resourceLoad/WARN] [net.minecraft.client.renderer.texture.SpriteLoader/]: Texture ssc_14:item/container/vacuum_flask/vacuum_flask with size 22x23 limits mip level from 2 to 0
+[12окт.2026 23:46:34.190] [resourceLoad/ERROR] [net.minecraft.client.resources.model.ModelManager/]: Failed to load model ssc_research_and_development:models/custom/artefact1.json
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated string at line 157 column 6 path $.elements[11].faces.
 See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.Streams.parse(Streams.java:58) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:91) ~[gson-2.11.0.jar%23123!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:434) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser.parse(UnbakedModelParser.java:43) ~[neoforge-21.8.31-merged.jar%23217!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.resources.model.ModelManager.lambda$loadBlockModels$9(ModelManager.java:198) ~[neoforge-21.8.31-merged.jar%23216!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:434) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser.parse(UnbakedModelParser.java:43) ~[neoforge-21.8.31-merged.jar%23221!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.resources.model.ModelManager.lambda$loadBlockModels$9(ModelManager.java:198) ~[neoforge-21.8.31-merged.jar%23220!/:?]
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$prepareTasks$0(SimpleReloadInstance.java:65) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.TracingExecutor.lambda$forName$0(TracingExecutor.java:18) ~[neoforge-21.8.31-merged.jar%23216!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$prepareTasks$0(SimpleReloadInstance.java:65) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.TracingExecutor.lambda$forName$0(TracingExecutor.java:18) ~[neoforge-21.8.31-merged.jar%23220!/:?]
 	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) [?:?]
 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
@@ -67,85 +75,95 @@ See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:820) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.Streams.parse(Streams.java:46) ~[gson-2.11.0.jar%23123!/:?]
 	... 13 more
-[18мая2026 09:31:14.379] [resourceLoad/ERROR] [net.minecraft.client.resources.model.ModelManager/]: Failed to load model ssc_research_and_development:models/custom/artifact1.json
+[12окт.2026 23:46:34.192] [resourceLoad/ERROR] [net.minecraft.client.resources.model.ModelManager/]: Failed to load model ssc_research_and_development:models/custom/artifact1.json
 com.google.gson.JsonSyntaxException: Missing axis, expected to find a string
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.GsonHelper.getAsString(GsonHelper.java:101) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.getAxis(BlockElement.java:101) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.getRotation(BlockElement.java:82) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.deserialize(BlockElement.java:52) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.deserialize(BlockElement.java:43) ~[neoforge-21.8.31-merged.jar%23216!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.GsonHelper.getAsString(GsonHelper.java:101) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.getAxis(BlockElement.java:101) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.getRotation(BlockElement.java:82) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.deserialize(BlockElement.java:52) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockElement$Deserializer.deserialize(BlockElement.java:43) ~[neoforge-21.8.31-merged.jar%23220!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:95) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.Gson.fromJson(Gson.java:1361) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.Gson.fromJson(Gson.java:1463) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.Gson.fromJson(Gson.java:1434) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:199) ~[gson-2.11.0.jar%23123!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockModel$Deserializer.getElements(BlockModel.java:127) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockModel$Deserializer.deserialize(BlockModel.java:77) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockModel$Deserializer.deserialize(BlockModel.java:73) ~[neoforge-21.8.31-merged.jar%23216!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockModel$Deserializer.getElements(BlockModel.java:127) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockModel$Deserializer.deserialize(BlockModel.java:77) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.block.model.BlockModel$Deserializer.deserialize(BlockModel.java:73) ~[neoforge-21.8.31-merged.jar%23220!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:95) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.Gson.fromJson(Gson.java:1361) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.Gson.fromJson(Gson.java:1463) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.Gson.fromJson(Gson.java:1434) ~[gson-2.11.0.jar%23123!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl.deserialize(TreeTypeAdapter.java:199) ~[gson-2.11.0.jar%23123!/:?]
-	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser$Deserializer.deserialize(UnbakedModelParser.java:76) ~[neoforge-21.8.31-merged.jar%23217!/:?]
-	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser$Deserializer.deserialize(UnbakedModelParser.java:46) ~[neoforge-21.8.31-merged.jar%23217!/:?]
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser$Deserializer.deserialize(UnbakedModelParser.java:76) ~[neoforge-21.8.31-merged.jar%23221!/:?]
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser$Deserializer.deserialize(UnbakedModelParser.java:46) ~[neoforge-21.8.31-merged.jar%23221!/:?]
 	at MC-BOOTSTRAP/com.google.gson@2.11.0/com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:95) ~[gson-2.11.0.jar%23123!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:434) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser.parse(UnbakedModelParser.java:43) ~[neoforge-21.8.31-merged.jar%23217!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.resources.model.ModelManager.lambda$loadBlockModels$9(ModelManager.java:198) ~[neoforge-21.8.31-merged.jar%23216!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.GsonHelper.fromJson(GsonHelper.java:434) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.model.UnbakedModelParser.parse(UnbakedModelParser.java:43) ~[neoforge-21.8.31-merged.jar%23221!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.resources.model.ModelManager.lambda$loadBlockModels$9(ModelManager.java:198) ~[neoforge-21.8.31-merged.jar%23220!/:?]
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$prepareTasks$0(SimpleReloadInstance.java:65) ~[neoforge-21.8.31-merged.jar%23216!/:?]
-	at TRANSFORMER/minecraft@1.21.8/net.minecraft.TracingExecutor.lambda$forName$0(TracingExecutor.java:18) ~[neoforge-21.8.31-merged.jar%23216!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$prepareTasks$0(SimpleReloadInstance.java:65) ~[neoforge-21.8.31-merged.jar%23220!/:?]
+	at TRANSFORMER/minecraft@1.21.8/net.minecraft.TracingExecutor.lambda$forName$0(TracingExecutor.java:18) ~[neoforge-21.8.31-merged.jar%23220!/:?]
 	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423) [?:?]
 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
-[18мая2026 09:31:14.744] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:block/armored_window_2
-[18мая2026 09:31:14.747] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:block/base_window_0
-[18мая2026 09:31:14.758] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:block/armored_window_1
-[18мая2026 09:31:14.762] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:block/armored_window_4
-[18мая2026 09:31:14.764] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:block/armored_window_0
-[18мая2026 09:31:14.774] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:block/armored_window_3
-[18мая2026 09:31:14.779] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:item/chair_entity_spawn_egg
-[18мая2026 09:31:14.779] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:item/c_4_crutch_ent_spawn_egg
-[18мая2026 09:31:14.779] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_research_and_development:item/screwdriver
-[18мая2026 09:31:14.783] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: minecraft:cabels_lv_mv_hv_block
-[18мая2026 09:31:15.613] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Динамики (High Definition Audio Device)
-[18мая2026 09:31:15.615] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[18мая2026 09:31:15.842] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x2 minecraft:textures/atlas/blocks.png-atlas
-[18мая2026 09:31:15.855] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/signs.png-atlas
-[18мая2026 09:31:15.859] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/shield_patterns.png-atlas
-[18мая2026 09:31:15.860] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/banner_patterns.png-atlas
-[18мая2026 09:31:15.861] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x2 minecraft:textures/atlas/armor_trims.png-atlas
-[18мая2026 09:31:15.865] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x2 minecraft:textures/atlas/decorated_pot.png-atlas
-[18мая2026 09:31:15.871] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/chest.png-atlas
-[18мая2026 09:31:15.872] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/beds.png-atlas
-[18мая2026 09:31:15.873] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18мая2026 09:31:15.876] [Render thread/WARN] [net.minecraft.client.resources.model.ModelManager/]: No model loaded for default item model ID ssc_research_and_development:screwdrive of ssc_research_and_development:screwdrive
-[18мая2026 09:31:15.878] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[18мая2026 09:31:15.973] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[18мая2026 09:31:15.975] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/paintings.png-atlas
-[18мая2026 09:31:15.977] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
-[18мая2026 09:31:15.985] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
-[18мая2026 09:31:21.761] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1407 recipes
-[18мая2026 09:31:21.776] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1520 advancements
-[18мая2026 09:31:21.781] [Render thread/INFO] [net.neoforged.neoforge.common.crafting.RecipePriorityManager/]: Loaded 0 recipe priority overrides
-[18мая2026 09:31:22.083] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.8
-[18мая2026 09:31:22.083] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[18мая2026 09:31:22.212] [Server thread/INFO] [Curios API/]: Loaded 13 curio slots
-[18мая2026 09:31:22.213] [Server thread/INFO] [Curios API/]: Loaded 1 curio entities
-[18мая2026 09:31:22.586] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[18мая2026 09:31:22.762] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[18мая2026 09:31:22.825] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
-[18мая2026 09:31:22.830] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 226 ms
-[18мая2026 09:31:22.941] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 5, from 10
-[18мая2026 09:31:22.942] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[18мая2026 09:31:23.840] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:9c4e152c] logged in with entity id 1 at (4.906242492138473, 56.0, 6.257495012626391)
-[18мая2026 09:31:23.939] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[18мая2026 09:31:24.170] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
-[18мая2026 09:31:24.188] [Render thread/INFO] [com.mojang.blaze3d.opengl.GlProgram/]: Info log when linking program containing VS minecraft:post/screenquad and FS minecraft:post/transparency. Log output: Fragment info
+[12окт.2026 23:46:34.617] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:item/corpse_spawn_egg
+[12окт.2026 23:46:34.624] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:item/poster_spawn_egg
+[12окт.2026 23:46:34.626] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:item/chair_entity_spawn_egg
+[12окт.2026 23:46:34.626] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: ssc_14:item/c_4_crutch_ent_spawn_egg
+[12окт.2026 23:46:34.650] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelDiscovery/]: Missing block model: minecraft:cabels_lv_mv_hv_block
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_orange_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_green_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_n_2_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_gray_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_mixed_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_black_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_blue_0:
+    #2
+[12окт.2026 23:46:35.092] [resourceLoad/WARN] [net.minecraft.client.resources.model.ModelManager/]: Missing texture references in model ssc_14:block/closet_pink_0:
+    #2
+[12окт.2026 23:46:35.661] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Динамики (High Definition Audio Device)
+[12окт.2026 23:46:35.663] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[12окт.2026 23:46:35.834] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x2 minecraft:textures/atlas/blocks.png-atlas
+[12окт.2026 23:46:35.855] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/signs.png-atlas
+[12окт.2026 23:46:35.860] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/banner_patterns.png-atlas
+[12окт.2026 23:46:35.862] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/shield_patterns.png-atlas
+[12окт.2026 23:46:35.862] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x2 minecraft:textures/atlas/armor_trims.png-atlas
+[12окт.2026 23:46:35.868] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x2 minecraft:textures/atlas/decorated_pot.png-atlas
+[12окт.2026 23:46:35.874] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/chest.png-atlas
+[12окт.2026 23:46:35.877] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/shulker_boxes.png-atlas
+[12окт.2026 23:46:35.878] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/beds.png-atlas
+[12окт.2026 23:46:35.883] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[12окт.2026 23:46:36.003] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[12окт.2026 23:46:36.006] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x0 minecraft:textures/atlas/paintings.png-atlas
+[12окт.2026 23:46:36.010] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[12окт.2026 23:46:36.019] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[12окт.2026 23:46:42.155] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1408 recipes
+[12окт.2026 23:46:42.176] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1521 advancements
+[12окт.2026 23:46:42.181] [Render thread/INFO] [net.neoforged.neoforge.common.crafting.RecipePriorityManager/]: Loaded 0 recipe priority overrides
+[12окт.2026 23:46:42.503] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.8
+[12окт.2026 23:46:42.504] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[12окт.2026 23:46:42.660] [Server thread/INFO] [Curios API/]: Loaded 25 curio slots
+[12окт.2026 23:46:42.660] [Server thread/INFO] [Curios API/]: Loaded 1 curio entities
+[12окт.2026 23:46:43.082] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[12окт.2026 23:46:43.260] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Подготовка области возрождения: 0%
+[12окт.2026 23:46:43.343] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[12окт.2026 23:46:43.352] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 261 ms
+[12окт.2026 23:46:43.478] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 5, from 10
+[12окт.2026 23:46:43.478] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[12окт.2026 23:46:44.577] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:c0fd0a69] logged in with entity id 1 at (6.475620161898997, 56.0, -4.277435916675542)
+[12окт.2026 23:46:44.673] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev присоединился к игре
+[12окт.2026 23:46:44.978] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[12окт.2026 23:46:45.006] [Render thread/INFO] [com.mojang.blaze3d.opengl.GlProgram/]: Info log when linking program containing VS minecraft:post/screenquad and FS minecraft:post/transparency. Log output: Fragment info
 -------------
 0(20) : warning C7050: "color_layers[1]" might be used before being initialized
 0(20) : warning C7050: "color_layers[2]" might be used before being initialized
@@ -158,33 +176,45 @@ com.google.gson.JsonSyntaxException: Missing axis, expected to find a string
 0(21) : warning C7050: "depth_layers[4]" might be used before being initialized
 0(21) : warning C7050: "depth_layers[5]" might be used before being initialized
 
-[18мая2026 09:31:24.202] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 14 advancements
-[18мая2026 09:31:24.290] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
-[18мая2026 09:31:24.391] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
-[18мая2026 09:31:24.447] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
-[18мая2026 09:31:24.516] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
-[18мая2026 09:31:28.817] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
-[18мая2026 09:31:36.630] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[18мая2026 09:31:36.663] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:overworld
-[18мая2026 09:31:36.687] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_nether
-[18мая2026 09:31:36.688] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:planet_pl
-[18мая2026 09:31:36.688] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:spaced
-[18мая2026 09:31:36.695] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_end
-[18мая2026 09:31:37.333] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[18мая2026 09:31:37.333] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[18мая2026 09:31:37.352] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
-[18мая2026 09:31:37.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[18мая2026 09:31:37.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[18мая2026 09:31:37.391] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[18мая2026 09:31:37.947] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:overworld
-[18мая2026 09:31:37.959] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_nether
-[18мая2026 09:31:37.965] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:planet_pl
-[18мая2026 09:31:37.971] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:spaced
-[18мая2026 09:31:37.975] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_end
-[18мая2026 09:31:37.991] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (Новый мир (1)): All chunks are saved
-[18мая2026 09:31:37.991] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[18мая2026 09:31:37.991] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (planet_pl): All chunks are saved
-[18мая2026 09:31:37.992] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (spaced): All chunks are saved
-[18мая2026 09:31:37.992] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[18мая2026 09:31:37.992] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[18мая2026 09:31:38.460] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[12окт.2026 23:46:45.037] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
+[12окт.2026 23:46:45.130] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[12окт.2026 23:46:45.244] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[12окт.2026 23:46:45.333] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[12окт.2026 23:46:45.493] [Render thread/INFO] [net.minecraft.client.renderer.DynamicUniformStorage/]: Resizing Dynamic Transforms UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[12окт.2026 23:46:48.414] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Научный] Консоль исследований говорит, "Успешно разблокирована технология: Лестницы"
+[12окт.2026 23:46:49.447] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[12окт.2026 23:46:49.476] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:overworld
+[12окт.2026 23:46:49.493] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:spaced
+[12окт.2026 23:46:49.494] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_end
+[12окт.2026 23:46:49.494] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_nether
+[12окт.2026 23:46:49.495] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:planet_pl
+[12окт.2026 23:46:53.696] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[12окт.2026 23:46:53.710] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:overworld
+[12окт.2026 23:46:53.712] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:spaced
+[12окт.2026 23:46:53.712] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_end
+[12окт.2026 23:46:53.713] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_nether
+[12окт.2026 23:46:53.713] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:planet_pl
+[12окт.2026 23:47:15.821] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Научный] Консоль исследований говорит, "Успешно разблокирована технология: Ксеноархеология"
+[12окт.2026 23:47:17.147] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Научный] Консоль исследований говорит, "Успешно разблокирована технология: Автоматизация"
+[12окт.2026 23:47:19.419] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Научный] Консоль исследований говорит, "Успешно разблокирована технология: Продвинутые инструменты"
+[12окт.2026 23:47:20.757] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Научный] Консоль исследований говорит, "Успешно разблокирована технология: Электропитание"
+[12окт.2026 23:47:34.297] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[12окт.2026 23:47:34.312] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:overworld
+[12окт.2026 23:47:34.314] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:spaced
+[12окт.2026 23:47:34.315] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_end
+[12окт.2026 23:47:34.315] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_nether
+[12окт.2026 23:47:34.316] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:planet_pl
+[12окт.2026 23:49:15.999] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[12окт.2026 23:49:16.001] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[12окт.2026 23:49:16.022] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[12окт.2026 23:49:16.915] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:overworld
+[12окт.2026 23:49:16.974] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:spaced
+[12окт.2026 23:49:17.006] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_end
+[12окт.2026 23:49:17.016] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/minecraft:the_nether
+[12окт.2026 23:49:17.032] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Новый мир]'/ssc_14:planet_pl
+[12окт.2026 23:49:17.054] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (Новый мир (4)): All chunks are saved
+[12окт.2026 23:49:17.055] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (spaced): All chunks are saved
+[12окт.2026 23:49:17.055] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12окт.2026 23:49:17.055] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12окт.2026 23:49:17.055] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (planet_pl): All chunks are saved
+[12окт.2026 23:49:17.055] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

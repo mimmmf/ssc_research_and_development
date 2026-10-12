@@ -1,19 +1,13 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "ssc_research_and_development:block/research_console"
-    },
-    "facing=east": {
-      "model": "ssc_research_and_development:block/research_console",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "ssc_research_and_development:block/research_console",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "ssc_research_and_development:block/research_console",
-      "y": 270
-    }
+    "facing=north,panel_open=false": { "model": "ssc_research_and_development:block/research_console" },
+    "facing=south,panel_open=false": { "model": "ssc_research_and_development:block/research_console", "y": 180 },
+    "facing=west,panel_open=false":  { "model": "ssc_research_and_development:block/research_console", "y": 270 },
+    "facing=east,panel_open=false":  { "model": "ssc_research_and_development:block/research_console", "y": 90 },
+
+    "facing=north,panel_open=true":  { "model": "ssc_research_and_development:block/research_console_panel_opened" },
+    "facing=south,panel_open=true":  { "model": "ssc_research_and_development:block/research_console_panel_opened", "y": 180 },
+    "facing=west,panel_open=true":   { "model": "ssc_research_and_development:block/research_console_panel_opened", "y": 270 },
+    "facing=east,panel_open=true":   { "model": "ssc_research_and_development:block/research_console_panel_opened", "y": 90 }
   }
 }

@@ -11,14 +11,11 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
-
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.client.Minecraft;
-
 import net.mcreator.sscresearchanddevelopment.network.MenuStateUpdateMessage;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 
@@ -29,6 +26,7 @@ public class SscResearchAndDevelopmentModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<ArtefactConsoleMenu>> ARTEFACT_CONSOLE = REGISTRY.register("artefact_console_gui", () -> IMenuTypeExtension.create(ArtefactConsoleMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<FabricatorMenu>> FABRICATOR = REGISTRY.register("fabricator", () -> IMenuTypeExtension.create(FabricatorMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<ResearchConsoleMenu>> RESEARCH_CONSOLE = REGISTRY.register("research_console", () -> IMenuTypeExtension.create(ResearchConsoleMenu::new));
+
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
 
@@ -39,8 +37,9 @@ public class SscResearchAndDevelopmentModMenus {
 			if (player instanceof ServerPlayer serverPlayer) {
 				PacketDistributor.sendToPlayer(serverPlayer, new MenuStateUpdateMessage(elementType, name, elementState));
 			} else if (player.level().isClientSide) {
-				if (Minecraft.getInstance().screen instanceof SscResearchAndDevelopmentModScreens.ScreenAccessor accessor && needClientUpdate)
-					accessor.updateMenuState(elementType, name, elementState);
+				if (needClientUpdate) {
+					ClientNetworkHandler.updateScreenState(elementType, name, elementState);
+				}
 				ClientPacketDistributor.sendToServer(new MenuStateUpdateMessage(elementType, name, elementState));
 			}
 		}

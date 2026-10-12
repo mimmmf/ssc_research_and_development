@@ -42,7 +42,7 @@ Details:
 Stacktrace:
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.register(DeferredRegister.java:235) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.registries.DeferredRegister.register(DeferredRegister.java:215) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactRegistries.<clinit>(ArtefactRegistries.java:39) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.init.ArtefactRegistries.<clinit>(ArtefactRegistries.java:39) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod.<init>(SscResearchAndDevelopmentMod.java:67) ~[%23214!/:?] {re:classloading}
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}

@@ -1,3 +1,20 @@
+# IDE и редакторы
 .eclipse/
-.gradle/
 .idea/
+*.iml
+.vscode/
+
+# Gradle
+.gradle/
+build/
+.gradletasknamecache
+
+# MCreator и папки запуска (run используется для тестирования модов в Forge/Fabric)
+.mcreator/
+run/
+
+# Прочее
+bin/
+target/
+.DS_Store
+Thumbs.db

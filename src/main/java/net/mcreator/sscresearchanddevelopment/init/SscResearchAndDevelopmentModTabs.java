@@ -5,14 +5,19 @@ package net.mcreator.sscresearchanddevelopment.init;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 
+@EventBusSubscriber
 public class SscResearchAndDevelopmentModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SscResearchAndDevelopmentMod.MODID);
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SSC_14RND = REGISTRY.register("ssc_14rnd",

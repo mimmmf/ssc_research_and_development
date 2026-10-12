@@ -16,6 +16,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FabricatorManager extends SimpleJsonResourceReloadListener<JsonElement> {
@@ -47,36 +48,42 @@ public class FabricatorManager extends SimpleJsonResourceReloadListener<JsonElem
 
         object.forEach((location, element) -> {
             try {
-                FabricatorRecipe recipe = FabricatorRecipe.Serializer.CODEC
-                        .codec()
-                        .parse(ops, element)
-                        .getOrThrow();
+                if (element.isJsonArray()) {
+                    List<FabricatorRecipe> parsedRecipes = FabricatorRecipe.Serializer.LIST_CODEC
+                            .parse(ops, element)
+                            .getOrThrow();
 
-                recipes.put(location, recipe);
+                    for (int i = 0; i < parsedRecipes.size(); i++) {
+                        FabricatorRecipe recipe = parsedRecipes.get(i);
+                        ResourceLocation recipeId = ResourceLocation.fromNamespaceAndPath(
+                                location.getNamespace(),
+                                location.getPath() + "_" + i
+                        );
+                        recipes.put(recipeId, recipe);
+                    }
+                } else if (element.isJsonObject()) {
+                    FabricatorRecipe recipe = FabricatorRecipe.Serializer.CODEC
+                            .codec()
+                            .parse(ops, element)
+                            .getOrThrow();
+
+                    recipes.put(location, recipe);
+                }
             } catch (Exception e) {
-                System.err.println("Failed to load recipe " + location + ": " + e.getMessage());
+                System.err.println("Failed to load fabricator recipes from " + location + ": " + e.getMessage());
             }
         });
 
         System.out.println("Loaded fabricator recipes: " + recipes.size());
     }
 
-//    public static String getStorageKeyFromItem(ItemStack stack) {
-//        if (stack.isEmpty()) return null;
-//
-//        if (stack.is(net.minecraft.world.item.Items.IRON_INGOT)) return "steel";
-//        if (stack.is(net.minecraft.world.item.Items.COPPER_INGOT)) return "copper";
-//        if (stack.is(net.minecraft.world.item.Items.GOLD_INGOT)) return "gold";
-//        if (stack.is(net.minecraft.world.item.Items.GLASS)) return "glass";
-//
-//        return null;
-//    }
     public static String getStorageKeyFromItem(ItemStack stack) {
         if (stack.isEmpty()) return "";
 
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
         return id.toString();
     }
+
     public static ItemStack getItemFromStorageKey(String key) {
         if (key == null || key.isEmpty()) return ItemStack.EMPTY;
 
@@ -94,15 +101,4 @@ public class FabricatorManager extends SimpleJsonResourceReloadListener<JsonElem
             return ItemStack.EMPTY;
         }
     }
-//    public static ItemStack getItemFromStorageKey(String key) {
-//        Item item = switch (key.toLowerCase()) {
-//            case "steel"  -> Items.IRON_INGOT;
-//            case "copper" -> Items.COPPER_INGOT;
-//            case "gold"   -> Items.GOLD_INGOT;
-//            case "glass"  -> Items.GLASS;
-//            default -> null;
-//        };
-//
-//        return item != null ? new ItemStack(item) : ItemStack.EMPTY;
-//    }
 }

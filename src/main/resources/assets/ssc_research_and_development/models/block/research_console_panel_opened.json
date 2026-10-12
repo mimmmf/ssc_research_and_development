@@ -1,0 +1,9 @@
+{
+  "parent": "ssc_research_and_development:custom/research_console",
+  "textures": {
+    "all": "ssc_research_and_development:block/research_console_texture_panel_opened",
+    "particle": "ssc_research_and_development:block/research_console_texture_panel_opened",
+    "1": "ssc_research_and_development:block/research_console_texture_panel_opened"
+  },
+  "render_type": "cutout"
+}

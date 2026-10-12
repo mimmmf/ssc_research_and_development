@@ -1,0 +1,74 @@
+{
+  "artefact_activate_1": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact1"
+    ]
+  },
+  "artefact_activate_2": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact2"
+    ]
+  },
+  "artefact_activate_3": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact3"
+    ]
+  },
+  "artefact_activate_4": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact4"
+    ]
+  },
+  "artefact_activate_5": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact5"
+    ]
+  },
+  "artefact_activate_6": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact6"
+    ]
+  },
+  "artefact_activate_7": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:artifact7"
+    ]
+  },
+  "keyboard1": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:keyboard1"
+    ]
+  },
+  "keyboard2": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:keyboard2"
+    ]
+  },
+  "keyboard3": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:keyboard3"
+    ]
+  },
+  "keyboard4": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:keyboard4"
+    ]
+  },
+  "scan_finish": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:scan_finish"
+    ]
+  }
+}

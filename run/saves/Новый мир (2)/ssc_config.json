@@ -1,0 +1,34 @@
+{
+  "balance": 1000.0,
+  "cargoItems": [
+    {
+      "name": "Алмаз",
+      "price": 100,
+      "itemId": "minecraft:diamond",
+      "count": 1
+    },
+    {
+      "name": "Железный блок",
+      "price": 50,
+      "itemId": "minecraft:iron_block",
+      "count": 1
+    },
+    {
+      "name": "Сундук с лутом",
+      "price": 200,
+      "itemId": "minecraft:chest",
+      "count": 1,
+      "containerData": {}
+    }
+  ],
+  "storageRegion": {
+    "world": "minecraft:overworld",
+    "x1": -5,
+    "y1": 0,
+    "z1": -5,
+    "x2": 5,
+    "y2": 10,
+    "z2": 5
+  },
+  "cartItems": []
+}

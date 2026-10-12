@@ -78,6 +78,8 @@ public class FabricatorRecipe implements Recipe<RecipeInput> {
                 Codec.INT.fieldOf("craft_time").forGetter(FabricatorRecipe::getCraftTime)
         ).apply(instance, FabricatorRecipe::new));
 
+        public static final Codec<List<FabricatorRecipe>> LIST_CODEC = CODEC.codec().listOf();
+
         public static final StreamCodec<RegistryFriendlyByteBuf, FabricatorRecipe> STREAM_CODEC = StreamCodec.composite(
                 ByteBufCodecs.STRING_UTF8, FabricatorRecipe::getCategory,
                 ItemStack.STREAM_CODEC, r -> r.result,

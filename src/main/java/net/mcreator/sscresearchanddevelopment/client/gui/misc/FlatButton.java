@@ -24,7 +24,7 @@ public class FlatButton extends Button implements IScreenHelper {
 
     @Override
     public void renderWidget(GuiGraphics g, int mx, int my, float pt) {
-        int color = isHoveredOrFocused() ? hoverColor : normalColor;
+        int color = isHovered() ? hoverColor : normalColor;
         g.fill(getX(), getY(), getX() + width, getY() + height, color);
         renderScaledText(font, g, label, getX() + width / 2f, getY() + (height - 8 * scale) / 2f, scale, active ? 0xFFFFFFFF : 0xFFA0A0A0, true);
     }

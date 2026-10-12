@@ -1,9 +1,17 @@
 package net.mcreator.sscresearchanddevelopment.block;
 
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactContext;
+import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.ArtefactEngine;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModItems;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
+import net.mcreator.sscresearchanddevelopment.item.ArtefactItem;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -56,22 +64,52 @@ public class ArtefactanalyzerBlock extends Block implements EntityBlock {
 	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
 		if (world.isClientSide) return InteractionResult.SUCCESS;
-
 		if (world.getBlockEntity(pos) instanceof ArtefactanalyzerBlockEntity be) {
 			ItemStack stackInHand = player.getItemInHand(InteractionHand.MAIN_HAND);
 			ItemStack stackInBlock = be.getItem(0);
-
+			if (!stackInBlock.isEmpty() && stackInBlock.getItem() instanceof ArtefactItem) {
+				if (stackInHand.getItem() instanceof FlintAndSteelItem) {
+					Object[] args = new Object[]{"item_on_fire"};
+					ArtefactContext context = new ArtefactContext(
+							world,
+							pos,
+							stackInBlock,
+							args,
+							player
+					);
+					ArtefactEngine.tickArtifact(stackInBlock, context);
+					be.setChanged();
+					stackInHand.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
+					world.playSound(null, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+					return InteractionResult.SUCCESS;
+				}
+				if (stackInHand.getItem() == Items.WATER_BUCKET) {
+					Object[] args = new Object[]{"bucket_water"};
+					ArtefactContext context = new ArtefactContext(
+							world,
+							pos,
+							stackInBlock,
+							args,
+							player
+					);
+					ArtefactEngine.tickArtifact(stackInBlock, context);
+					be.setChanged();
+					if (!player.getAbilities().instabuild) {
+						player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.BUCKET));
+					}
+					world.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+					return InteractionResult.SUCCESS;
+				}
+			}
 			if (stackInHand.isEmpty() && !stackInBlock.isEmpty()) {
 				player.setItemInHand(InteractionHand.MAIN_HAND, stackInBlock);
 				be.setItem(0, ItemStack.EMPTY);
 				return InteractionResult.SUCCESS;
 			}
-
 			if (stackInHand.is(SscResearchAndDevelopmentModItems.ARTEFACT.get()) && stackInBlock.isEmpty()) {
 				be.setItem(0, stackInHand.split(1));
 				return InteractionResult.SUCCESS;
 			}
-
 			if (stackInHand.is(SscResearchAndDevelopmentModItems.ARTEFACT.get()) && !stackInBlock.isEmpty()) {
 				ItemStack fromBlock = stackInBlock.copy();
 				be.setItem(0, stackInHand.split(1));
