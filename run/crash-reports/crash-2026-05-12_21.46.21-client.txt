@@ -5,8 +5,8 @@ Time: 2026-05-12 21:46:21
 Description: Rendering screen
 
 java.lang.NullPointerException: Cannot invoke "net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance.getPoints()" because "server" is null
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen.renderStatus(ResearchConsoleScreen.java:244) ~[%23214!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen.render(ResearchConsoleScreen.java:80) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ResearchConsoleScreen.renderStatus(ResearchConsoleScreen.java:244) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ResearchConsoleScreen.render(ResearchConsoleScreen.java:80) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
@@ -40,14 +40,14 @@ A detailed walkthrough of the error, its code path and all known details is as f
 -- Head --
 Thread: Render thread
 Stacktrace:
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen.renderStatus(ResearchConsoleScreen.java:244) ~[%23214!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen.render(ResearchConsoleScreen.java:80) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ResearchConsoleScreen.renderStatus(ResearchConsoleScreen.java:244) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ResearchConsoleScreen.render(ResearchConsoleScreen.java:80) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 -- Screen render details --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ResearchConsoleScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.screens.ResearchConsoleScreen
 	Mouse location: Scaled: (418.993750, 175.183631). Absolute: (1256.000000, 525.000000)
 	Screen size: ~~ERROR~~ IllegalFormatConversionException: f != java.lang.Integer
 Stacktrace:

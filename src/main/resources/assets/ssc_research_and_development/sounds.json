@@ -70,5 +70,65 @@
     "sounds": [
       "ssc_research_and_development:scan_finish"
     ]
+  },
+  "server_fans": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "ssc_research_and_development:server_fans",
+        "attenuation_distance": 4
+      }
+    ]
+  },
+  "circuit_printer": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:circuitprinter"
+    ]
+  },
+  "terminal_insert_disc": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:terminal_insert_disc"
+    ]
+  },
+  "tray_eject": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:tray_eject"
+    ]
+  },
+  "scan_loop": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "ssc_research_and_development:scan_loop",
+        "attenuation_distance": 4
+      }
+    ]
+  },
+  "teleport_arrival": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:teleport_arrival"
+    ]
+  },
+  "radpulse11": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:radpulse11"
+    ]
+  },
+  "button": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:button"
+    ]
+  },
+  "high_tech_confirm": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:high_tech_confirm"
+    ]
   }
 }

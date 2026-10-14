@@ -3,6 +3,7 @@ package net.mcreator.sscresearchanddevelopment.component.fabricator;
 import com.mojang.serialization.Codec;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentSounds;
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
 import net.mcreator.sscresearchanddevelopment.network.S2CSyncCraftingState;
 import net.minecraft.core.BlockPos;
@@ -14,6 +15,7 @@ import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -64,6 +66,7 @@ public abstract class AbstractFabricatorBlockEntity extends BlockEntity implemen
         this.setChanged();
         if (this.level != null && !this.level.isClientSide) {
             this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(), 3);
+            this.level.playSound(null, this.worldPosition, SscResearchAndDevelopmentSounds.TERMINAL_INSERT_DISC.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
         }
     }
 
@@ -160,6 +163,8 @@ public abstract class AbstractFabricatorBlockEntity extends BlockEntity implemen
                 be.craftTotalTime = recipe.getCraftTime();
                 be.craftProgress = 0;
                 changed = true;
+
+                level.playSound(null, pos, SscResearchAndDevelopmentSounds.CIRCUIT_PRINTER.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
             } else {
                 be.activeRecipeId = null;
             }
@@ -297,6 +302,8 @@ public abstract class AbstractFabricatorBlockEntity extends BlockEntity implemen
             ItemEntity entity = new ItemEntity(level, x, y, z, resultStack);
             entity.setDeltaMovement(facing.getStepX() * 0.2, 0.1, facing.getStepZ() * 0.2);
             level.addFreshEntity(entity);
+
+            this.level.playSound(null, this.worldPosition, SscResearchAndDevelopmentSounds.TRAY_EJECT.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
 
             this.setChanged();
             this.syncToClients();

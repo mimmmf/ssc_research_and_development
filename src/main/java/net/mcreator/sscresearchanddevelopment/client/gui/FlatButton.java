@@ -1,4 +1,4 @@
-package net.mcreator.sscresearchanddevelopment.client.gui.misc;
+package net.mcreator.sscresearchanddevelopment.client.gui;
 
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
 import net.minecraft.client.gui.Font;

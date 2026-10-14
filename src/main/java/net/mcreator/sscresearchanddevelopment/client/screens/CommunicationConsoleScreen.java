@@ -1,12 +1,11 @@
-package net.mcreator.sscresearchanddevelopment.client.gui;
-import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
+package net.mcreator.sscresearchanddevelopment.client.screens;
+import net.mcreator.sscresearchanddevelopment.client.gui.FlatButton;
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.MultiLineEditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 

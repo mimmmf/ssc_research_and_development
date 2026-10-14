@@ -9,7 +9,7 @@ java.lang.UnsupportedOperationException: Payload ssc:withdraw_material may not b
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.send(ClientCommonPacketListenerImpl.java:383) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.common.extensions.IClientCommonPacketListenerExtension.send(IClientCommonPacketListenerExtension.java:22) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(ClientPacketDistributor.java:25) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.FabricatorScreen$StorageEntry.mouseClicked(FabricatorScreen.java:333) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.FabricatorScreen$StorageEntry.mouseClicked(FabricatorScreen.java:333) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:44) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.AbstractContainerWidget.mouseClicked(AbstractContainerWidget.java:60) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:44) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
@@ -57,7 +57,7 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.send(ClientCommonPacketListenerImpl.java:383) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.common.extensions.IClientCommonPacketListenerExtension.send(IClientCommonPacketListenerExtension.java:22) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(ClientPacketDistributor.java:25) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.FabricatorScreen$StorageEntry.mouseClicked(FabricatorScreen.java:333) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.FabricatorScreen$StorageEntry.mouseClicked(FabricatorScreen.java:333) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:44) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.AbstractContainerWidget.mouseClicked(AbstractContainerWidget.java:60) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:44) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
@@ -73,7 +73,7 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:140) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 -- Affected screen --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.FabricatorScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.screens.FabricatorScreen
 Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.onPress(MouseHandler.java:110) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:249) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}

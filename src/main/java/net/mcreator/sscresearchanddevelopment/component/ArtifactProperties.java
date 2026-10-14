@@ -169,7 +169,6 @@ public record ArtifactProperties(
                     player.level().sendBlockUpdated(analyzerPos, analyzer.getBlockState(), analyzer.getBlockState(), 3);
 
                     player.containerMenu.broadcastChanges();
-                    player.level().playSound(null, pos, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.BLOCKS, 1.0f, 0.8f);
 
                     if (console instanceof IServerLinked linked) {
                         ServerInstance server = linked.resolveServer();

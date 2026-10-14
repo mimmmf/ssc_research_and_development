@@ -16,7 +16,7 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:526) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 -- Screen render details --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.screens.ArtefactConsoleScreen
 	Mouse location: Scaled: (240.000000, 126.374628). Absolute: (960.000000, 504.000000)
 	Screen size: ~~ERROR~~ IllegalFormatConversionException: f != java.lang.Integer
 Stacktrace:

@@ -9,7 +9,7 @@ java.lang.IllegalStateException: Can only blur once per frame
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.GuiGraphics.blurBeforeThisStratum(GuiGraphics.java:110) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderBlurredBackground(Screen.java:408) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderBackground(Screen.java:401) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen.render(ServersScreen.java:68) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen.render(ServersScreen.java:68) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
@@ -47,13 +47,13 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.GuiGraphics.blurBeforeThisStratum(GuiGraphics.java:110) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderBlurredBackground(Screen.java:408) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderBackground(Screen.java:401) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen.render(ServersScreen.java:68) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen.render(ServersScreen.java:68) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 -- Screen render details --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen
 	Mouse location: Scaled: (127.500000, 184.500000). Absolute: (255.000000, 369.000000)
 	Screen size: ~~ERROR~~ IllegalFormatConversionException: f != java.lang.Integer
 Stacktrace:

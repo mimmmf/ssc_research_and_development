@@ -1,9 +1,9 @@
-package net.mcreator.sscresearchanddevelopment.client.gui;
+package net.mcreator.sscresearchanddevelopment.client.screens;
 
 import net.mcreator.sscresearchanddevelopment.network.C2SRequestServerList;
 import net.mcreator.sscresearchanddevelopment.client.ClientFabricatorCache;
 import net.mcreator.sscresearchanddevelopment.client.ClientResearchCache;
-import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
+import net.mcreator.sscresearchanddevelopment.client.gui.FlatButton;
 import net.mcreator.sscresearchanddevelopment.component.fabricator.FabricatorRecipe;
 import net.mcreator.sscresearchanddevelopment.network.C2SRequestConsoleData;
 import net.mcreator.sscresearchanddevelopment.network.C2SUnlockResearch;

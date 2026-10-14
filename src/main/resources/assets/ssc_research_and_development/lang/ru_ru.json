@@ -60,6 +60,7 @@
   "ssc_research_and_development:area_damage_high": "Значительный урон",
   "ssc_research_and_development:area_heal": "Регенерация",
   "ssc_research_and_development:impulse_push": "Импульс",
+  "ssc_research_and_development:fracture": "Разлом",
   "gui.ssc_research_and_development.status.no_connection": "Нет связи",
   "gui.ssc_research_and_development.status.unlocked": "Изучено",
   "gui.ssc_research_and_development.status.no_points": "Мало ОИ",
@@ -75,5 +76,6 @@
   "gui.ssc_research_and_development.fabricator_gui.materials": "Материалы",
   "gui.ssc_research_and_development.fabricator_gui.none": "Ничего",
   "gui.ssc_research_and_development.fabricator_gui.required_resources": "Необходимые ресурсы:",
-  "gui.ssc_research_and_development.fabricator_gui.cost_line": " • %s: %s/%s"
+  "gui.ssc_research_and_development.fabricator_gui.cost_line": " • %s: %s/%s",
+  "item.ssc_research_and_development.hand_teleporter": "Ручной Телепорт"
 }

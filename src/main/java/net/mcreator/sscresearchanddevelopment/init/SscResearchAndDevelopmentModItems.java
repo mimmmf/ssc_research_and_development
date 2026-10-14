@@ -3,6 +3,7 @@
  */
 package net.mcreator.sscresearchanddevelopment.init;
 
+import net.mcreator.sscresearchanddevelopment.item.HandTeleporterItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -32,6 +33,7 @@ public class SscResearchAndDevelopmentModItems {
 	public static final DeferredItem<Item> CIRCUITIMPRINTER;
 	public static final DeferredItem<Item> MULTITOOL;
 	public static final DeferredItem<Item> RESEARCHDISK;
+	public static final DeferredItem<Item> HAND_TELEPORTER;
 	static {
 		ARTEFACTCONSOLE = block(SscResearchAndDevelopmentModBlocks.ARTEFACTCONSOLE, new Item.Properties().rarity(Rarity.UNCOMMON));
 		ARTEFACTANALYZER = block(SscResearchAndDevelopmentModBlocks.ARTEFACTANALYZER, new Item.Properties().rarity(Rarity.UNCOMMON));
@@ -43,6 +45,7 @@ public class SscResearchAndDevelopmentModItems {
 		CIRCUITIMPRINTER = block(SscResearchAndDevelopmentModBlocks.CIRCUITIMPRINTER, new Item.Properties().rarity(Rarity.UNCOMMON));
 		MULTITOOL = register("multitool", MultitoolItem::new);
 		RESEARCHDISK = register("researchdisk", ResearchdiskItem::new);
+		HAND_TELEPORTER = register("hand_teleporter", HandTeleporterItem::new);
 	}
 
 	// Start of user code block custom items

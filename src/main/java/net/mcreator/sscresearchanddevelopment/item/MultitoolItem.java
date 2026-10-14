@@ -57,7 +57,6 @@ public class MultitoolItem extends Item {
 					}
 				}
 				else {
-					//Соединение
 					handleSingleLinkMode(context, world, pos, player, stack);
 				}
 
@@ -87,7 +86,6 @@ public class MultitoolItem extends Item {
 	private InteractionResult handleSingleLinkMode(UseOnContext context, Level world, BlockPos pos, Player player, ItemStack stack) {
 		var linkedData = stack.getOrDefault(LINKED_BLOCK.get(), new LinkedBlockComponent(Optional.empty()));
 
-		// Шаг 1: Выбор первого блока
 		if (linkedData.linked_block().isEmpty()) {
 			if (world.getBlockEntity(pos) instanceof ILinkable) {
 				stack.set(LINKED_BLOCK.get(), new LinkedBlockComponent(Optional.of(pos)));
@@ -100,7 +98,6 @@ public class MultitoolItem extends Item {
 		BlockPos firstPos = linkedData.linked_block().get();
 		BlockPos secondPos = pos;
 
-		// Сброс, если кликнули по тому же блоку
 		if (firstPos.equals(secondPos)) {
 			if (world.getBlockEntity(secondPos) instanceof ILinkable linkable) {
 				linkable.tryUnlink(player, stack);
@@ -113,19 +110,16 @@ public class MultitoolItem extends Item {
 		ILinkable firstBE = world.getBlockEntity(firstPos) instanceof ILinkable lb ? lb : null;
 		ILinkable secondBE = world.getBlockEntity(secondPos) instanceof ILinkable lb ? lb : null;
 
-		// КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Если первый блок был удален из мира
 		if (firstBE == null) {
 			player.displayClientMessage(Component.literal("Предыдущий блок более недоступен!").withStyle(ChatFormatting.RED), true);
 			stack.set(LINKED_BLOCK.get(), new LinkedBlockComponent(Optional.empty()));
 			return InteractionResult.FAIL;
 		}
 
-		// Если второй блок (на который кликаем сейчас) не линкуемый
 		if (secondBE == null) {
 			return InteractionResult.PASS;
 		}
 
-		// Логика поиска цели (Приемника)
 		ILinkable target = null;
 		BlockPos sourceCoords = null;
 
@@ -138,14 +132,12 @@ public class MultitoolItem extends Item {
 		}
 
 		if (target != null) {
-			// Проверяем, не та же ли это самая связь
 			if (target.getLinkedPos().isPresent() && target.getLinkedPos().get().equals(sourceCoords)) {
 				if (target.tryUnlink(player, stack)) {
 					player.displayClientMessage(Component.literal("Связь разорвана!").withStyle(ChatFormatting.RED), true);
 				}
 			}
 			else {
-				// Переподключение: сначала очищаем старое, потом ставим новое
 				if (target.getLinkedPos().isPresent()) {
 					target.tryUnlink(player, stack);
 				}
@@ -160,7 +152,6 @@ public class MultitoolItem extends Item {
 			return InteractionResult.SUCCESS;
 		}
 
-		// Если оба блока — источники и никто не может хранить связь
 		player.displayClientMessage(Component.literal("Эти блоки не могут быть соединены").withStyle(ChatFormatting.GRAY), true);
 		stack.set(LINKED_BLOCK.get(), new LinkedBlockComponent(Optional.empty()));
 		return InteractionResult.FAIL;

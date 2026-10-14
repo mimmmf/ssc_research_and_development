@@ -31,10 +31,14 @@ public class CircuitimprinterBlock extends Block {
 	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
-				default -> box(0, 0, 0, 16, 15, 16);
-				case NORTH -> box(0, 0, 0, 16, 15, 16);
-				case EAST -> box(0, 0, 0, 16, 15, 16);
-				case WEST -> box(0, 0, 0, 16, 15, 16);
+				case NORTH, SOUTH -> Shapes.or(
+						box(0, 0, 3, 16, 6, 13),
+						box(0, 6, 4, 16, 15, 12)
+				);
+                default -> Shapes.or(
+						box(3, 0, 0, 13, 6, 16),
+						box(4, 6, 0, 12, 15, 16)
+				);
 			};
 		});
 	}
@@ -67,7 +71,7 @@ public class CircuitimprinterBlock extends Block {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection().getOpposite());
+		return super.getStateForPlacement(context).setValue(FACING, context.getHorizontalDirection());
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {

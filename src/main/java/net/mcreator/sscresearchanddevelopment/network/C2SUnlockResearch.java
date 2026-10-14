@@ -9,6 +9,7 @@ import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents
 import net.mcreator.sscresearchanddevelopment.component.technologies.ResearchNode;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentSounds;
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
+import net.mcreator.sscresearchanddevelopment.libs.Ssc14Handle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -18,6 +19,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -30,6 +32,8 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.ArrayList;
+
+import static net.mcreator.sscresearchanddevelopment.libs.Ssc14Handle.hasHeadsetWithKeyCustom;
 
 public record C2SUnlockResearch(BlockPos pos, String techId) implements CustomPacketPayload {
     public static final Type<C2SUnlockResearch> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath("ssc_research_and_development", "unlock_research"));
@@ -58,36 +62,20 @@ public record C2SUnlockResearch(BlockPos pos, String techId) implements CustomPa
                 NetworkSavedData data = NetworkSavedData.get(level);
                 if (data != null && data.unlockTechnology(server.getServerId(), node)) {
                     if (player instanceof ServerPlayer serverPlayer) {
-                        player.playSound(SscResearchAndDevelopmentSounds.SCAN_FINISH.get(), 1.0f, 1.0f);
+                        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SscResearchAndDevelopmentSounds.SCAN_FINISH.get(), SoundSource.BLOCKS, 1, 1);
 
                         String messageText = "Успешно разблокирована технология: " + node.getName().getString();
-                        int channelColor = 13466829;
-                        Component radioMessage = Component.literal("[Научный] Консоль исследований говорит, \"" + messageText + "\"")
-                                .setStyle(net.minecraft.network.chat.Style.EMPTY.withColor(net.minecraft.network.chat.TextColor.fromRgb(channelColor)));
-                        Item rndKeyItem = Ssc14ModItems.ENCRYPTION_KEY_RND.get();
-                        boolean hasConnection = false;
-                        try {
-                            Ssc14ModVariables.MapVariables vars = Ssc14ModVariables.MapVariables.get(level);
-                            hasConnection = vars.RND_Radio_Frequency;
-                        } catch (Exception e) {
-                            hasConnection = true;
-                        }
-                        if (hasConnection) {
-                            for (Player target : level.players()) {
-                                if (target.level() == level && hasHeadsetWithKeyCustom(target, rndKeyItem)) {
-                                    target.displayClientMessage(radioMessage, false);
-                                }
-                            }
-                        }
-                        net.minecraft.server.MinecraftServer serverInstance = net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer();
-                        if (serverInstance != null) {
-                            for (Player target : serverInstance.getPlayerList().getPlayers()) {
-                                if (target.isSpectator()) {
-                                    target.displayClientMessage(radioMessage, false);
-                                }
-                            }
-                        }
+
+                        Ssc14Handle.sendRadioMessage(
+                                level,
+                                "Научный",
+                                13466829,
+                                Ssc14ModItems.ENCRYPTION_KEY_RND.get(),
+                                "Консоль исследований",
+                                messageText
+                        );
                     }
+
                     if (linked instanceof BlockEntity be) {
                         ServerInstance updatedServer = data.getServer(server.getServerId());
                         if (updatedServer != null && player instanceof ServerPlayer serverPlayer) {
@@ -107,52 +95,5 @@ public record C2SUnlockResearch(BlockPos pos, String techId) implements CustomPa
                 }
             }
         });
-    }
-    private static boolean hasHeadsetWithKeyCustom(net.minecraft.world.entity.player.Player player, net.minecraft.world.item.Item requiredKey) {
-        net.minecraft.tags.TagKey<net.minecraft.world.item.Item> headsetTag = net.minecraft.tags.ItemTags.create(
-                net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("ssc14", "headsets")
-        );
-        net.minecraft.world.entity.player.Inventory inventory = player.getInventory();
-        for (int i = 0; i < inventory.getContainerSize(); ++i) {
-            net.minecraft.world.item.ItemStack stack = inventory.getItem(i);
-            if (!stack.isEmpty() && stack.is(headsetTag) && hasSpecificKeyInsideCustom(stack, requiredKey)) {
-                return true;
-            }
-        }
-
-        try {
-            var atomicFound = new java.util.concurrent.atomic.AtomicBoolean(false);
-            CuriosApi.getCuriosInventory(player).ifPresent((invHandler) -> {
-                var earHandler = invHandler.getStacksHandler("ear");
-                if (earHandler.isPresent()) {
-                    net.neoforged.neoforge.items.IItemHandler handler = earHandler.get().getStacks();
-                    for (int i = 0; i < handler.getSlots(); ++i) {
-                        net.minecraft.world.item.ItemStack stack = handler.getStackInSlot(i);
-                        if (!stack.isEmpty() && stack.is(headsetTag) && hasSpecificKeyInsideCustom(stack, requiredKey)) {
-                            atomicFound.set(true);
-                        }
-                    }
-                }
-            });
-            if (atomicFound.get()) return true;
-        } catch (Exception ignored) {}
-
-        return false;
-    }
-
-    private static boolean hasSpecificKeyInsideCustom(net.minecraft.world.item.ItemStack headset, net.minecraft.world.item.Item requiredKey) {
-        IItemHandler container = headset.getCapability(
-                Capabilities.ItemHandler.ITEM
-        );
-        if (container == null) {
-            return false;
-        }
-        for (int i = 0; i < container.getSlots(); ++i) {
-            ItemStack itemInSlot = container.getStackInSlot(i);
-            if (!itemInSlot.isEmpty() && itemInSlot.is(requiredKey)) {
-                return true;
-            }
-        }
-        return false;
     }
 }

@@ -1,12 +1,3 @@
-/data get block 8 56 -2
-/data get block -1 56 10
-/data get block -1 56 9
-/data get block 2 56 6
-/data get block 7 56 8
-/data get block 7 56 6
-/data get block -2 56 -6
-/give @a minecraft:debug_stick
-/summon ssc_research_and_development:flora_anomaly
 /kill @e[type=ssc_research_and_development:flora_anomaly]
 /test
 /screentest
@@ -48,3 +39,12 @@
 /test
 /difficulty easy
 /difficulty peaceful
+/give @a ssc14_dlc:carp_spawn_egg
+/summon ssc14_dlc:carp
+/kill @e
+/summon ssc_research_and_development:portal_blue
+/kill @e[type=ssc_research_and_development:portal_blue]
+/summon ssc_research_and_development:portal_blue
+/summon ssc_research_and_development:portal_red
+/kill @e[type=ssc_research_and_development:portal_blue]
+/kill @e[type=ssc_research_and_development:portal_red]

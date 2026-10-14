@@ -1,19 +1,20 @@
 {
   "variants": {
     "facing=north": {
-      "model": "ssc_research_and_development:block/circuitimprinter"
-    },
-    "facing=east": {
       "model": "ssc_research_and_development:block/circuitimprinter",
       "y": 90
     },
-    "facing=south": {
+    "facing=east": {
       "model": "ssc_research_and_development:block/circuitimprinter",
       "y": 180
     },
-    "facing=west": {
+    "facing=south": {
       "model": "ssc_research_and_development:block/circuitimprinter",
       "y": 270
+    },
+    "facing=west": {
+      "model": "ssc_research_and_development:block/circuitimprinter",
+      "y": 0
     }
   }
 }

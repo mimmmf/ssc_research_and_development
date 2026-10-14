@@ -60,6 +60,7 @@
   "ssc_research_and_development:area_damage_high": "major Damage",
   "ssc_research_and_development:area_heal": "regeneration",
   "ssc_research_and_development:impulse_push": "impulse",
+  "ssc_research_and_development:fracture": "fracture",
   "gui.ssc_research_and_development.status.no_connection": "No link",
   "gui.ssc_research_and_development.status.unlocked": "Unlocked",
   "gui.ssc_research_and_development.status.no_points": "Low RP",
@@ -75,5 +76,6 @@
   "gui.ssc_research_and_development.fabricator_gui.materials": "Materials",
   "gui.ssc_research_and_development.fabricator_gui.none": "Nothing",
   "gui.ssc_research_and_development.fabricator_gui.required_resources": "Required resources:",
-  "gui.ssc_research_and_development.fabricator_gui.cost_line": " • %s: %s/%s"
+  "gui.ssc_research_and_development.fabricator_gui.cost_line": " • %s: %s/%s",
+  "item.ssc_research_and_development.hand_teleporter": "Hand Teleporter"
 }

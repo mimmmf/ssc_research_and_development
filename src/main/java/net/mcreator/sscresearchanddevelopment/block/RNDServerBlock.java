@@ -5,15 +5,10 @@ import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModItems;
-import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
-import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
-import net.mcreator.sscresearchanddevelopment.item.ResearchdiskItem;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -47,10 +42,22 @@ public class RNDServerBlock extends Block implements EntityBlock {
 	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
-				default -> box(0, 0, 0, 16, 24, 16);
-				case NORTH -> box(0, 0, 0, 16, 24, 16);
-				case EAST -> box(0, 0, 0, 16, 24, 16);
-				case WEST -> box(0, 0, 0, 16, 24, 16);
+				case NORTH -> Shapes.or(
+						box(2, 0, 2, 14, 12, 15),
+						box(1, 12, 1, 15, 20, 15)
+				);
+				case EAST -> Shapes.or(
+						box(1, 0, 2, 14, 12, 14),
+						box(1, 12, 1, 15, 20, 15)
+				);
+				case WEST -> Shapes.or(
+						box(2, 0, 2, 15, 12, 14),
+						box(1, 12, 1, 15, 20, 15)
+				);
+				default -> Shapes.or(
+						box(2, 0, 1, 14, 12, 14),
+						box(1, 12, 1, 15, 20, 15)
+				);
 			};
 		});
 	}

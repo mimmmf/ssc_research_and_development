@@ -1,6 +1,7 @@
 package net.mcreator.sscresearchanddevelopment.block.entity;
 
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentSounds;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
 import net.mcreator.sscresearchanddevelopment.interfaces.IServerLinked;
 import net.mcreator.sscresearchanddevelopment.world.inventory.ArtefactConsoleMenu;
@@ -147,12 +148,7 @@ public class ArtefactconsoleBlockEntity extends BlockEntity implements ILinkable
 
 	private void playLinkEffects(boolean linked) {
 		if (level instanceof ServerLevel serverLevel) {
-			ParticleOptions particle = linked ? ParticleTypes.HAPPY_VILLAGER : ParticleTypes.SMOKE;
-			serverLevel.sendParticles(particle,
-					worldPosition.getX() + 0.5, worldPosition.getY() + 1.1, worldPosition.getZ() + 0.5,
-					15, 0.2, 0.2, 0.2, 0.05);
-
-			SoundEvent sound = linked ? SoundEvents.EXPERIENCE_ORB_PICKUP : SoundEvents.LEAF_LITTER_BREAK;
+			SoundEvent sound = linked ? SscResearchAndDevelopmentSounds.SCAN_FINISH.get() : SoundEvents.LEAF_LITTER_BREAK;
 			level.playSound(null, worldPosition, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
 	}

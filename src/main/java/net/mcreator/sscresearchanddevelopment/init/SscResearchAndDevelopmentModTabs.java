@@ -32,5 +32,6 @@ public class SscResearchAndDevelopmentModTabs {
 				tabData.accept(SscResearchAndDevelopmentModBlocks.CIRCUITIMPRINTER.get().asItem());
 				tabData.accept(SscResearchAndDevelopmentModItems.MULTITOOL.get());
 				tabData.accept(SscResearchAndDevelopmentModItems.RESEARCHDISK.get());
+				tabData.accept(SscResearchAndDevelopmentModItems.HAND_TELEPORTER.get());
 			}).build());
 }

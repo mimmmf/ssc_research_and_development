@@ -31,10 +31,22 @@ public class ProtolatheBlock extends Block {
 	private Function<BlockState, VoxelShape> makeShapes() {
 		return this.getShapeForEachState(state -> {
 			return switch (state.getValue(FACING)) {
-				default -> box(0, 0, 0, 16, 24, 16);
-				case NORTH -> box(0, 0, 0, 16, 24, 16);
-				case EAST -> box(0, 0, 0, 16, 24, 16);
-				case WEST -> box(0, 0, 0, 16, 24, 16);
+				case NORTH -> Shapes.or(
+						box(0, 0, 2, 16, 12, 14),
+						box(-1, 12, 0, 17, 24, 14)
+				);
+				case EAST -> Shapes.or(
+						box(2, 0, 0, 14, 12, 16),
+						box(2, 12, -1, 16, 24, 17)
+				);
+				case WEST -> Shapes.or(
+						box(2, 0, 0, 14, 12, 16),
+						box(0, 12, -1, 14, 24, 17)
+				);
+				default -> Shapes.or(
+						box(0, 0, 2, 16, 12, 14),
+						box(-1, 12, 2, 17, 24, 16)
+				);
 			};
 		});
 	}

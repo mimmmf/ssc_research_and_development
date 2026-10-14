@@ -73,6 +73,7 @@ public class SscResearchAndDevelopmentMod {
 		SscResearchAndDevelopmentDataComponents.COMPONENTS.register(modEventBus);
 		ArtefactRegistries.init(modEventBus);
 		SscResearchAndDevelopmentSounds.SOUND_EVENTS.register(modEventBus);
+		SscResearchAndDevelopmentModEntities.REGISTRY.register(modEventBus);
 		// End of user code block mod init
 	}
 

@@ -2,7 +2,9 @@ package net.mcreator.sscresearchanddevelopment.block.entity;
 
 import net.mcreator.sscresearchanddevelopment.component.ArtefactsComponents.*;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentDataComponents;
+import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentSounds;
 import net.mcreator.sscresearchanddevelopment.interfaces.ILinkable;
+import net.mcreator.sscresearchanddevelopment.interfaces.ILoopSoundPlayer;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.Connection;
@@ -32,10 +34,10 @@ import javax.annotation.Nullable;
 
 import java.util.*;
 
-public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyContainer, ILinkable {
+public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyContainer, ILinkable, ILoopSoundPlayer {
 	private NonNullList<ItemStack> stacks = NonNullList.withSize(1, ItemStack.EMPTY);
 	private boolean connected = false;
-
+	private boolean soundStarted = false;
 	public ArtefactanalyzerBlockEntity(BlockPos position, BlockState state) {
 		super(SscResearchAndDevelopmentModBlockEntities.ARTEFACTANALYZER.get(), position, state);
 	}
@@ -70,6 +72,22 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 		this.connected = valueInput.getBooleanOr("is_connected", false);
 		this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 		ContainerHelper.loadAllItems(valueInput, this.stacks);
+	}
+
+	@Override
+	public void onLoad() {
+		super.onLoad();
+
+		if (level == null)
+			return;
+		if (level.isClientSide) {
+			tryPlayLoopSound(this, soundStarted, () -> soundStarted = true);
+		}
+	}
+
+	@Override
+	public SoundEvent getLoopSound() {
+		return SscResearchAndDevelopmentSounds.SCAN_LOOP.get();
 	}
 
 	@Override
@@ -170,9 +188,7 @@ public class ArtefactanalyzerBlockEntity extends BlockEntity implements WorldlyC
 
 	private void playLinkEffects(boolean linked) {
 		if (level instanceof ServerLevel serverLevel) {
-			ParticleOptions particle = linked ? ParticleTypes.HAPPY_VILLAGER : ParticleTypes.SMOKE;
-			serverLevel.sendParticles(particle, worldPosition.getX() + 0.5, worldPosition.getY() + 1.1, worldPosition.getZ() + 0.5, 15, 0.2, 0.2, 0.2, 0.05);
-			SoundEvent sound = linked ? SoundEvents.EXPERIENCE_ORB_PICKUP : SoundEvents.LEAF_LITTER_BREAK;
+			SoundEvent sound = linked ? SscResearchAndDevelopmentSounds.SCAN_FINISH.get() : SoundEvents.LEAF_LITTER_BREAK;
 			level.playSound(null, worldPosition, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
 		}
 	}

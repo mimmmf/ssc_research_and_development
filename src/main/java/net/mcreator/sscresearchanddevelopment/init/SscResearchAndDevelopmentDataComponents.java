@@ -5,6 +5,7 @@ import net.mcreator.sscresearchanddevelopment.component.LinkedBlockComponent;
 import net.mcreator.sscresearchanddevelopment.component.ArtifactProperties;
 import net.mcreator.sscresearchanddevelopment.component.MultitoolComponent;
 import net.minecraft.core.GlobalPos;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -15,17 +16,18 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Supplier;
 
 public class SscResearchAndDevelopmentDataComponents {
-	public static final DeferredRegister<DataComponentType<?>> COMPONENTS = 
-        DeferredRegister.create(BuiltInRegistries.DATA_COMPONENT_TYPE, "ssc_research_and_development");
+    public static final DeferredRegister<DataComponentType<?>> COMPONENTS =
+            DeferredRegister.create(BuiltInRegistries.DATA_COMPONENT_TYPE, "ssc_research_and_development");
 
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ArtifactProperties>> ARTIFACT_DATA = 
-        COMPONENTS.register("artifact_data", () -> DataComponentType.<ArtifactProperties>builder()
-            .persistent(ArtifactProperties.CODEC)
-            .networkSynchronized(ArtifactProperties.STREAM_CODEC)
-            .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ArtifactProperties>> ARTIFACT_DATA =
+            COMPONENTS.register("artifact_data", () -> DataComponentType.<ArtifactProperties>builder()
+                    .persistent(ArtifactProperties.CODEC)
+                    .networkSynchronized(ArtifactProperties.STREAM_CODEC)
+                    .build());
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<List<GlobalPos>>> LINKED_BLOCKS =
             COMPONENTS.register("linked_blocks", () -> DataComponentType.<List<GlobalPos>>builder()
                     .persistent(Codec.list(GlobalPos.CODEC))
@@ -49,4 +51,10 @@ public class SscResearchAndDevelopmentDataComponents {
                     .build());
     public static final Supplier<DataComponentType<Integer>> SCORE = COMPONENTS.register("score",
             () -> DataComponentType.<Integer>builder().persistent(ExtraCodecs.NON_NEGATIVE_INT).build());
+
+    public static final Supplier<DataComponentType<List<UUID>>> TELEPORTER_PORTALS =
+            COMPONENTS.register("teleporter_portals", () -> DataComponentType.<List<UUID>>builder()
+                    .persistent(UUIDUtil.CODEC.listOf())
+                    .networkSynchronized(UUIDUtil.STREAM_CODEC.apply(ByteBufCodecs.list()))
+                    .build());
 }

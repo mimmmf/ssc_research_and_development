@@ -1,0 +1,7 @@
+{
+  "parent": "ssc_research_and_development:custom/hand_teleporter",
+  "textures": {
+    "0": "ssc_research_and_development:item/hand_teleporter_texture",
+    "particle": "ssc_research_and_development:item/hand_teleporter_texture"
+  }
+}

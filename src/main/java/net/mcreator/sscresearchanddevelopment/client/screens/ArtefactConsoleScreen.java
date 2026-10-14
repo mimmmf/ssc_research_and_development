@@ -1,8 +1,8 @@
-package net.mcreator.sscresearchanddevelopment.client.gui;
+package net.mcreator.sscresearchanddevelopment.client.screens;
 
 import net.mcreator.sscresearchanddevelopment.block.entity.ArtefactconsoleBlockEntity;
 import net.mcreator.sscresearchanddevelopment.network.C2SRequestServerList;
-import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
+import net.mcreator.sscresearchanddevelopment.client.gui.FlatButton;
 import net.mcreator.sscresearchanddevelopment.component.ArtifactProperties;
 import net.mcreator.sscresearchanddevelopment.component.subcomponents.ArtefactNode;
 import net.mcreator.sscresearchanddevelopment.network.ExtractPointsPayload;
@@ -66,7 +66,7 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
 
         this.extractButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 71, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.extract").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
             if (selectedNode != null && selectedNode.status() == NodeStatus.READY_TO_EXTRACT) {
-                ClientPacketDistributor.sendToServer(new ExtractPointsPayload(new BlockPos(x, y, z), selectedNode.id()));
+                ClientPacketDistributor.sendToServer(new ExtractPointsPayload(new BlockPos(x, y, z), selectedNode));
             }
         }));
     }

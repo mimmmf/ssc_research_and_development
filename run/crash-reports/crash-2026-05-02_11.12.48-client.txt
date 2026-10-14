@@ -15,7 +15,7 @@ java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlots(AbstractContainerScreen.java:164) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderContents(AbstractContainerScreen.java:116) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:101) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen.render(ArtefactConsoleGUIScreen.java:43) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ArtefactConsoleScreen.render(ArtefactConsoleGUIScreen.java:43) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31.jar%23213!/:?] {re:classloading}
@@ -59,13 +59,13 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderSlots(AbstractContainerScreen.java:164) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderContents(AbstractContainerScreen.java:116) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:101) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen.render(ArtefactConsoleGUIScreen.java:43) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ArtefactConsoleScreen.render(ArtefactConsoleGUIScreen.java:43) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:112) ~[neoforge-21.8.31.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreenInternal(ClientHooks.java:409) ~[neoforge-21.8.31.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.ClientHooks.drawScreen(ClientHooks.java:404) ~[neoforge-21.8.31.jar%23213!/:?] {re:classloading}
 -- Screen render details --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ArtefactConsoleScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.screens.ArtefactConsoleScreen
 	Mouse location: Scaled: (240.000000, 126.374628). Absolute: (960.000000, 504.000000)
 	Screen size: ~~ERROR~~ IllegalFormatConversionException: f != java.lang.Integer
 Stacktrace:

@@ -9,13 +9,13 @@ java.lang.UnsupportedOperationException: Payload ssc:connect_server may not be s
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.send(ClientCommonPacketListenerImpl.java:383) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.common.extensions.IClientCommonPacketListenerExtension.send(IClientCommonPacketListenerExtension.java:22) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(ClientPacketDistributor.java:25) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen.lambda$init$1(ServersScreen.java:48) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen.lambda$init$1(ServersScreen.java:48) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.Button.onPress(Button.java:41) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.AbstractButton.onClick(AbstractButton.java:51) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.extensions.IAbstractWidgetExtension.onClick(IAbstractWidgetExtension.java:36) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.AbstractWidget.mouseClicked(AbstractWidget.java:135) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:44) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen.mouseClicked(ServersScreen.java:110) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen.mouseClicked(ServersScreen.java:110) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.onPress(MouseHandler.java:110) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:249) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:102) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
@@ -59,13 +59,13 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl.send(ClientCommonPacketListenerImpl.java:383) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.common.extensions.IClientCommonPacketListenerExtension.send(IClientCommonPacketListenerExtension.java:22) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(ClientPacketDistributor.java:25) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen.lambda$init$1(ServersScreen.java:48) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen.lambda$init$1(ServersScreen.java:48) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.Button.onPress(Button.java:41) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.AbstractButton.onClick(AbstractButton.java:51) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/neoforge@21.8.31/net.neoforged.neoforge.client.extensions.IAbstractWidgetExtension.onClick(IAbstractWidgetExtension.java:36) ~[neoforge-21.8.31-merged.jar%23213!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.AbstractWidget.mouseClicked(AbstractWidget.java:135) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:44) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
-	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen.mouseClicked(ServersScreen.java:110) ~[%23214!/:?] {re:classloading}
+	at TRANSFORMER/ssc_research_and_development@1.0.0/net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen.mouseClicked(ServersScreen.java:110) ~[%23214!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.onPress(MouseHandler.java:110) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:249) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:102) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading,pl:accesstransformer:B}
@@ -77,7 +77,7 @@ Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:140) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 -- Affected screen --
 Details:
-	Screen name: net.mcreator.sscresearchanddevelopment.client.gui.ServersScreen
+	Screen name: net.mcreator.sscresearchanddevelopment.client.screens.ServersScreen
 Stacktrace:
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.onPress(MouseHandler.java:110) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}
 	at TRANSFORMER/minecraft@1.21.8/net.minecraft.client.MouseHandler.lambda$setup$4(MouseHandler.java:249) ~[neoforge-21.8.31-merged.jar%23212!/:?] {re:classloading}

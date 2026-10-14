@@ -1,9 +1,9 @@
-package net.mcreator.sscresearchanddevelopment.client.gui;
+package net.mcreator.sscresearchanddevelopment.client.screens;
 
 import net.mcreator.sscresearchanddevelopment.network.C2SRequestFabricatorSync;
 import net.mcreator.sscresearchanddevelopment.network.C2SRequestServerList;
 import net.mcreator.sscresearchanddevelopment.client.ClientFabricatorCache;
-import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
+import net.mcreator.sscresearchanddevelopment.client.gui.FlatButton;
 import net.mcreator.sscresearchanddevelopment.component.fabricator.*;
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
 import net.mcreator.sscresearchanddevelopment.network.C2SStartCraft;

@@ -1,8 +1,8 @@
-package net.mcreator.sscresearchanddevelopment.client.gui;
+package net.mcreator.sscresearchanddevelopment.client.screens;
 
 import net.mcreator.sscresearchanddevelopment.network.C2SConnectServer;
 import net.mcreator.sscresearchanddevelopment.network.S2CUpdateServerList;
-import net.mcreator.sscresearchanddevelopment.client.gui.misc.FlatButton;
+import net.mcreator.sscresearchanddevelopment.client.gui.FlatButton;
 import net.mcreator.sscresearchanddevelopment.interfaces.IScreenHelper;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;

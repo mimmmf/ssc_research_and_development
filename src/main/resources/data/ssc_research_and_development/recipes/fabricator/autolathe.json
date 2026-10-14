@@ -1119,7 +1119,7 @@
     },
     "materials": [
       {
-        "ingredient": "minecraft:oak_planks",
+        "ingredient": "ssc_14:wood",
         "count": 2
       },
       {
@@ -1141,7 +1141,7 @@
     },
     "materials": [
       {
-        "ingredient": "minecraft:oak_planks",
+        "ingredient": "ssc_14:wood",
         "count": 2
       }
     ],
@@ -2225,7 +2225,7 @@
     },
     "materials": [
       {
-        "ingredient": "minecraft:oak_planks",
+        "ingredient": "ssc_14:wood",
         "count": 1
       }
     ],
@@ -2711,7 +2711,7 @@
     },
     "materials": [
       {
-        "ingredient": "minecraft:oak_planks",
+        "ingredient": "ssc_14:wood",
         "count": 1
       }
     ],
@@ -2729,7 +2729,7 @@
     },
     "materials": [
       {
-        "ingredient": "minecraft:oak_planks",
+        "ingredient": "ssc_14:wood",
         "count": 1
       }
     ],
@@ -2747,7 +2747,7 @@
     },
     "materials": [
       {
-        "ingredient": "minecraft:oak_planks",
+        "ingredient": "ssc_14:wood",
         "count": 1
       }
     ],

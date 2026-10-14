@@ -99,7 +99,7 @@ public class ArtefactRegistries {
                             "ssc_14:popcorn_trash",
                             "energy_bar_trash"
                     ),
-                    10, 30
+                    16,32
             ));
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> COMMON_RESOURCE_SPAWN =
             REACTIONS.register("common_resource_spawn", () -> new ResourceSpawnReaction(
@@ -115,7 +115,7 @@ public class ArtefactRegistries {
                             "ssc_14:raw_iron",
                             "ssc_14:raw_coal"
                     ),
-                    5, 15
+                    16, 64
             ));
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> RARE_RESOURCE_SPAWN =
             REACTIONS.register("rare_resource_spawn", () -> new ResourceSpawnReaction(
@@ -128,7 +128,7 @@ public class ArtefactRegistries {
                             "ssc_14:silver",
                             "ssc_14:uran"
                     ),
-                    1, 5
+                    16, 32
             ));
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> ARTEFACT_SPAWN =
             REACTIONS.register("artefact_spawn", () -> new ResourceSpawnReaction(
@@ -148,7 +148,7 @@ public class ArtefactRegistries {
                             "minecraft:pig",
                             "minecraft:bee",
                             "minecraft:chicken",
-                            "minecraft:villager"
+                            "minecraft:fox"
                     ),
                     1, 3
             ));
@@ -157,27 +157,24 @@ public class ArtefactRegistries {
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> SUMMON_HOSTILE =
             REACTIONS.register("summon_hostile", () -> new EntitySummonReaction(
                     List.of(
-                            "minecraft:zombie",
-                            "minecraft:skeleton",
-                            "minecraft:spider",
-                            "minecraft:blaze",
-                            "minecraft:cave_spider",
-                            "minecraft:silverfish"
+                            "ssc14_dlc:carp"
                     ),
                     2, 4
             ));
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> AREA_DAMAGE_LOW =
-            REACTIONS.register("area_damage_low", () -> new AreaDamageReaction(4.0F, 5.0D));
+            REACTIONS.register("area_damage_low", () -> new AreaDamageReaction(4.0F, 3.0D));
 
     // 2. Сильная аномальная вспышка урона (12 HP = 6 сердец в радиусе 8 блоков)
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> AREA_DAMAGE_HIGH =
-            REACTIONS.register("area_damage_high", () -> new AreaDamageReaction(12.0F, 8.0D));
+            REACTIONS.register("area_damage_high", () -> new AreaDamageReaction(12.0F, 3.0D));
 
     // 3. Импульс исцеления (6 HP = 3 сердца в радиусе 6 блоков)
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> AREA_HEAL =
-            REACTIONS.register("area_heal", () -> new AreaHealReaction(6.0F, 6.0D));
+            REACTIONS.register("area_heal", () -> new AreaHealReaction(6.0F, 3.0D));
     public static final DeferredHolder<ArtefactReaction, ArtefactReaction> IMPULSE_PUSH =
             REACTIONS.register("impulse_push", () -> new ImpulsePushReaction(8.0D, 2.0D));
+    public static final DeferredHolder<ArtefactReaction, ArtefactReaction> FRACTURE =
+            REACTIONS.register("fracture", FractureReaction::new);
     public static void init(IEventBus bus) {
         TRIGGERS.register(bus);
         REACTIONS.register(bus);
