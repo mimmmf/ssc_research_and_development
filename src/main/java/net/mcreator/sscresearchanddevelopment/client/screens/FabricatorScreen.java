@@ -46,7 +46,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
     protected void init() {
         super.init();
         String serversBtnText = Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString();
-        addRenderableWidget(new FlatButton(leftPos + 9, topPos + 160, 99, 10, serversBtnText, 0.7f, 0xFF3D3F56, 0xFF633B00, font, b -> {
+        addRenderableWidget(new FlatButton(leftPos + 9, topPos + 160, 99, 10, serversBtnText, 0.7f, 0xFF3D3F56, 0xFF633B00, b -> {
             if (menu.getBlockEntity() != null)
                 ClientPacketDistributor.sendToServer(new C2SRequestServerList(menu.getBlockEntity().getBlockPos()));
         }));
@@ -114,13 +114,13 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         renderCraftingStatus(g, be, pt);
 
         String titleText = be != null ? be.getDisplayName().getString() : Component.translatable("gui.ssc_research_and_development.fabricator_gui.title").getString();
-        renderScaledText(font, g, titleText, leftPos + 30, topPos + 7, 1.0f, -26368, true);
+        renderScaledText(g, titleText, leftPos + 30, topPos + 7, 1.0f, -26368, true);
 
         String queueText = Component.translatable("gui.ssc_research_and_development.fabricator_gui.queue").getString();
-        renderScaledText(font, g, queueText, leftPos + 170, topPos + 19, 0.6f, 0xFFFFFFFF, true);
+        renderScaledText(g, queueText, leftPos + 170, topPos + 19, 0.6f, 0xFFFFFFFF, true);
 
         String materialsText = Component.translatable("gui.ssc_research_and_development.fabricator_gui.materials").getString();
-        renderScaledText(font, g, materialsText, leftPos + 170, topPos + 76, 0.6f, 0xFFFFFFFF, true);
+        renderScaledText(g, materialsText, leftPos + 170, topPos + 76, 0.6f, 0xFFFFFFFF, true);
 
         if (hoveredRecipe != null) renderRecipeTooltip(g, hoveredRecipe, mx, my);
     }
@@ -140,13 +140,13 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
                 renderScaledItem(g, recipe.getResult(), ax + 2, ay + 2, 1.75f);
 
                 String time = String.format("%.1fs", Math.max(0, (be.getCraftTotalTime() - be.getCraftProgress()) / 20.0f));
-                renderScaledText(font, g, time, ax + 16, ay + 12, 1f, 0xFFFFFFFF, true);
-                renderScaledText(font, g, recipe.getResult().getHoverName().getString(), ax + 15, ay + 34, 0.7f, -26368, true);
+                renderScaledText(g, time, ax + 16, ay + 12, 1f, 0xFFFFFFFF, true);
+                renderScaledText(g, recipe.getResult().getHoverName().getString(), ax + 15, ay + 34, 0.7f, -26368, true);
                 return;
             }
         }
         String noneText = Component.translatable("gui.ssc_research_and_development.fabricator_gui.none").getString();
-        renderScaledText(font, g, noneText, ax + 15, ay + 34, 0.7f, 0xFFFFFFFF, true);
+        renderScaledText(g, noneText, ax + 15, ay + 34, 0.7f, 0xFFFFFFFF, true);
     }
 
     private void renderScaledItem(GuiGraphics g, ItemStack stack, int x, int y, float scale) {
@@ -283,7 +283,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
             this.cachedEnough = null;
             boolean enough = hasEnough();
             g.fill(left, top - 1, left + 200, top + 10, enough ? 0xFF3D3F56 : 0xFF22222A);
-            renderScaledText(font, g, text, left + 72, top + 1, 0.75f, enough ? 0xFFFFFFFF : 0xFFAA0000, false);
+            renderScaledText(g, text, left + 72, top + 1, 0.75f, enough ? 0xFFFFFFFF : 0xFFAA0000, false);
             if (!icon.isEmpty()) renderScaledItem(g, icon, left + 58, top - 1, 0.6f);
             if (hov) FabricatorScreen.this.hoveredRecipe = this.recipe;
         }
@@ -319,7 +319,7 @@ public class FabricatorScreen extends AbstractContainerScreen<FabricatorMenu> im
         @Override
         public void render(GuiGraphics g, int idx, int top, int left, int w, int h, int mx, int my, boolean hov, float pt) {
             g.fill(left, top - 1, left + 200, top + 10, 0xFF3D3F56);
-            renderScaledText(font, g, text, left + 70, top + 2, 0.75f, 0xFFFFFFFF, false);
+            renderScaledText(g, text, left + 70, top + 2, 0.75f, 0xFFFFFFFF, false);
             if (!icon.isEmpty()) renderScaledItem(g, icon, left + 56, top, 0.6f);
         }
 

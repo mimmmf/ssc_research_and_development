@@ -77,5 +77,20 @@
   "gui.ssc_research_and_development.fabricator_gui.none": "Nothing",
   "gui.ssc_research_and_development.fabricator_gui.required_resources": "Required resources:",
   "gui.ssc_research_and_development.fabricator_gui.cost_line": " • %s: %s/%s",
-  "item.ssc_research_and_development.hand_teleporter": "Hand Teleporter"
+  "item.ssc_research_and_development.hand_teleporter": "Hand Teleporter",
+  "item.ssc_research_and_development.anomaly_vessel": "Anomaly Vessel",
+  "item.ssc_research_and_development.anomaly_scanner": "Anomaly Scanner",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.title": "ANOMALY SCANNER",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.subtitle": "SCN-04",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.current_severity": "Current severity:",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.current_anomaly_state": "Current anomaly state:",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.point_output": "Point output: ",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.particle_reaction_analysis": "Particle Reaction Analysis:",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.danger_type": "Danger type: ",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.unstable_type": "Unstable type: ",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.containment_type": "Containment type: ",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.transformation_type": "Transformation type: ",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.behavior_deviation_analysis": "Behavior deviation analysis:",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.anomaly_produces_percent": "- Anomaly produces 120% of the points",
+  "gui.ssc_research_and_development.anomaly_scanner_gui.time_until_next_pulse": "Time until next pulse:"
 }

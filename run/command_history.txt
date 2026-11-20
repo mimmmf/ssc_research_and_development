@@ -1,13 +1,3 @@
-/kill @e[type=ssc_research_and_development:flora_anomaly]
-/test
-/screentest
-/
-/screentest
-/
-/screentest
-/difficulty easy
-/time set night
-/time set 20000
 /give @a minecraft:command_block
 /give Dev ssc_research_and_development:artefact
 /kill @e[type=minecraft:item]
@@ -48,3 +38,13 @@
 /summon ssc_research_and_development:portal_red
 /kill @e[type=ssc_research_and_development:portal_blue]
 /kill @e[type=ssc_research_and_development:portal_red]
+/summon ssc_research_and_development:anomaly
+/kill @e[type=ssc_research_and_development:anomaly
+/kill @e[type=ssc_research_and_development:anomaly]
+/summon ssc_research_and_development:anomaly
+/kill @e[type=ssc_research_and_development:anomaly]
+/summon ssc_research_and_development:anomaly
+/time set night
+/kill @e[type=ssc_research_and_development:anomaly]
+/summon ssc_research_and_development:anomaly
+/kill @e[type=ssc_research_and_development:portal_blue]

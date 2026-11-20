@@ -35,7 +35,7 @@ public class RNDServerBlock extends Block implements EntityBlock {
 	private final Function<BlockState, VoxelShape> shapes = this.makeShapes();
 
 	public RNDServerBlock(BlockBehaviour.Properties properties) {
-		super(properties.sound(SoundType.METAL).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(properties.sound(SoundType.METAL).strength(1f, 10f).noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 

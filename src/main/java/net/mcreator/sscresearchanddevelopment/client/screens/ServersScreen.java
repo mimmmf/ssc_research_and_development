@@ -47,7 +47,7 @@ public class ServersScreen extends Screen implements IScreenHelper {
         this.selectButton = this.addRenderableWidget(new FlatButton(
                 leftPos + 70, topPos + 138, 100, 12,
                 Component.translatable("gui.ssc_research_and_development.servers_gui.connect").getString(),
-                0.8f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
+                0.8f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, b -> {
             if (selectedId != null) {
                 ClientPacketDistributor.sendToServer(new C2SConnectServer(consolePos, selectedId));
             }
@@ -63,7 +63,7 @@ public class ServersScreen extends Screen implements IScreenHelper {
         g.blit(RenderPipelines.GUI_TEXTURED, BG_TEXTURE, this.leftPos + 60, this.topPos - 1, 0, 0, 120, 160, 120, 160);
 
         String titleText = Component.translatable("gui.ssc_research_and_development.servers_gui.title").getString();
-        renderScaledText(font, g, titleText, leftPos + 120, topPos + 7, 1.0f, 0xFF55FFFF, true);
+        renderScaledText(g, titleText, leftPos + 120, topPos + 7, 1.0f, 0xFF55FFFF, true);
 
         int startX = listStartX();
         int startY = listStartY();
@@ -82,10 +82,10 @@ public class ServersScreen extends Screen implements IScreenHelper {
                 g.drawString(font, "✔", startX + 2, itemY + 3, 0xFF00FF00, false);
             }
 
-            renderScaledText(font, g, info.name(), startX + 30, itemY + 4, 0.8f, isSelected ? 0xFFFFFF00 : 0xFFFFFFFF, true);
+            renderScaledText(g, info.name(), startX + 30, itemY + 4, 0.8f, isSelected ? 0xFFFFFF00 : 0xFFFFFFFF, true);
 
             String pointsText = Component.translatable("gui.ssc_research_and_development.servers_gui.points", info.points()).getString();
-            renderScaledText(font, g, pointsText, startX + 80, itemY + 4, 0.8f, 0xFFAAAAAA, true);
+            renderScaledText(g, pointsText, startX + 80, itemY + 4, 0.8f, 0xFFAAAAAA, true);
         }
 
         super.render(g, mx, my, pt);

@@ -130,5 +130,11 @@
     "sounds": [
       "ssc_research_and_development:high_tech_confirm"
     ]
+  },
+  "anomaly_drone": {
+    "category": "master",
+    "sounds": [
+      "ssc_research_and_development:anomaly_drone"
+    ]
   }
 }

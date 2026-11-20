@@ -1,7 +1,4 @@
-package net.mcreator.sscresearchanddevelopment.client.Renderer.entity;// Made with Blockbench 5.2.2
-// Exported for Minecraft version 1.17 or later with Mojang mappings
-// Paste this class into your mod and generate all required imports
-
+package net.mcreator.sscresearchanddevelopment.client.Renderer.entity;
 
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 import net.minecraft.client.model.EntityModel;

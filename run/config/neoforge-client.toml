@@ -9,4 +9,4 @@ reducedDepthStencilFormat = false
 #When enabled, AO will be handled per BlockModelPart instead of using the first part's AO setting
 handleAmbientOcclusionPerPart = true
 #When enabled, all usage of Blaze3D will be validated against allowed usage
-enableB3DValidationLayer = true
+enableB3DValidationLayer = false

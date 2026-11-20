@@ -3,7 +3,7 @@
  */
 package net.mcreator.sscresearchanddevelopment.init;
 
-import net.mcreator.sscresearchanddevelopment.item.HandTeleporterItem;
+import net.mcreator.sscresearchanddevelopment.item.*;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -14,9 +14,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
-import net.mcreator.sscresearchanddevelopment.item.ResearchdiskItem;
-import net.mcreator.sscresearchanddevelopment.item.MultitoolItem;
-import net.mcreator.sscresearchanddevelopment.item.ArtefactItem;
 import net.mcreator.sscresearchanddevelopment.SscResearchAndDevelopmentMod;
 
 import java.util.function.Function;
@@ -34,18 +31,22 @@ public class SscResearchAndDevelopmentModItems {
 	public static final DeferredItem<Item> MULTITOOL;
 	public static final DeferredItem<Item> RESEARCHDISK;
 	public static final DeferredItem<Item> HAND_TELEPORTER;
+	public static final DeferredItem<Item> ANOMALY_VESSEL;
+	public static final DeferredItem<Item> ANOMALY_SCANNER;
 	static {
-		ARTEFACTCONSOLE = block(SscResearchAndDevelopmentModBlocks.ARTEFACTCONSOLE, new Item.Properties().rarity(Rarity.UNCOMMON));
-		ARTEFACTANALYZER = block(SscResearchAndDevelopmentModBlocks.ARTEFACTANALYZER, new Item.Properties().rarity(Rarity.UNCOMMON));
+		ARTEFACTCONSOLE = block(SscResearchAndDevelopmentModBlocks.ARTEFACTCONSOLE, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+		ARTEFACTANALYZER = block(SscResearchAndDevelopmentModBlocks.ARTEFACTANALYZER, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
 		ARTEFACT = register("artefact", ArtefactItem::new);
-		RND_SERVER = block(SscResearchAndDevelopmentModBlocks.RND_SERVER, new Item.Properties().rarity(Rarity.UNCOMMON));
-		RESEARCH_CONSOLE = block(SscResearchAndDevelopmentModBlocks.RESEARCH_CONSOLE, new Item.Properties().rarity(Rarity.UNCOMMON));
-		AUTOLATHE = block(SscResearchAndDevelopmentModBlocks.AUTOLATHE, new Item.Properties().rarity(Rarity.UNCOMMON));
-		PROTOLATHE = block(SscResearchAndDevelopmentModBlocks.PROTOLATHE, new Item.Properties().rarity(Rarity.UNCOMMON));
-		CIRCUITIMPRINTER = block(SscResearchAndDevelopmentModBlocks.CIRCUITIMPRINTER, new Item.Properties().rarity(Rarity.UNCOMMON));
+		RND_SERVER = block(SscResearchAndDevelopmentModBlocks.RND_SERVER, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+		RESEARCH_CONSOLE = block(SscResearchAndDevelopmentModBlocks.RESEARCH_CONSOLE, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+		AUTOLATHE = block(SscResearchAndDevelopmentModBlocks.AUTOLATHE, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+		PROTOLATHE = block(SscResearchAndDevelopmentModBlocks.PROTOLATHE, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+		CIRCUITIMPRINTER = block(SscResearchAndDevelopmentModBlocks.CIRCUITIMPRINTER, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
 		MULTITOOL = register("multitool", MultitoolItem::new);
 		RESEARCHDISK = register("researchdisk", ResearchdiskItem::new);
 		HAND_TELEPORTER = register("hand_teleporter", HandTeleporterItem::new);
+		ANOMALY_VESSEL = block(SscResearchAndDevelopmentModBlocks.ANOMALY_VESSEL, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+		ANOMALY_SCANNER = register("anomaly_scanner", AnomalyScannerItem::new);
 	}
 
 	// Start of user code block custom items

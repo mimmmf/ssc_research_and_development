@@ -1,5 +1,6 @@
 package net.mcreator.sscresearchanddevelopment.interfaces;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderPipelines;
@@ -8,7 +9,11 @@ import net.minecraft.resources.ResourceLocation;
 
 
 public interface IScreenHelper {
-    default void renderScaledText(Font font, GuiGraphics g, String text, float x, float y, float scale, int color, boolean centered) {
+    default Font getFont() {
+        return Minecraft.getInstance().font;
+    }
+    default void renderScaledText(GuiGraphics g, String text, float x, float y, float scale, int color, boolean centered) {
+        Font font = getFont();
         g.pose().pushMatrix();
         g.pose().translate(x, y);
         g.pose().scale(scale, scale);
@@ -26,7 +31,8 @@ public interface IScreenHelper {
         g.blit(RenderPipelines.GUI_TEXTURED, texture, 0, 0, 0, 0, width, height, width, height);
         g.pose().popMatrix();
     }
-    default int renderWrappedText(Font font, GuiGraphics g, String text, int x, int y, int maxWidth, float scale, int color) {
+    default int renderWrappedText(GuiGraphics g, String text, int x, int y, int maxWidth, float scale, int color) {
+        Font font = getFont();
         g.pose().pushMatrix();
         g.pose().translate(x, y);
         g.pose().scale(scale, scale);

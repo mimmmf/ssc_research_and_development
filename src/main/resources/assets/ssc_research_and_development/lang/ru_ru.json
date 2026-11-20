@@ -77,5 +77,7 @@
   "gui.ssc_research_and_development.fabricator_gui.none": "Ничего",
   "gui.ssc_research_and_development.fabricator_gui.required_resources": "Необходимые ресурсы:",
   "gui.ssc_research_and_development.fabricator_gui.cost_line": " • %s: %s/%s",
-  "item.ssc_research_and_development.hand_teleporter": "Ручной Телепорт"
+  "item.ssc_research_and_development.hand_teleporter": "Ручной Телепорт",
+  "item.ssc_research_and_development.anomaly_vessel": "Сосуд Аномалий",
+  "item.ssc_research_and_development.anomaly_scanner": "Сканер Аномалий"
 }

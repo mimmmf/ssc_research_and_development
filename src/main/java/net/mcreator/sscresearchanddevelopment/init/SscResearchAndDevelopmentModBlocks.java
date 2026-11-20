@@ -23,6 +23,7 @@ public class SscResearchAndDevelopmentModBlocks {
 	public static final DeferredBlock<Block> AUTOLATHE;
 	public static final DeferredBlock<Block> PROTOLATHE;
 	public static final DeferredBlock<Block> CIRCUITIMPRINTER;
+	public static final DeferredBlock<Block> ANOMALY_VESSEL;
 	static {
 		ARTEFACTCONSOLE = register("artefactconsole", ArtefactconsoleBlock::new);
 		ARTEFACTANALYZER = register("artefactanalyzer", ArtefactanalyzerBlock::new);
@@ -31,6 +32,7 @@ public class SscResearchAndDevelopmentModBlocks {
 		AUTOLATHE = register("autolathe", AutolatheBlock::new);
 		PROTOLATHE = register("protolathe", ProtolatheBlock::new);
 		CIRCUITIMPRINTER = register("circuitimprinter", CircuitimprinterBlock::new);
+		ANOMALY_VESSEL = register("anomaly_vessel", AnomalyVesselBlock::new);
 	}
 
 	// Start of user code block custom blocks

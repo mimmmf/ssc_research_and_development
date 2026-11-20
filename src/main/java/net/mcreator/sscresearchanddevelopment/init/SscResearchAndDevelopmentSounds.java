@@ -33,6 +33,7 @@ public class SscResearchAndDevelopmentSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> RAD_PULSE_11 = registerSound("radpulse11");
     public static final DeferredHolder<SoundEvent, SoundEvent> BUTTON = registerSound("button");
     public static final DeferredHolder<SoundEvent, SoundEvent> HIGH_TECH_CONFIRM = registerSound("high_tech_confirm");
+    public static final DeferredHolder<SoundEvent, SoundEvent> ANOMALY_DRONE = registerSound("anomaly_drone");
     private static DeferredHolder<SoundEvent, SoundEvent> registerSound(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MODID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));

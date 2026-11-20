@@ -11,21 +11,19 @@ public class FlatButton extends Button implements IScreenHelper {
     private final float scale;
     private final int normalColor;
     private final int hoverColor;
-    private final Font font;
 
-    public FlatButton(int x, int y, int width, int height, String label, float scale, int normalColor, int hoverColor, Font font, OnPress press) {
+    public FlatButton(int x, int y, int width, int height, String label, float scale, int normalColor, int hoverColor, OnPress press) {
         super(x, y, width, height, Component.empty(), press, DEFAULT_NARRATION);
         this.label = label;
         this.scale = scale;
         this.normalColor = normalColor;
         this.hoverColor = hoverColor;
-        this.font = font;
     }
 
     @Override
     public void renderWidget(GuiGraphics g, int mx, int my, float pt) {
         int color = isHovered() ? hoverColor : normalColor;
         g.fill(getX(), getY(), getX() + width, getY() + height, color);
-        renderScaledText(font, g, label, getX() + width / 2f, getY() + (height - 8 * scale) / 2f, scale, active ? 0xFFFFFFFF : 0xFFA0A0A0, true);
+        renderScaledText(g, label, getX() + width / 2f, getY() + (height - 8 * scale) / 2f, scale, active ? 0xFFFFFFFF : 0xFFA0A0A0, true);
     }
 }

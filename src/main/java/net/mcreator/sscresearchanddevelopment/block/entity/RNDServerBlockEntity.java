@@ -1,6 +1,5 @@
 package net.mcreator.sscresearchanddevelopment.block.entity;
 
-import net.mcreator.sscresearchanddevelopment.client.sound.BlockEntityLoopSound;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.NetworkSavedData;
 import net.mcreator.sscresearchanddevelopment.component.ResearchServerComponents.ServerInstance;
 import net.mcreator.sscresearchanddevelopment.init.SscResearchAndDevelopmentModBlockEntities;

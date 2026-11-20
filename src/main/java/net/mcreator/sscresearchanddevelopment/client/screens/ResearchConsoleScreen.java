@@ -61,11 +61,11 @@ public class ResearchConsoleScreen extends AbstractContainerScreen<ResearchConso
         techButtons.clear();
         selectedNode = null;
 
-        this.serversButton = addRenderableWidget(new FlatButton(leftPos + 212, topPos + 180, 70, 10, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString(), 0.7f, 0xFF3D3F56, 0xFF633B00, font, b -> {
+        this.serversButton = addRenderableWidget(new FlatButton(leftPos + 212, topPos + 180, 70, 10, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString(), 0.7f, 0xFF3D3F56, 0xFF633B00, b -> {
             ClientPacketDistributor.sendToServer(new C2SRequestServerList(menu.getPos()));
         }));
 
-        this.unlockButton = addRenderableWidget(new FlatButton(leftPos + 212, topPos + 168, 70, 10, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.research").getString(), 0.7f, 0xFF1D5E1D, 0xFF2A8C2A, font, b -> {
+        this.unlockButton = addRenderableWidget(new FlatButton(leftPos + 212, topPos + 168, 70, 10, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.research").getString(), 0.7f, 0xFF1D5E1D, 0xFF2A8C2A, b -> {
             if (selectedNode != null && connectedServer != null) {
                 ClientPacketDistributor.sendToServer(new C2SUnlockResearch(menu.getPos(), selectedNode.getId()));
             }
@@ -93,7 +93,7 @@ public class ResearchConsoleScreen extends AbstractContainerScreen<ResearchConso
         }
 
         renderBg(g, pt, mx, my);
-        renderScaledText(font, g, Component.translatable("item.ssc_research_and_development.research_console").getString(), leftPos, topPos + 7, 1f, -26368, false);
+        renderScaledText(g, Component.translatable("item.ssc_research_and_development.research_console").getString(), leftPos, topPos + 7, 1f, -26368, false);
 
         g.enableScissor(leftPos + vX, topPos + vY, leftPos + vX + vW, topPos + vY + vH);
         renderConnections(g);
@@ -147,11 +147,11 @@ public class ResearchConsoleScreen extends AbstractContainerScreen<ResearchConso
                 ? Component.translatable("gui.ssc_research_and_development.artefact_console_gui.connected").getString()
                 : Component.translatable("gui.ssc_research_and_development.artefact_console_gui.disconnected").getString();
         int connColor = isConnected ? 0xFF55FF55 : 0xFFFF5555;
-        renderScaledText(font, g, connText, isConnected ? leftPos + 240 : leftPos + 215, topPos + 8, 0.7f, connColor, false);
+        renderScaledText(g, connText, isConnected ? leftPos + 240 : leftPos + 215, topPos + 8, 0.7f, connColor, false);
 
         if (isConnected) {
             String pointsText = Component.translatable("gui.ssc_research_and_development.research_console_gui.available_rp", serverPoints).getString();
-            renderScaledText(font, g, pointsText, leftPos + 2, topPos + 182, 0.8f, 0xFFE6AC00, false);
+            renderScaledText(g, pointsText, leftPos + 2, topPos + 182, 0.8f, 0xFFE6AC00, false);
         }
     }
 
@@ -168,17 +168,17 @@ public class ResearchConsoleScreen extends AbstractContainerScreen<ResearchConso
         int startY = currentY;
 
         String nodeName = Component.translatable(selectedNode.getName().getString()).getString();
-        currentY += renderWrappedText(font, g, nodeName, panelX, currentY, infoPanelWidth, 0.7f, 0xFFFFA500);
+        currentY += renderWrappedText(g, nodeName, panelX, currentY, infoPanelWidth, 0.7f, 0xFFFFA500);
         currentY += 4;
 
         String costText = Component.translatable("gui.ssc_research_and_development.research_console_gui.cost", selectedNode.getCost()).getString();
-        renderScaledText(font, g, costText, panelX, currentY, 0.6f, 0xFFFFFFFF, false);
+        renderScaledText(g, costText, panelX, currentY, 0.6f, 0xFFFFFFFF, false);
         currentY += 10;
 
         List<String> parents = selectedNode.getParents();
         if (!parents.isEmpty()) {
             String reqText = Component.translatable("gui.ssc_research_and_development.research_console_gui.requires").getString();
-            renderScaledText(font, g, reqText, panelX, currentY, 0.6f, 0xFF999999, false);
+            renderScaledText(g, reqText, panelX, currentY, 0.6f, 0xFF999999, false);
             currentY += 8;
 
             Map<String, ResearchNode> nodes = ClientResearchCache.getNodes();
@@ -189,7 +189,7 @@ public class ResearchConsoleScreen extends AbstractContainerScreen<ResearchConso
                     int color = isParentUnlocked ? 0xFF55FF55 : 0xFFFF5555;
 
                     String parentName = "• " + Component.translatable(parentNode.getName().getString()).getString();
-                    currentY += renderWrappedText(font, g, parentName, panelX, currentY, infoPanelWidth, 0.55f, color);
+                    currentY += renderWrappedText(g, parentName, panelX, currentY, infoPanelWidth, 0.55f, color);
                     currentY += 2;
                 }
             }
@@ -197,11 +197,11 @@ public class ResearchConsoleScreen extends AbstractContainerScreen<ResearchConso
         }
         currentY += 5;
         String nodeDesc = Component.translatable(selectedNode.getDescription().getString()).getString();
-        currentY += renderWrappedText(font, g, nodeDesc, panelX, currentY, infoPanelWidth, 0.6f, 0xFFAAAAAA);
+        currentY += renderWrappedText(g, nodeDesc, panelX, currentY, infoPanelWidth, 0.6f, 0xFFAAAAAA);
         currentY += 8;
 
         String unlocksText = Component.translatable("gui.ssc_research_and_development.research_console_gui.unlocks").getString();
-        renderScaledText(font, g, unlocksText, panelX, currentY, 0.7f, 0xFF35DCBD, false);
+        renderScaledText(g, unlocksText, panelX, currentY, 0.7f, 0xFF35DCBD, false);
         currentY += 12;
 
         List<ItemStack> unlockedItems = getUnlockedItems(selectedNode.getId());

@@ -33,5 +33,7 @@ public class SscResearchAndDevelopmentModTabs {
 				tabData.accept(SscResearchAndDevelopmentModItems.MULTITOOL.get());
 				tabData.accept(SscResearchAndDevelopmentModItems.RESEARCHDISK.get());
 				tabData.accept(SscResearchAndDevelopmentModItems.HAND_TELEPORTER.get());
+				tabData.accept(SscResearchAndDevelopmentModBlocks.ANOMALY_VESSEL.get().asItem());
+				tabData.accept(SscResearchAndDevelopmentModItems.ANOMALY_SCANNER.get());
 			}).build());
 }

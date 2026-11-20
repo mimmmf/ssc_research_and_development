@@ -60,11 +60,11 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
             hasLinked = linkable.getLinkedPos().isPresent();
         }
 
-        this.serversButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 62, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
+        this.serversButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 62, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.server").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, b -> {
             ClientPacketDistributor.sendToServer(new C2SRequestServerList(new BlockPos(x, y, z)));
         }));
 
-        this.extractButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 71, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.extract").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, font, b -> {
+        this.extractButton = addRenderableWidget(new FlatButton(width / 2 - 120, height / 2 + 71, 58, 8, Component.translatable("gui.ssc_research_and_development.artefact_console_gui.extract").getString(), 0.7f, COLOR_BTN_NORMAL, COLOR_BTN_HOVER, b -> {
             if (selectedNode != null && selectedNode.status() == NodeStatus.READY_TO_EXTRACT) {
                 ClientPacketDistributor.sendToServer(new ExtractPointsPayload(new BlockPos(x, y, z), selectedNode));
             }
@@ -164,7 +164,7 @@ public class ArtefactConsoleScreen extends AbstractContainerScreen<ArtefactConso
         if (props != null) {
             String chargeText = Component.translatable("gui.ssc_research_and_development.artefact_console_gui.available_rp", props.totalPoints()).getString();
             int color = props.totalPoints() > 0 ? 0xFF55FF55 : 0xFF555555;
-            renderScaledText(font, g, chargeText, 45, 145, 0.8f, color, false);
+            renderScaledText(g, chargeText, 45, 145, 0.8f, color, false);
         }
 
         g.pose().pushMatrix();

@@ -1,6 +1,7 @@
 package net.mcreator.sscresearchanddevelopment.init;
 
 import com.mojang.blaze3d.platform.Window;
+import net.mcreator.sscresearchanddevelopment.client.screens.AnomalyScannerOverlay;
 import net.mcreator.sscresearchanddevelopment.client.screens.MultitoolOverlay;
 import net.mcreator.sscresearchanddevelopment.client.screens.ProgressBarOverlay;
 import net.minecraft.client.Minecraft;
@@ -30,5 +31,6 @@ public class SscResearchAndDevelopmentModOverlaysHandler {
 
         MultitoolOverlay.render(graphics, w, h, player);
         ProgressBarOverlay.render(graphics, w, h);
+        AnomalyScannerOverlay.render(graphics, w, h, player);
     }
 }

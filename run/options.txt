@@ -30,7 +30,7 @@ screenEffectScale:1.0
 soundDevice:""
 autoJump:false
 rotateWithMinecart:false
-operatorItemsTab:false
+operatorItemsTab:true
 autoSuggestions:true
 chatColors:true
 chatLinks:true
@@ -55,7 +55,7 @@ narratorHotkey:true
 resourcePacks:[]
 incompatibleResourcePacks:[]
 lastServer:127.0.0.1:25565
-lang:ru_ru
+lang:en_us
 chatVisibility:0
 chatOpacity:1.0
 chatLineSpacing:0.0

@@ -125,16 +125,13 @@ public class PortalEntity extends Entity {
      * (головы и тела) и вектор скорости без изменений.
      */
     private void transport(ServerLevel serverLevel, Entity e, PortalEntity to) {
-        // Сохраняем текущие углы сущности — они не должны меняться.
         float yaw = e.getYRot();
         float pitch = e.getXRot();
 
-        // Всегда спавним ровно в центре принимающего портала.
         double destX = to.getX();
         double destY = to.getY();
         double destZ = to.getZ();
 
-        // Скорость сохраняем без изменений.
         Vec3 v = e.getDeltaMovement();
         Vec3 newVelocity = new Vec3(v.x, v.y, v.z);
 

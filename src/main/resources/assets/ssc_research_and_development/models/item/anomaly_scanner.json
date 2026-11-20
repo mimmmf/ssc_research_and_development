@@ -1,0 +1,7 @@
+{
+  "parent": "ssc_research_and_development:custom/anomaly_scanner",
+  "textures": {
+    "1": "ssc_research_and_development:item/anomaly_scanner_texture",
+    "particle": "ssc_research_and_development:item/anomaly_scanner_texture"
+  }
+}

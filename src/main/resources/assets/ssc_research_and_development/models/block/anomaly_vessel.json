@@ -1,0 +1,8 @@
+{
+  "parent": "ssc_research_and_development:custom/anomaly_vessel",
+  "textures": {
+    "particle": "ssc_research_and_development:block/anomaly_vessel_texture",
+    "0": "ssc_research_and_development:block/anomaly_vessel_texture"
+  },
+  "render_type": "translucent"
+}

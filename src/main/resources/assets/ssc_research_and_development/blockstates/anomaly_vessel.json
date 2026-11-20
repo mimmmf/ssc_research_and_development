@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "ssc_research_and_development:block/anomaly_vessel"
+    },
+    "facing=east": {
+      "model": "ssc_research_and_development:block/anomaly_vessel",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "ssc_research_and_development:block/anomaly_vessel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "ssc_research_and_development:block/anomaly_vessel",
+      "y": 270
+    }
+  }
+}
